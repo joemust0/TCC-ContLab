@@ -1,6 +1,10 @@
 # FerramentaContabil
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
+Projeto voltado para usuarios e estudandes da area contabil com foco para praticas e treinamentos básicos.
+
+Inicialemnte o projeto visa a atender uma necessidade de ferramenta para gerar seus lançamentos de prévias de balanços não oficials para alunos do curso de contabilidade da ETEC Zona Leste, facilitando o acesso e a aprendizagem dos alunos.
+
+Projeto gerado com o uso do angular Framework [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
 
 ## Development server
 
