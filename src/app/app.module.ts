@@ -10,6 +10,10 @@ import { LoginComponent } from './componets/login/login.component';
 import { CadUsuarioComponent } from './componets/cad-usuario/cad-usuario.component';
 import { LancamentosComponent } from './componets/lancamentos/lancamentos.component';
 import { BalancoComponent } from './componets/balanco/balanco.component';
+import { NavComponent } from './componets/nav/nav.component';
+import { CadastroComponent } from './componets/tabelas/cadastro/cadastro.component';
+import { GraficoComponent } from './componets/tabelas/grafico/grafico.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +24,10 @@ import { BalancoComponent } from './componets/balanco/balanco.component';
     LoginComponent,
     CadUsuarioComponent,
     LancamentosComponent,
-    BalancoComponent
+    BalancoComponent,
+    NavComponent,
+    CadastroComponent,
+    GraficoComponent
   ],
   imports: [
     BrowserModule,

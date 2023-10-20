@@ -2,3 +2,7 @@
     font-size: 24pt;
     padding: 10px;
 }
+div{
+    position: relative;
+    left: 180px;
+}

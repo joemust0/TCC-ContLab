@@ -1,0 +1,19 @@
+.tres{
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin-left: 13%;
+    margin-top: 5%;
+    width: 80%;
+    height: 75vh;
+    background-color: #1D9B1A;
+    color: white;
+    text-align:center;
+}
+.quatro{
+    position: relative;
+    background-color: #01102C;
+    width: 150px;
+    height: 100%;
+}

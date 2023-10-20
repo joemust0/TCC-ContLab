@@ -6,6 +6,7 @@ import { CadUsuarioComponent } from './componets/cad-usuario/cad-usuario.compone
 import { LancamentosComponent } from './componets/lancamentos/lancamentos.component';
 import { BalancoComponent } from './componets/balanco/balanco.component';
 
+
 const routes: Routes = [
   {path: '', component: MainComponent },
   {path: 'login', component: LoginComponent },
