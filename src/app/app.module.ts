@@ -13,6 +13,7 @@ import { BalancoComponent } from './componets/balanco/balanco.component';
 import { NavComponent } from './componets/nav/nav.component';
 import { CadastroComponent } from './componets/tabelas/cadastro/cadastro.component';
 import { GraficoComponent } from './componets/tabelas/grafico/grafico.component';
+//import { ScriptComponent } from './componets/php/script/script.component';
 
 
 @NgModule({
@@ -27,7 +28,9 @@ import { GraficoComponent } from './componets/tabelas/grafico/grafico.component'
     BalancoComponent,
     NavComponent,
     CadastroComponent,
-    GraficoComponent
+    GraficoComponent,
+    //ScriptComponent,
+
   ],
   imports: [
     BrowserModule,
