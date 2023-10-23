@@ -1,4 +1,16 @@
-div{
-    position: relative;
-    left: 180px;
+@import url('https://fonts.googleapis.com/css2?family=Iceland&family=Kaushan+Script&display=swap');
+
+*{
+  display: block;
+  float: none;
+  background-color: rgb(5, 21, 51);
+  width: 100%;
+  height: 20px;
+  bottom: 0px;
+  }
+p{
+  text-align: center;
+  font-size: 30pt;
+  font-family: 'Iceland', sans-serif;
+  color: blueviolet;
 }

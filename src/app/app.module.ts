@@ -13,7 +13,8 @@ import { BalancoComponent } from './componets/balanco/balanco.component';
 import { NavComponent } from './componets/nav/nav.component';
 import { CadastroComponent } from './componets/tabelas/cadastro/cadastro.component';
 import { GraficoComponent } from './componets/tabelas/grafico/grafico.component';
-//import { ScriptComponent } from './componets/php/script/script.component';
+import { ScriptComponent } from './componets/php/script/script.component';
+import { TestesComponent } from './componets/testes/testes.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { GraficoComponent } from './componets/tabelas/grafico/grafico.component'
     NavComponent,
     CadastroComponent,
     GraficoComponent,
-    //ScriptComponent,
+    ScriptComponent,
+    TestesComponent,
 
   ],
   imports: [

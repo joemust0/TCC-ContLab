@@ -1,30 +1,29 @@
-#tudo{
-    display: flex;
-}
+
 #nav_bar{
+  display: flex;
     position: fixed;
     width: 150px;
     height:100%;
     left: 0;
-    top:0;
+    top:50px;
     background-color: #01102C;
     color: white;
     flex-direction: column;
     padding: 0;
-    align-items: start;
+    align-items: center;
 }
 #nav_bar li {
     width: 80%;
-    padding: 10px; 
+    padding: 10px;
     transition: background-color 0.3s;
 }
 #nav_bar li:hover {
     background-color: #3498db;
-    color: white; 
-    cursor: pointer; 
+    color: white;
+    cursor: pointer;
 }
 #nav_bar ul {
     list-style: none;
     padding: 0;
-    margin: 0; 
+    margin: 0;
 }
