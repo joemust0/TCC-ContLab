@@ -1,12 +1,45 @@
 .header{
     display: block;
     position: fixed;
-    border: 2px lightblue;
+    border: 2px blueviolet solid;
     width: 100%;
     align-items: center;
     top: 0;
-    height: 10%;
+    background-color: cornflowerblue;
+    width: 100%;
+    height: 50px;
 }
 .nav{
+display: block;
+position: fixed;
+left: -5px;
+width: 150px;
+height:100%;
+background-color: #01102C;
+color: white;
+flex-direction: column;
+padding: 0;
+border: 2px blueviolet double;
+border-radius: 10px;
+margin-top: 50px;
+padding-bottom: 50px;
+}
+.main{
+    display: flex;
+    position: absolute;
+    align-items: baseline;
+    justify-content: baseline;
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-bottom: 10px;
+    padding-top: 5px;
 
+}
+.footer{
+    display: block;
+    position: absolute;
+    background-color: rgb(5, 21, 51);
+    width: 100%;
+    height: 50px;
+    bottom: 0px;
 }
