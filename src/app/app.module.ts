@@ -17,6 +17,7 @@ import { ScriptComponent } from './componets/php/script/script.component';
 import { TestesComponent } from './componets/testes/testes.component';
 import { MonologComponent } from './componets/php/monolog/monolog.component';
 import { SlimComponent } from './componets/php/slim/slim.component';
+import { MotorDeCalculoComponent } from './componets/motor-de-calculo/motor-de-calculo.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { SlimComponent } from './componets/php/slim/slim.component';
     TestesComponent,
     MonologComponent,
     SlimComponent,
+    MotorDeCalculoComponent,
 
   ],
   imports: [
