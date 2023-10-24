@@ -1,0 +1,12 @@
+.header{
+    display: block;
+    position: fixed;
+    border: 2px lightblue;
+    width: 100%;
+    align-items: center;
+    top: 0;
+    height: 10%;
+}
+.nav{
+
+}

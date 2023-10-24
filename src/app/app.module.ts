@@ -15,6 +15,8 @@ import { CadastroComponent } from './componets/tabelas/cadastro/cadastro.compone
 import { GraficoComponent } from './componets/tabelas/grafico/grafico.component';
 import { ScriptComponent } from './componets/php/script/script.component';
 import { TestesComponent } from './componets/testes/testes.component';
+import { MonologComponent } from './componets/php/monolog/monolog.component';
+import { SlimComponent } from './componets/php/slim/slim.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { TestesComponent } from './componets/testes/testes.component';
     GraficoComponent,
     ScriptComponent,
     TestesComponent,
+    MonologComponent,
+    SlimComponent,
 
   ],
   imports: [
