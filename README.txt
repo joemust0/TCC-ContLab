@@ -4,6 +4,26 @@ Projeto voltado para usuarios e estudandes da area contabil com foco para pratic
 
 Inicialemnte o projeto visa a atender uma necessidade de ferramenta para gerar seus lançamentos de prévias de balanços não oficials para alunos do curso de contabilidade da ETEC Zona Leste, facilitando o acesso e a aprendizagem dos alunos.
 
+Divisão de trabalho:
+
+João
+Gestão de projeto
+Full Stack e atuação hibrida;
+
+Guylherme
+Supervisão de Back-end
+Desenvolvedor Back-end
+
+Henrique
+Desenvolvedor Back-end
+
+Paulo
+Supervisão de Front-end
+Desenvolvedor Front-end
+
+Henry
+Desenvolvedor Front-end
+
 Projeto gerado com o uso do angular Framework [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
 
 ## Development server
