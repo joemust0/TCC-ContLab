@@ -1,21 +1,29 @@
 .um{
     display: flex;
     position: fixed;
-    left: 0;
-    top: 0;
-    margin-left: 13%;
-    margin-top: 5%;
-    width: 80%;
-    height: 75vh;
+    margin-left: 6%;
+    margin-top: 3%;
+    width: 76%;
+    height: 78%;
     background-color: #1D9B1A;
     color: white;
     text-align:center;
+    align-items: flex-start;
 }
 .dois{
+    display: flex;
     position: relative;
     background-color: #01102C;
-    width: 150px;
+    width: 120px;
     height: 100%;
 }
-
-
+.dois li:hover {
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+}
+.dois li{
+    width: 80%;
+    padding: 10px;
+    transition: background-color 0.3s;
+}

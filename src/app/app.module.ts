@@ -18,6 +18,9 @@ import { TestesComponent } from './componets/testes/testes.component';
 import { MonologComponent } from './componets/php/monolog/monolog.component';
 import { SlimComponent } from './componets/php/slim/slim.component';
 import { MotorDeCalculoComponent } from './componets/motor-de-calculo/motor-de-calculo.component';
+import { FormComponent } from './componets/form/form.component';
+
+
 
 
 @NgModule({
@@ -38,6 +41,9 @@ import { MotorDeCalculoComponent } from './componets/motor-de-calculo/motor-de-c
     MonologComponent,
     SlimComponent,
     MotorDeCalculoComponent,
+    FormComponent,
+
+
 
   ],
   imports: [
