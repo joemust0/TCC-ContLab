@@ -1,8 +1,7 @@
-:root{
+*{
   --color-hover: rgba(32, 59,232);
   --transition: all 0.2s ease;
 }
-
 .sidebar{
 position:absolute;
 top: 0;
@@ -29,12 +28,13 @@ transition: var(--transition);
 color: #000;
 font-size: 23px;
 font-weight: 600;
+opacity: 0;
+transition: var(--transition);
 }
-.nav-header .logo{
-  color: #000;
-  font-size: 23px;
-  font-weight: 600;
-  }
+.sidebar.expand .nav-header .logo{
+  opacity: 1;
+  transition: var(--transition);
+}
 .nav-header .btn-menu{
   position: absolute;
   color: #000;
@@ -43,6 +43,10 @@ font-weight: 600;
   transform: translatey(-50%);
   font-size: 23px;
   cursor: pointer;
+  margin-right: 10px;
+}
+.sidebar.expand .nav-header .btn-menu{
+margin-right: 0;
 }
 .nav-routes{
   margin: 20px;
@@ -53,6 +57,10 @@ font-weight: 600;
   margin: 8px 0;
   list-style: none;
 }
+.nav-routes li:hover{
+  background-color: var(--color-hover);
+  border-radius: 12px;
+ }
 .nav-routes i{
   color: #000;
   height: 50px;
@@ -67,10 +75,14 @@ font-weight: 600;
   color: navy;
   outline: none;
   height: 40px;
-  width: 100%;
+  width: 50%;
   border: none;
   border-radius: 12px;
-  background-color: #e2e2e2;
+  background: #e2e2e2;
+  padding: 0;
+}
+.sidebar.expand .nav-routes input{
+  width: 100%;
   padding: 0 20px 0 40px;
 }
 .nav-routes li .routes{
@@ -80,25 +92,28 @@ font-weight: 600;
   border-radius: 12px;
   align-items: center;
   text-decoration: none;
-  background-color: #fff;
+  background: #fff;
 }
-.nav-routes li .routes .text{
+.nav-routes li span .text{
 color: #000;
 font-size: 15px;
 font-weight: 400;
 white-space: nowarp;
+display: none;
+transition: var(--transition);
 }
-.nav-routes li:hover{
-  background-color: var(--color-hover);
-  border-radius: 12px;
- }
+.sidebar.expand .nav-routes li span .text{
+  display: block;
+  transition: var(--transition);
+}
 .nav-routes li:hover .text{
   color: #e2e2e2;
 }
+
 .nav-routes li:hover i{
 color: #fff;
 }
-.nav-routes  .busca-btn{
+.nav-routes .busca-btn{
 position: absolute;
 top: 50%;
 left: 0;
@@ -106,11 +121,18 @@ transform: translateY(-25px);
 font-size: 23px;
 color: #000;
 border-radius: 12px;
+background: #fff;
+transition: var(--transition);
+
 }
-.nav-routes  .busca-btn:hover{
-background-color: var(--color-hover);
+.sidebar.expand .nav-routes .busca-btn{
+background: transparent;
+transition: var(--transition);
 }
 
+.nav-routes .busca-btn:hover{
+background-color: var(--color-hover);
+}
 .theme-wrapper{
 position: fixed;
 bottom: 0px;
@@ -158,7 +180,7 @@ left: 3px;
   z-index: 6;
   transition: var(--transition);
 }
-.sidebar.expand ~.home{
+.sidebar.expand ~ .home{
   left: 250px;
   width: calc(100% - 250px);
   transition: var(--transition);
