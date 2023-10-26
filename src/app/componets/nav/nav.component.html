@@ -1,9 +1,8 @@
   <nav>
-    <section class="sidebar">
-
+    <section class="sidebar" [ngClass]="{'ocultar' : ocultar}">
     <div class="nav-header">
       <p class="logo">Área de estudos</p>
-      <i class="bx bx-menu-alt-right btn-menu" ></i>
+      <i class="bx bx-menu-alt-right btn-menu"></i>
       </div>
       <ul class="nav-routes">
         <li>
@@ -12,27 +11,27 @@
       </li>
         <li class="routes" routerLink="">
                <i class='bx bx-home'></i>
-          <span class="text">Início</span>
+          <span class="text" [ngClass]="{'hidden-text': ocultar}">Início</span>
         </li>
         <li class="routes" routerLink="/balanço">
-          <i class='bx bxs-bar-chart-alt-2' ></i>
-          <span class="text">Balanços</span>
+          <i Class="bx bxs-bar-chart-alt-2"></i>
+          <span class="text" [ngClass]="{'hidden-text': ocultar}">Balanços</span>
         </li>
         <li class="routes" routerLink="/lançamentos">
             <i class='bx bx-spreadsheet'></i>
-          <span class="text">Lançamentos</span>
+            <span class="text" [ngClass]="{'hidden-text': ocultar}">Lançamentos</span>
         </li>
         <li class="routes" routerLink="">
           <i class='bx bx-buildings'></i>
-          <span class="text">Contole</span>
+          <span class="text" [ngClass]="{'hidden-text': ocultar}">Contole</span>
         </li>
         <li class="routes" routerLink="">
           <i class='bx bx-user'></i>
-          <span class="text">Perfil</span>
+          <span class="text" [ngClass]="{'hidden-text': ocultar}">Perfil</span>
         </li>
         <li class="routes" routerLink="/testes">
           <i class='bx bx-cog' ></i>
-          <span class="text">Testes desenvolvimento</span>
+          <span class="text" [ngClass]="{'hidden-text': ocultar}">Testes desenvolvimento</span>
         </li>
       </ul>
       <div class="theme-wrapper">

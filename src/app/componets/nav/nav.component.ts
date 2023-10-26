@@ -7,16 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  ocultar = true;
+  iconOcultar = true;
+
   constructor() { }
 
   ngOnInit(): void {
-
 
   const btn_menu = document.querySelector(".btn-menu") as HTMLElement;
   const side_bar = document.querySelector(".sidebar") as HTMLElement;
 
   btn_menu.addEventListener('click', () => {
     side_bar.classList.toggle('expand');
+
+  this.ocultar = !this.ocultar; //Alterar o estado do texto
+  this.iconOcultar = !this.iconOcultar; //Alterar o estado do icone
 });
 }
 }

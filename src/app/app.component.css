@@ -5,15 +5,7 @@
   background-color: #e2e2e2;
 }
 .header{
-    display: block;
-    position: fixed;
-    border: 2px blueviolet solid;
-    width: 100%;
-    align-items: center;
-    top: 0;
-    background-color: cornflowerblue;
-    width: 100%;
-    height: 50px;
+  font-family: "iceland",sans-serif;
 }
 .nav{
 font-family: "poppins",sans-serif;

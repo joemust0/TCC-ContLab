@@ -9,7 +9,6 @@ left: 0;
 z-index: 100;
 width: 78px;
 height: 100%;
-**background-color: #01102C;
 background-color:#fff;
 padding: 8px 16px;
 transition: var(--transition);
@@ -69,6 +68,10 @@ margin-right: 0;
   text-align: center;
   line-height: 50px;
 }
+
+.sidebar:not(.expand) .nav-routes li i {
+  color: #000;
+}
 .nav-routes  input{
   font-size: 14px;
   font-weight: 400;
@@ -105,7 +108,12 @@ transition: var(--transition);
 .sidebar.expand .nav-routes li span .text{
   display: block;
   transition: var(--transition);
+  text-decoration: none;
 }
+.sidebar.ocultar .nav-routes li span.text {
+  display: none;
+}
+
 .nav-routes li:hover .text{
   color: #e2e2e2;
 }
@@ -113,6 +121,7 @@ transition: var(--transition);
 .nav-routes li:hover i{
 color: #fff;
 }
+
 .nav-routes .busca-btn{
 position: absolute;
 top: 50%;
@@ -168,29 +177,4 @@ height: 15px;
 border-radius: 50%;
 top: 2px;
 left: 3px;
-}
-
-.home{
-  position: relative;
-  top: 0;
-  left: 78px;
-  width: calc(100% - 78px);
-  min-width: 100vh;
-  background-color: #e2e2e2;
-  z-index: 6;
-  transition: var(--transition);
-}
-.sidebar.expand ~ .home{
-  left: 250px;
-  width: calc(100% - 250px);
-  transition: var(--transition);
-}
-
-.home p{
-  font-size: 20px;
-  font-weight: 500;
-  color: #000;
-  display: inline-block;
-  margin: 20px;
-  white-space: nowrap;
 }
