@@ -1,19 +1,24 @@
 <table border="">
     <tr>
-        <th></th>
-    </tr>
-    <tr>
-        <td>
+        <td id="Tipo-entrada">
             <button type="checkbox" id="Crédito"><label for="Crédito">C</label></button>
             <button type="checkbox" id="Débito"><label for="Débito">D</label></button>
         </td>
-        <td>
-            <label for="Ativo Circu">Ativo Ciruclante</label><br>
-            <input type="checkbox" id="Ativo Ciru">
+        <td id="bah">
+            <label>Qual</label><br>
+            <select id="Bah">
+                <option id="Bah"></option>
+            </select>
         </td>
-        <td>
+        <td id="Entrar">
+            <label for="entrada">Escolha sua entrada</label><br>
+            <select id="entrada">
+                <option id="entrada"></option>
+            </select>
+        </td>
+        <td id="Valores">
             <label for="Valor">Digite seu valor</label><br>
-            <input type="text" id="Valor">
+            <input type="number" id="Valor" step="0.01" min="0" placeholder="0.00">
         </td>
     </tr>
     <tr>

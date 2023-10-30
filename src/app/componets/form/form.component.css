@@ -1,0 +1,36 @@
+table{
+    margin-left: 100px;
+    margin-top: 200px;
+}
+#Tipo-entrada{
+    height: 80px;
+    width: 100px;
+}
+#Crédito{
+    height: 30px;
+    width: 30px;
+    margin: 4px;
+}
+#Débito{
+    height: 30px;
+    width: 30px;
+    margin: 4px;
+}
+#bah{
+    width: 140px;
+}
+#Bah{
+    width: 100px;
+}
+#Entrar{
+    width: 150px;
+}
+#entrada{
+    width: 100px;
+}
+#Valores{
+    width: 150px;
+}
+#Valor{
+    width: 100px;
+}
