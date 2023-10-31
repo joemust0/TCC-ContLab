@@ -1,27 +1,33 @@
-<table border="">
+<table border="" id="Base">
     <tr>
         <td id="Tipo-entrada">
-            <button type="checkbox" id="Crédito"><label for="Crédito">C</label></button>
-            <button type="checkbox" id="Débito"><label for="Débito">D</label></button>
+            <button type="checkbox" id="Crédito" onclick="toggleCheckBox('Crédito')"><label
+                    for="Crédito">C</label></button>
+            <button type="checkbox" id="Débito" onclick="toggleCheckBox('Crédito')"><label
+                    for="Débito">D</label></button>
+            <input type="checkbox" id="hiddenCrédito" style="display: none">
+            <input type="checkbox" id="hiddenDébito" style="display: none">
         </td>
         <td id="bah">
             <label>Qual</label><br>
             <select id="Bah">
                 <option id="Bah"></option>
+                <option id="Bah">adasdsa</option>
             </select>
         </td>
         <td id="Entrar">
             <label for="entrada">Escolha sua entrada</label><br>
             <select id="entrada">
                 <option id="entrada"></option>
+                <option id="entrada">dasdasd</option>
             </select>
         </td>
         <td id="Valores">
             <label for="Valor">Digite seu valor</label><br>
-            <input type="number" id="Valor" step="0.01" min="0" placeholder="0.00">
+            <input type="number" id="Valor" min="0" placeholder="0.00">
         </td>
     </tr>
-    <tr>
-
-    </tr>
+</table>
+<button id="Adicionar">Cop</button>
+<table border="" id="Nova">
 </table>
