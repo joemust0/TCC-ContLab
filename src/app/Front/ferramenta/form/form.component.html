@@ -1,9 +1,9 @@
 <table border="" id="Base">
     <tr>
         <td id="Tipo-entrada">
-            <button type="checkbox" id="Crédito" onclick="toggleCheckBox('Crédito')"><label
+            <button class="DebCre" id="Crédito" onclick="toggleCheckBox('Crédito')"><label
                     for="Crédito">C</label></button>
-            <button type="checkbox" id="Débito" onclick="toggleCheckBox('Crédito')"><label
+            <button class="DebCre" id="Débito" onclick="toggleCheckBox('Crédito')"><label
                     for="Débito">D</label></button>
             <input type="checkbox" id="hiddenCrédito" style="display: none">
             <input type="checkbox" id="hiddenDébito" style="display: none">
@@ -12,14 +12,19 @@
             <label>Qual</label><br>
             <select id="Bah">
                 <option id="Bah"></option>
-                <option id="Bah">adasdsa</option>
+                <option id="Bah">Ativo</option>
+                <option id="Bah">Passivo</option>
+                <option id="Bah">Patrimonio Líquido</option>
             </select>
         </td>
         <td id="Entrar">
             <label for="entrada">Escolha sua entrada</label><br>
             <select id="entrada">
                 <option id="entrada"></option>
-                <option id="entrada">dasdasd</option>
+                <option id="entrada">Caixa</option>
+                <option id="entrada">Banco</option>
+                <option id="entrada">Imobilizado</option>
+                <option id="entrada">Estoque</option>
             </select>
         </td>
         <td id="Valores">
@@ -28,6 +33,8 @@
         </td>
     </tr>
 </table>
-<button id="Adicionar">Cop</button>
+
 <table border="" id="Nova">
 </table>
+<button class="Adic" id="Adicionar">Adicionar</button>
+<script src="src\app\Front\ferramenta\form\form.component.ts"></script>
