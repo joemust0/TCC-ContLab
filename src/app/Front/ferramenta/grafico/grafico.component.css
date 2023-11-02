@@ -1,19 +1,21 @@
-.tres{
-    display: flex;
-    position: fixed;
-    left: 0;
-    top: 0;
-    margin-left: 13%;
-    margin-top: 5%;
-    width: 80%;
-    height: 75vh;
-    background-color: #1D9B1A;
-    color: white;
-    text-align:center;
-}
-.quatro{
+#Graf-Balanço{
     position: relative;
-    background-color: #01102C;
-    width: 150px;
-    height: 100%;
+    background-color: white;
+    color: black;
+    width: 100%;
+    height: 50%;
+    justify-content: flex-start;
+}
+#Ativo-Circulante {
+    position: relative;
+    background-color: #1D9B1A;
+    top: 0;
+    text-align: center;
+}
+#Ativo{
+    vertical-align: top;   
+    text-align: left;
+}
+#Total{
+    height: 20px;
 }
