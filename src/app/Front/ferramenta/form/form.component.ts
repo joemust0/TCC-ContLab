@@ -71,6 +71,7 @@ adicionarLancamentoInicial() {
         <input type="number" id="Valor" min="0" placeholder="0.00">
     </td>
 </tr>
+<br>
 <tr>
 <td class="num-lancamento"></td>
   <td id="Tipo-entrada">

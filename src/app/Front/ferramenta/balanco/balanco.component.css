@@ -1,3 +1,47 @@
-*{
-    font-size: 24pt;
+button {
+  border: none;
+  background: none;
+  align-items: center;
+  cursor: pointer;
+}
+i{
+  font-size: 50px;
+}
+.ocultar{
+  display: none;
+}
+.btn-novo{
+  position: relative;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  align-content: center;
+  border: none;
+  outline: none;
+}
+.btn-novo label{
+  font-size: 36px;
+}
+.btn-novo button{
+background: white;
+border-radius: 50px;
+margin-left: 100px;
+box-shadow: 2px 2px black;
+
+}
+.novo-balanco{
+  justify-content: center;
+  align-items: center;
+  background-color: skyblue;
+  border-radius: 12px;
+  box-shadow: -2px 2px red;
+  width: 150px;
+  margin-left: 70px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 20px;
+}
+textarea .Description{
+  border-radius: 15px;
 }
