@@ -6,7 +6,7 @@ import { CadUsuarioComponent } from './Front/Usuario/cad-usuario/cad-usuario.com
 import { LancamentosComponent } from './Front/ferramenta/lancamentos/lancamentos.component';
 import { BalancoComponent } from './Front/ferramenta/balanco/balanco.component';
 import { TestesComponent } from './Dev/testes/testes.component';
-
+import { MotorDeCalculoComponent } from './Dev/motor-de-calculo/motor-de-calculo.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent },
@@ -15,6 +15,7 @@ const routes: Routes = [
   {path: 'lançamentos', component: LancamentosComponent },
   {path: 'balanço', component: BalancoComponent },
   {path: 'testes', component: TestesComponent },
+  {path: 'motor', component: MotorDeCalculoComponent },
 ];
 
 @NgModule({
