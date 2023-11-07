@@ -6,16 +6,54 @@
     height: 50%;
     justify-content: flex-start;
 }
-#Ativo-Circulante {
-    position: relative;
-    background-color: #1D9B1A;
-    top: 0;
-    text-align: center;
+#Balanço{
+    background-color: rgb(189, 216, 237);
 }
-#Ativo{
+#Padrão{
     vertical-align: top;   
     text-align: left;
 }
 #Total{
     height: 20px;
+    text-align: left;
+}
+#Ativo-Circulante {
+    position: relative;
+    background-color: rgb(226, 239, 219);
+    top: 0;
+    text-align: center;
+}
+#Ativo-N-Circulante{
+    position: relative;
+    background-color: rgb(168, 208, 145);
+    top: 0;
+    text-align: center;
+}
+#Passivo-Circulante{
+    position: relative;
+    background-color: rgb(252, 229, 215);
+    top: 0;
+    text-align: center;
+}
+#Passivo-N-Circulante{
+    position: relative;
+    background-color: rgb(245, 204, 176);
+    top: 0;
+    text-align: center;
+}
+#Patrimonio-Liquido{
+    position: relative;
+    background-color: rgb(243, 176, 134);
+    top: 0;
+    text-align: center;
+}
+#Total-Ativ{
+    position: relative;
+    color: white;
+    background-color: rgb(114, 172, 69);
+}
+#Total-Pass{
+    position: relative;
+    color: white;
+    background-color: rgb(237, 126, 47);
 }
