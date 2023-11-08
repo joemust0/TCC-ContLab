@@ -41,9 +41,9 @@ adicionarLancamentoInicial() {
   <td class="num-lancamento"></td>
     <td id="Tipo-entrada">
         <button class="DebCre" id="Crédito" onclick="toggleCheckBox('Crédito')"><label
-                for="Crédito">C</label></button>
+                for="Crédito">Crédito</label></button>
         <button class="DebCre" id="Débito" onclick="toggleCheckBox('Crédito')"><label
-                for="Débito">D</label></button>
+                for="Débito">Débito</label></button>
         <input type="checkbox" id="hiddenCrédito" style="display: none">
         <input type="checkbox" id="hiddenDébito" style="display: none">
        </td>
@@ -64,6 +64,8 @@ adicionarLancamentoInicial() {
             <option id="entrada">Banco</option>
             <option id="entrada">Imobilizado</option>
             <option id="entrada">Estoque</option>
+            <option id="entrada">Fornecedor</option>
+            <option id="entrada">Emprestimo</option>
         </select>
     </td>
     <td id="Valores">
@@ -71,14 +73,13 @@ adicionarLancamentoInicial() {
         <input type="number" id="Valor" min="0" placeholder="0.00">
     </td>
 </tr>
-<br>
 <tr>
 <td class="num-lancamento"></td>
   <td id="Tipo-entrada">
       <button class="DebCre" id="Crédito" onclick="toggleCheckBox('Crédito')"><label
-              for="Crédito">C</label></button>
+              for="Crédito">Crédito</label></button>
       <button class="DebCre" id="Débito" onclick="toggleCheckBox('Crédito')"><label
-              for="Débito">D</label></button>
+              for="Débito">Débito</label></button>
       <input type="checkbox" id="hiddenCrédito" style="display: none">
       <input type="checkbox" id="hiddenDébito" style="display: none">
      </td>
@@ -99,6 +100,8 @@ adicionarLancamentoInicial() {
           <option id="entrada">Banco</option>
           <option id="entrada">Imobilizado</option>
           <option id="entrada">Estoque</option>
+          <option id="entrada">Fornecedor</option>
+          <option id="entrada">Emprestimo</option>
       </select>
   </td>
   <td id="Valores">
