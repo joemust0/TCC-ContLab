@@ -10,6 +10,8 @@
 .nav{
 font-family: "poppins",sans-serif;
 
+
+
 }
 .main{
     display: flex;
@@ -24,7 +26,7 @@ font-family: "poppins",sans-serif;
 }
 .footer{
     display: block;
-    position: absolute;
+    position: fixed;
     background-color: rgb(5, 21, 51);
     width: 100%;
     height: 50px;

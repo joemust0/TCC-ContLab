@@ -1,9 +1,10 @@
 *{
   --color-hover: rgba(32, 59,232);
-  --transition: all 0.2s ease;
+  --transition: all 0.2s ease
+  
 }
 .sidebar{
-position:absolute;
+position:fixed;
 top: 0;
 left: 0;
 z-index: 100;
@@ -154,12 +155,13 @@ padding: 8px 16px;
 }
 .theme-wrapper .theme-icon{
   font-size: 20px;
-  color: #000;
+  color: #000;       /*tela de tema escuro, css da tela */
 }
-.theme-wrapper p{
+.theme-wrapper p{                       
   font-size: 16px;
   color: #000;
   font-weight: 400;
+
 }
 .theme-wrapper .theme-btn{
 width: 40px;

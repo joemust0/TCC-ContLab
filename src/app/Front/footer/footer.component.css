@@ -1,6 +1,14 @@
+*{
+  position: relative;  
+  
+}
 p{
   text-align: center;
   font-size: 18pt;
   font-family: 'Iceland', sans-serif;
-  color: blueviolet;
+  color: blueviolet
+
 }
+
+
+
