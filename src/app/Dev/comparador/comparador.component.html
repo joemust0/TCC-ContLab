@@ -1,0 +1,11 @@
+<div>
+  <input [(ngModel)]="contaO" placeholder="Valor 1">
+  <input [(ngModel)]="contaD" placeholder="Valor 2">
+  <button (click)="compararValores()">Comparar</button>
+  <div *ngIf="temDiferenca">
+    Há diferença entre os valores.
+  </div>
+  <div *ngIf="!temDiferenca">
+    Não há diferença entre os valores.
+  </div>
+</div>

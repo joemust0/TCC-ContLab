@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +22,7 @@ import { MonologComponent } from './Dev/PHP/monolog/monolog.component';
 import { SlimComponent } from './Dev/PHP/slim/slim.component';
 import { MotorDeCalculoComponent } from './Dev/motor-de-calculo/motor-de-calculo.component';
 import { FormComponent } from './Front/ferramenta/form/form.component';
+import { ComparadorComponent } from './Dev/comparador/comparador.component';
 
 
 
@@ -44,6 +46,7 @@ import { FormComponent } from './Front/ferramenta/form/form.component';
     SlimComponent,
     MotorDeCalculoComponent,
     FormComponent,
+    ComparadorComponent,
 
 
 
@@ -51,7 +54,8 @@ import { FormComponent } from './Front/ferramenta/form/form.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
