@@ -34,89 +34,19 @@ ngOnInit() {
 adicionarLancamentoInicial() {
   const tabelaBase = document.getElementById('Base') as HTMLTableElement;
   const novaLinha = document.createElement('tr');
-
-  // Adicione os elementos da linha (células) para o lançamento inicial
-  novaLinha.innerHTML = `
-  <tr>
-  <td class="num-lancamento"></td>
-    <td id="Tipo-entrada">
-        <button class="DebCre" id="Crédito" onclick="toggleCheckBox('Crédito')"><label
-                for="Crédito">Crédito</label></button>
-        <button class="DebCre" id="Débito" onclick="toggleCheckBox('Crédito')"><label
-                for="Débito">Débito</label></button>
-        <input type="checkbox" id="hiddenCrédito" style="display: none">
-        <input type="checkbox" id="hiddenDébito" style="display: none">
-       </td>
-    <td id="bah">
-        <label>Qual</label><br>
-        <select id="Bah">
-            <option id="Bah"></option>
-            <option id="Bah">Ativo</option>
-            <option id="Bah">Passivo</option>
-            <option id="Bah">Patrimonio Líquido</option>
-        </select>
-    </td>
-    <td id="Entrar">
-        <label for="entrada">Escolha sua entrada</label><br>
-        <select id="entrada">
-            <option id="entrada"></option>
-            <option id="entrada">Caixa</option>
-            <option id="entrada">Banco</option>
-            <option id="entrada">Imobilizado</option>
-            <option id="entrada">Estoque</option>
-            <option id="entrada">Fornecedor</option>
-            <option id="entrada">Emprestimo</option>
-        </select>
-    </td>
-    <td id="Valores">
-        <label for="Valor">Digite seu valor</label><br>
-        <input type="number" id="Valor" min="0" placeholder="0.00">
-    </td>
-</tr>
-<tr>
-<td class="num-lancamento"></td>
-  <td id="Tipo-entrada">
-      <button class="DebCre" id="Crédito" onclick="toggleCheckBox('Crédito')"><label
-              for="Crédito">Crédito</label></button>
-      <button class="DebCre" id="Débito" onclick="toggleCheckBox('Crédito')"><label
-              for="Débito">Débito</label></button>
-      <input type="checkbox" id="hiddenCrédito" style="display: none">
-      <input type="checkbox" id="hiddenDébito" style="display: none">
-     </td>
-  <td id="bah">
-      <label>Qual</label><br>
-      <select id="Bah">
-          <option id="Bah"></option>
-          <option id="Bah">Ativo</option>
-          <option id="Bah">Passivo</option>
-          <option id="Bah">Patrimonio Líquido</option>
-      </select>
-  </td>
-  <td id="Entrar">
-      <label for="entrada">Escolha sua entrada</label><br>
-      <select id="entrada">
-          <option id="entrada"></option>
-          <option id="entrada">Caixa</option>
-          <option id="entrada">Banco</option>
-          <option id="entrada">Imobilizado</option>
-          <option id="entrada">Estoque</option>
-          <option id="entrada">Fornecedor</option>
-          <option id="entrada">Emprestimo</option>
-      </select>
-  </td>
-  <td id="Valores">
-      <label for="Valor">Digite seu valor</label><br>
-      <input type="number" id="Valor" min="0" placeholder="0.00">
-  </td>
-</tr>
-  `;
-
-  // Incremente o número de lançamento para a próxima vez
   this.numeroLancamento++;
-
-  // Adicione a nova linha à tabela
   tabelaBase.appendChild(novaLinha.cloneNode(true) as HTMLTableRowElement);
-
 }
 }
-
+function adicionarLancamento(): void {
+  const numLancamento = (document.querySelector("#Base tr:first-child .num-lancamento") as HTMLElement).textContent;
+  const tipoEntrada = (document.querySelector("input[type=checkbox]:checked") as HTMLInputElement)?.id;
+  const tipagem = (document.querySelector("#Tip-Entrad") as HTMLSelectElement).value;
+  const entrada = (document.querySelector("#entrada") as HTMLSelectElement).value;
+  const valor = parseFloat((document.querySelector("#Valor") as HTMLInputElement).value);
+  console.log("Número de lançamento:", numLancamento);
+  console.log("Tipo de entrada:", tipoEntrada);
+  console.log("Tipagem:", tipagem);
+  console.log("Entrada:", entrada);
+  console.log("Valor:", valor);
+}
