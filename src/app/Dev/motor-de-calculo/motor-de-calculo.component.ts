@@ -8,6 +8,9 @@ import { CalcExt } from '../testes/CalcExt';
   styleUrls: ['./motor-de-calculo.component.css']
 })
 export class MotorDeCalculoComponent {
+
+  constructor(){}
+
   
     }
 

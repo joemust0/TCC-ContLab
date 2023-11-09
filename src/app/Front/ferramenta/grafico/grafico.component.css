@@ -10,7 +10,7 @@
     background-color: rgb(189, 216, 237);
 }
 #Padrão{
-    vertical-align: top;   
+    vertical-align: top;
     text-align: left;
 }
 #Total{
@@ -40,7 +40,7 @@
     background-color: rgb(245, 204, 176);
     top: 0;
     text-align: center;
-}
+   }
 #Patrimonio-Liquido{
     position: relative;
     background-color: rgb(243, 176, 134);
@@ -51,9 +51,26 @@
     position: relative;
     color: white;
     background-color: rgb(114, 172, 69);
+    width: 100px;
+    text-align: left;
 }
 #Total-Pass{
     position: relative;
     color: white;
     background-color: rgb(237, 126, 47);
+    text-align: left;
+}
+#Total-Ativ div{
+  text-align: right;
+}
+#Total-Pass div{
+  text-align: right;
+}
+#itensL{
+  height: 25px;
+  width: 300px;
+}
+td{
+  min-width: 150px;
+
 }

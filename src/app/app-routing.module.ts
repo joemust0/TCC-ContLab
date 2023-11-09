@@ -7,6 +7,7 @@ import { LancamentosComponent } from './Front/ferramenta/lancamentos/lancamentos
 import { BalancoComponent } from './Front/ferramenta/balanco/balanco.component';
 import { TestesComponent } from './Dev/testes/testes.component';
 import { MotorDeCalculoComponent } from './Dev/motor-de-calculo/motor-de-calculo.component';
+import { GraficoComponent } from './Front/ferramenta/grafico/grafico.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'balanço', component: BalancoComponent },
   {path: 'testes', component: TestesComponent },
   {path: 'motor', component: MotorDeCalculoComponent },
+  {path: 'Graf-balanço', component: GraficoComponent },
 ];
 
 @NgModule({

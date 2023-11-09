@@ -12,23 +12,23 @@
              </td>
           <td id="Tipagem">
               <label>Tipo de entrada</label><br>
-              <select id="Tip-Entrad">
-                  <option id="Tip-Entrad"></option>
-                  <option id="Tip-Entrad">Ativo</option>
-                  <option id="Tip-Entrad">Passivo</option>
-                  <option id="Tip-Entrad">Patrimonio Líquido</option>
+              <select id="Tipo-Entrada" (change)="atualizarTipoEntrada($event)" [(ngModel)]="tipoEntrada">
+                <option value="Ativo">Ativo</option>
+                <option value="Passivo">Passivo</option>
+                <option value="PatrL">atrimonio Líquido</option>
               </select>
           </td>
           <td id="Entrar">
               <label for="entrada">Escolha sua entrada</label><br>
-              <select id="entrada">
-                  <option id="entrada"></option>
-                  <option id="entrada">Caixa</option>
-                  <option id="entrada">Banco</option>
-                  <option id="entrada">Imobilizado</option>
-                  <option id="entrada">Estoque</option>
-                  <option id="entrada">Fornecedor</option>
-                  <option id="entrada">Emprestimo</option>
+              <select id="entrada" (change)="atualizarEntrada($event)" [(ngModel)]="entrada">
+                   <option id="entrada"></option>
+                  <option value="Caixa">Caixa</option>
+                  <option value="Banco">Banco</option>
+                  <option value="Imobilizado">Imobilizado</option>
+                  <option value="Estoque">Estoque</option>
+                  <option value="Fornecedor">Fornecedor</option>
+                  <option value="Emprestimo">Emprestimo</option>
+                  <option value="Capital-Social">Capital Social</option>
               </select>
           </td>
           <td id="Valores">
@@ -36,9 +36,12 @@
               <input type="number" id="Valor" min="0" placeholder="0.00">
           </td>
       </tr>
+      <tr *ngFor="let entrada of sharedTableService.obterTabelaOriginal()">
+        <!-- Renderize as colunas da tabela original -->
+      </tr>
 </table>
 <table border="" id="Nova">
 </table>
 <button class="Adic" id="Adicionar">Adicionar</button>
-<button class="Graf" id="Grafico">Acompanhar</button>
+<button class="Graf" id="Grafico"  (click)="acompanharL()" routerLink="/Graf-balanço">Acompanhar</button>
 <script type="module" src="src\app\Front\ferramenta\form\form.component.tss"></script>

@@ -23,6 +23,8 @@ import { SlimComponent } from './Dev/PHP/slim/slim.component';
 import { MotorDeCalculoComponent } from './Dev/motor-de-calculo/motor-de-calculo.component';
 import { FormComponent } from './Front/ferramenta/form/form.component';
 import { ComparadorComponent } from './Dev/comparador/comparador.component';
+import { SharedTableService } from './Dev/processos/shared-tab.service'; // Verifique o caminho correto
+
 
 
 
@@ -57,7 +59,7 @@ import { ComparadorComponent } from './Dev/comparador/comparador.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [SharedTableService],
+  bootstrap: [AppComponent, FormComponent]
 })
 export class AppModule { }

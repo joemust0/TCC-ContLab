@@ -1,55 +1,174 @@
 <table border="" id="Graf-Balanço">
     <tr>
-        <th colspan="2" align="center" id="Balanço">Balanço Patrimonial</th>
+        <th colspan="4" align="center" id="Balanço">Balanço Patrimonial</th>
     </tr>
-    <tr>
-        <td rowspan="2" id="Padrão">
+    <tr align="center">
+        <td colspan="2" id="Padrão">
             <div id="Ativo-Circulante">
                 <p>Ativo Circulante</p>
             </div>
-
         </td>
-        <td id="Padrão">
+        <td colspan="2" id="Padrão">
             <div id="Passivo-Circulante">
                 <p>Passivo Ciruclante</p>
             </div>
-
         </td>
     </tr>
-    <tr>
-        <td id="Padrão">
-            <div id="Passivo-N-Circulante">
+    <tr rowspan="4" id="itensL">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr rowspan="4" id="itensL">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr rowspan="4" id="itensL">
+      <td></td>
+      <td></td>
+          <td  colspan="2" id="Padrão">
+            <div  id="Passivo-N-Circulante">
                 <p>Passivo Não Circulante</p>
             </div>
-
         </td>
     </tr>
+    <tr rowspan="4"id="itensL">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr rowspan="4"id="itensL">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
     <tr>
-        <td id="Padrão">
+        <td colspan="2" id="Padrão">
             <div id="Ativo-N-Circulante">
                 <p>Ativo Não Circulante</p>
             </div>
 
         </td>
-        <td id="Padrão">
+        <td colspan="2" id="Padrão">
             <div id="Patrimonio-Liquido">
                 <p>Patrimonio Liquido</p>
             </div>
 
         </td>
     </tr>
-    <tr id="Total">
-        <td id="Total-Ativ">
-        Total Ativo: 
-        <div>
-
-        </div>
-        </td>
-        <td id="Total-Pass">
-        Total Passivo:
-        <div>
-
-        </div>
-        </td>
+    <tr rowspan="4"id="itensL">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
-</table>
+    <tr colspan="2"id="itensL">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <tr align="center">
+      <td colspan="2" id="Total-Ativ">
+               <p>Total Passivo:</p>
+              <div>
+
+              </div>
+      </td>
+      <td colspan="2" id="Total-Pass">
+              <p>Total Passivo:</p>
+              <div>
+
+              </div>
+
+      </td>
+  </tr>
+    </table>
+
+-------------------------------------------------------------
+
+
+    <table border="" id="Graf-Balanço">
+      <tr>
+        <th colspan="4" align="center" id="Balanço">Balanço Patrimonial</th>
+      </tr>
+      <!-- Linhas da tabela original -->
+      <ng-container *ngFor="let entrada of tabelaEspelhada">
+        <tr>
+          <td>{{ entrada.numLancamento }}</td>
+          <td>{{ entrada.tipoEntrada }}</td>
+          <td>{{ entrada.tipagem }}</td>
+          <td>{{ entrada.entrada }}</td>
+          <td>{{ entrada.valor }}</td>
+        </tr>
+      </ng-container>
+
+      <!-- Linhas para ativos circulantes -->
+      <ng-container *ngIf="tipoEntrada === 'Ativo'">
+        <tr>
+          <td rowspan="2" id="Padrão"></td>
+          <td colspan="2" id="Ativo-Circulante">Ativo Circulante</td>
+          <td colspan="2"></td>
+        </tr>
+        <ng-container *ngFor="let entrada of tabelaEspelhada">
+          <tr *ngIf="entrada.tipoEntrada === 'Ativo'">
+            <td></td>
+            <td>{{ entrada.entrada }}</td>
+            <td></td>
+            <td>{{ entrada.valor }}</td>
+          </tr>
+        </ng-container>
+        <tr>
+          <td id="Padrão"></td>
+          <td colspan="2" id="Ativo-N-Circulante">Ativo Não Circulante</td>
+          <td colspan="2"></td>
+        </tr>
+        <ng-container *ngFor="let entrada of tabelaEspelhada">
+          <tr *ngIf="entrada.tipoEntrada === 'Ativo' && entrada.entrada === 'Imobilizado'">
+            <td></td>
+            <td>{{ entrada.entrada }}</td>
+            <td></td>
+            <td>{{ entrada.valor }}</td>
+          </tr>
+        </ng-container>
+      </ng-container>
+
+      <!-- Linhas para passivos circulantes -->
+      <ng-container *ngIf="tipoEntrada === 'Passivo'">
+        <tr>
+          <td id="Padrão"></td>
+          <td colspan="2" id="Passivo-Circulante">Passivo Circulante</td>
+          <td colspan="2"></td>
+        </tr>
+      </ng-container>
+
+      <!-- Linhas para passivos não circulantes -->
+      <ng-container *ngIf="tipoEntrada === 'Passivo'">
+        <tr>
+          <td id="Padrão"></td>
+          <td colspan="2" id="Passivo-N-Circulante">Passivo Não Circulante</td>
+          <td colspan="2"></td>
+        </tr>
+      </ng-container>
+
+      <!-- Linhas para patrimônio líquido -->
+      <ng-container *ngIf="tipoEntrada === 'PatrimonioLiquido'">
+        <tr>
+          <td id="Padrão"></td>
+          <td colspan="2" id="Patrimonio-Liquido">Patrimônio Líquido</td>
+          <td colspan="2"></td>
+        </tr>
+      </ng-container>
+
+      <!-- Linhas para o total -->
+      <tr id="Total">
+        <td id="Total-Ativ" colspan="4">Total Ativo:</td>
+        <td id="Total-Pass" colspan="4">Total Passivo:</td>
+      </tr>
+    </table>

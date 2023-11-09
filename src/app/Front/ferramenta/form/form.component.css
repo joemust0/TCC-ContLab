@@ -36,10 +36,12 @@ table{
 }
 .DebCre{
   border: none;
-  border-radius: 50%;
+  width: 200px;
+  border-radius: 12%;
   box-shadow: 3px -2px black;
   background: rgb(233, 236, 234);
   cursor: pointer;
+  margin: 15px;
 }
 .DebCre :hover{
 background: navy;
