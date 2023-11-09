@@ -22,6 +22,19 @@ export class NavComponent implements OnInit {
 
   this.ocultar = !this.ocultar; //Alterar o estado do texto
   this.iconOcultar = !this.iconOcultar; //Alterar o estado do icone
+  changebtn();
 });
 }
+}
+function changebtn() {
+  const side_bar = document.getElementById('side_bar'); // Substitua 'side_bar' pelo ID correto
+  const btn_menu = document.getElementById('btn_menu');   // Substitua 'btn_menu' pelo ID correto
+
+  if (side_bar && btn_menu) {
+    if (side_bar.classList.contains('expand')) {
+      btn_menu.classList.replace('bx bx-menu', 'bx bx-menu-alt-right');
+    } else {
+      btn_menu.classList.replace('bx bx-menu-alt-right', 'bx bx-menu');
+    }
+  }
 }
