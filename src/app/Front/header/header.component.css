@@ -32,3 +32,15 @@
   margin: 20px;
   white-space: nowrap;
 }
+p{
+  text-align: center;
+  font-size: 18pt;
+  font-family: 'Iceland', sans-serif;
+  color: blueviolet
+
+
+}
+*{
+  position: relative;
+  background-color: #01102C;  
+}
