@@ -1,0 +1,28 @@
+<div class="cadastro">
+    <h2>Crie sua conta agora!</h2>
+    <form>
+    <div class="cad-container" ngForm="Cadastro">
+            <h4>Nome Completo*:</h4>
+            <input type="text" alt="Nome" id="Nome" placeholder="Digite seu nome completo" required/>
+            <h4>Como gostaria de ser chamado:</h4>
+            <input type="text" alt="Apelido" id="Nickname" placeholder="Digite seu apelido" />
+            <h4>Digite seu e-mail*:</h4>
+            <input type="email" alt="E-mail" id="Email" placeholder="Digite seu e-mail" required />
+            <h4>Confirme seu e-mail*:</h4>
+            <input type="email" alt="E-mail-conf" placeholder="Confirme seu e-mail" required />
+            <h4>Crie uma senha*:</h4>
+            <input type="password" alt="Senha" id="Senha" placeholder="Crie uma senha" required/>
+            <h4>Confirme sua senha*:</h4>
+            <input type="password" alt="Senha-conf" placeholder="Confirme sua senha" required />
+            <h4>Instituição:</h4>
+            <h5>(Escola, Instituição de ensino, Faculdade,...)</h5>
+            <input type="text" alt="Apelido" id="Nickname" placeholder="Digite seu apelido" />
+            <h4>Responsável:</h4>
+            <h5>(Professor, Orientador,..)</h5>
+            <input type="text" alt="Apelido" id="Nickname" placeholder="Digite o responsável" />
+        </div>
+        <button type="submit" alt="Cadastrar" (click)="CadastrarUsuario()">Cadastrar</button>
+        <button type="submit" alt="Cancelar" (click)="CancelarCadUser()">Cancelar</button>
+     </form>
+        <p>*Campos obrigatório.</p>
+</div>
