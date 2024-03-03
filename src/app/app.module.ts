@@ -25,7 +25,9 @@ import { FormComponent } from './Front/ferramenta/form/form.component';
 import { ComparadorComponent } from './Dev/comparador/comparador.component';
 import { SharedTableService } from './Dev/processos/shared-tab.service';
 import { AreaUserComponentComponent } from './Usuario/area-user-component/area-user-component.component';
-import { LogComponent } from './Usuario/log/log.component'; // Verifique o caminho correto
+import { Login2Component } from './Usuario/login2/login2.component';
+import { InfoLancamentoComponent } from './Front/ferramenta/info-lancamento/info-lancamento.component';
+import { ExibirBalancoComponent } from './Front/ferramenta/exibir-balanco/exibir-balanco.component'; // Verifique o caminho correto
 
 
 
@@ -52,7 +54,9 @@ import { LogComponent } from './Usuario/log/log.component'; // Verifique o camin
     FormComponent,
     ComparadorComponent,
     AreaUserComponentComponent,
-    LogComponent,
+    Login2Component,
+    InfoLancamentoComponent,
+    ExibirBalancoComponent,
 
 
 

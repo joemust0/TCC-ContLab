@@ -1,0 +1,18 @@
+<!-- Tabela Informações de Lançamento -->
+<table *ngIf="lancamentos && lancamentos.length > 0; else noData">
+    <thead>
+      <tr>
+        <th *ngFor="let column of columnsToShow">{{ column }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let lancamento of lancamentos; let i = index">
+        <td *ngFor="let column of columnsToShow">{{ lancamento[column] }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <ng-template #noData>
+    <p>Nenhum dado disponível.</p>
+  </ng-template>
+  

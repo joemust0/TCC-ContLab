@@ -1,20 +1,73 @@
-<form id="novoBalanco" >
-  <div #btnNovo class="btn-novo">
-    <Label>Criar novo balanço</Label>
+<form id="novoBalanco">
+  <div #btnNovoDiv class="btn-novo">
+    <label>Criar novo balanço</label>
     <br>
-  <button #btnNovo class="btn-novo" (click)="nBalanco()"><i class='bx bx-plus-circle'></i></button>
+    <button #btnNovo class="btn-novo" (click)="nBalanco()"><i class='bx bx-plus-circle'></i></button>
+  </div>
 
-</div>
-<div  #criarBalanco class="criarBalanco ocultar">
-  <label for="nome">Nome do balanço:</label>
-<br>
-<input  type="text" id="name" placeholder="Digite seu texto" name="name" required>
-<br>
-<br>
-<label for="description">Descrição:</label>
-<br>
-<textarea id="description" name="description" rows="6" cols="50" placeholder="Digite a descrição do balanço"></textarea>
-<br>
-<button class="novo-balanco" (click)="newBalanco()">Criar Balanço</button>
-</div>
+  <div #criarBalanco class="criarBalanco ocultar">
+    <label for="nome">Nome do balanço:</label>
+    <br>
+    <input  type="text" id="name" placeholder="Digite seu texto" name="name" required>
+    <br>
+    <br>
+    <label for="description">Descrição:</label>
+    <br>
+    <textarea id="description" name="description" rows="6" cols="50" placeholder="Digite a descrição do balanço"></textarea>
+    <br>
+    <button class="novo-balanco" (click)="newBalanco()">Criar Balanço</button>
+  </div>
+
+  <div #tabelaB class="balanco-table ocultar" [ngClass]="{'ocultar': !mostrarBalanco}">
+
+        <table border="" id="Graf-Balanço">
+          <tr>
+            <th colspan="8" align="center" id="Balanço">Balanço Patrimonial</th>
+          </tr>
+          <tr align="center">
+            <td colspan="2" id="Padrão">
+              <div id="Ativo-Circulante">
+                <p>Ativo Circulante</p>
+              </div>
+            </td>
+            <td colspan="2" id="Padrão">
+              <div id="Passivo-Circulante">
+                <p>Passivo Circulante</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <!-- Ativo Circulante -->
+              <app-info-lancamento [lancamentos]="lancamentosAtivoCirculante" [columnsToShow]="['tipo', 'conta', 'valor']"></app-info-lancamento>
+            </td>
+            <td colspan="2">
+              <!-- Passivo Circulante -->
+              <app-info-lancamento [lancamentos]="lancamentosPassivoCirculante" [columnsToShow]="['tipo', 'conta', 'valor']"></app-info-lancamento>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <!-- Ativo não Circulante -->
+              <app-info-lancamento [lancamentos]="lancamentosAtivoNCirculante" [columnsToShow]="['tipo', 'conta', 'valor']"></app-info-lancamento>
+            </td>
+            <td colspan="2">
+              <!-- Passivo não Circulante -->
+              <app-info-lancamento [lancamentos]="lancamentosPassivoNCirculante" [columnsToShow]="['tipo', 'conta', 'valor']"></app-info-lancamento>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <!-- Patrimônio Líquido -->
+              <app-info-lancamento [lancamentos]="lancamentosPatrimonioLiquido" [columnsToShow]="['tipo', 'conta', 'valor']"></app-info-lancamento>
+            </td>
+            <td colspan="4"></td> <!-- Colunas extras para ajustar a tabela -->
+          </tr>
+          <tr>
+            <td colspan="4" align="center">Total Ativos: {{ getTotalAtivos() | currency }}</td>
+            <td colspan="4" align="center">Total Passivos: {{ getTotalPassivos() | currency }}</td>
+          </tr>
+        </table>
+      </div>
+
 </form>

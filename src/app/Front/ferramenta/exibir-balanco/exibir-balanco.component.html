@@ -1,0 +1,9 @@
+<div>
+
+    <app-info-lancamento [tipoLancamento]="tipoLancamento"></app-info-lancamento>
+    <app-lancamentos (mostrarBalancoChange)="mostrarBalanco = $event"></app-lancamentos>
+  
+    <div *ngIf="mostrarBalanco">
+      <app-balanco></app-balanco>
+    </div>
+  </div>

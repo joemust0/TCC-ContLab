@@ -9,7 +9,7 @@ import { TestesComponent } from './Dev/testes/testes.component';
 import { MotorDeCalculoComponent } from './Dev/motor-de-calculo/motor-de-calculo.component';
 import { GraficoComponent } from './Front/ferramenta/grafico/grafico.component';
 import { AreaUserComponentComponent } from './Usuario/area-user-component/area-user-component.component';
-import { LogComponent } from './Usuario/log/log.component';
+import { Login2Component } from './Usuario/login2/login2.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent },
@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: 'Graf-balanço', component: GraficoComponent },
   {path: 'cadUsuario', component: CadUsuarioComponent},
   {path: 'areaUser', component: AreaUserComponentComponent},
-  {path: 'log', component: LogComponent },
+  {path: 'login2', component: Login2Component },
 ];
 
 @NgModule({

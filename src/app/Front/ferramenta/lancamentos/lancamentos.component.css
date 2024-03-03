@@ -1,24 +1,89 @@
-.tres{
-    display: flex;
-    position: fixed;
-    left: 0;
-    top: 0;
-    margin-left: 13%;
-    margin-top: 5%;
-    width: 80%;
-    height: 75vh;
-    background-color: #006400;
-    color: white;
-    text-align:center;
-}
-.quatro{
-    position: relative;
-    background-color: #01102C;
-    width: 150px;
-    height: 100%;
-}
-#balanço{
-    position: relative;
-    width: 48%;
-    height: 100%;
-}
+button{
+    font-size: 15pt;
+    padding: 5px;
+    margin: 10px;
+  border-radius: 15px;
+  }
+  
+  label{
+    height: 50px;
+  font-size: 15pt;
+  margin: 5px;
+  font-weight: bold;
+  
+  }
+  
+  table{
+    font-size: 12pt;
+    content: none;
+    justify-items: center;
+    align-items: center;
+  border: 2px double green;
+    position: center;
+    padding: 5px;
+    border-radius: 12px;
+    background-color: rgba(176, 212, 121, 0.651)
+  }
+  tbody{
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px black;
+    border-radius: 12px;
+  }
+  td{
+    border: 2px solid green;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  th{
+  padding: 5px;
+  }
+  select{
+    font-size: 15pt;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    box-shadow: 2px -3px lightskyblue;
+    margin: 10px;
+    padding: 5px;
+    height: 40px;
+    width: 350px;
+    align-items: center;
+  justify-content: center;
+  }
+  
+  input{
+    font-size: 20pt;
+    margin: 10px;
+    padding: 5px;
+    width: 200px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    box-shadow: 2px 1px black ;
+  }
+  .checkCredito{
+    font-size: 10px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    color: brown;
+  }
+  .quadroLancamentos{
+    border: none;
+    box-sizing: border-box;
+    box-shadow: 2px -4px darkgreen;
+    background-color: rgba(52, 116, 211, 0.473);
+    border-radius: 20px;
+  }
+  

@@ -45,3 +45,17 @@ box-shadow: 2px 2px black;
 textarea .Description{
   border-radius: 15px;
 }
+.form-wrapper {
+  display: flex;
+}
+
+.balanco-info {
+  flex: 1;
+  margin-right: 20px; /* Ajuste conforme necessário */
+}
+
+.balanco-table {
+  flex: 2;
+}
+
+/* Adicione mais estilos conforme necessário */
