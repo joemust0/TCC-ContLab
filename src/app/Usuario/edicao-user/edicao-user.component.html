@@ -1,0 +1,21 @@
+<div class="editUser">
+    <h2>Edição</h2>
+    <div class="editCad-container">
+        <div class="btn-edit">
+            <button alt="Alterar" (click)="alterarCampo()">{{botaoTexto}} </button><!-- Não implementado -->
+            <button alt="Voltar">Voltar</button><!-- Não implementado -->
+        </div>
+        <div class="edit" ngForm="Cadastro">
+            <label>Nome Completo:</label>
+            <input type="text" alt="Nome" id="Nome" [(ngModel)]="usuario.Nome" [readonly]="!editavel"/>
+            <label>Apelido:</label>
+            <input type="text" alt="Apelido" id="Nickname" [(ngModel)]="usuario.Nickname" [readonly]="!editavel"/>
+            <label>Digite seu e-mail:</label>
+            <input type="email" alt="E-mail" id="Email" [(ngModel)]="usuario.Email" [readonly]="!editavel"/>
+            <label>Instituição:</label>
+            <input type="text" alt="Instituição" id="Instituicao" />
+            <label>Responsável:</label>
+            <input type="text" alt="Responsável" id="Responsavel" />
+        </div>
+    </div>
+</div>

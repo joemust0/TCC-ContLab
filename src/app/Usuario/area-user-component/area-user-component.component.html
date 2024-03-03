@@ -1,18 +1,18 @@
 <div class="areaUser"> <!--aplicar ng for e associar o bem vindo ao apelido ou nome da pessoa respectivamente-->
     <h1>Bem vindo (Usuário) !</h1>
     <img src="/upload/wallpaperflare.com_wallpaper (2).jpg" alt="FotoPerfil" />
-    <h2>Usuário:</h2>
+    <label>Usuário:</label>
     <p id="Nome">(Nome do usuário)</p>
-    <h2>Email:</h2>
+    <label>Email:</label>
     <p id="E-mail">(E-mail do usuario)</p>
-    <h2>Instituição:</h2>
+    <label>Instituição:</label>
     <p id="Instituição">(Nome da instituição)</p>
-    <h2>Responsável:</h2>
+    <label>Responsável:</label>
     <p id="Responsável">(Nome do responsável)</p>
 </div>
 <div class="btn-comandos-userArea">
-    <button>Editar</button><!--Não funcional ainda-->
-    <button>Sair</button><!--Não funcional ainda-->
+    <button (click)="Edit()" Alt="Edição">Editar</button>
+    <button Alt="Sair">Sair</button><!--Não funcional ainda-->
 </div>
 <div class="areaUser-task">
     <h1>Veja seus balanços:</h1>

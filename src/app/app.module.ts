@@ -27,10 +27,8 @@ import { SharedTableService } from './Dev/processos/shared-tab.service';
 import { AreaUserComponentComponent } from './Usuario/area-user-component/area-user-component.component';
 import { Login2Component } from './Usuario/login2/login2.component';
 import { InfoLancamentoComponent } from './Front/ferramenta/info-lancamento/info-lancamento.component';
-import { ExibirBalancoComponent } from './Front/ferramenta/exibir-balanco/exibir-balanco.component'; // Verifique o caminho correto
-
-
-
+import { ExibirBalancoComponent } from './Front/ferramenta/exibir-balanco/exibir-balanco.component';
+import { EdicaoUserComponent} from './Usuario/edicao-user/edicao-user.component'; 
 
 
 @NgModule({
@@ -57,16 +55,17 @@ import { ExibirBalancoComponent } from './Front/ferramenta/exibir-balanco/exibir
     Login2Component,
     InfoLancamentoComponent,
     ExibirBalancoComponent,
-
-
+    EdicaoUserComponent,
 
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule
   ],
+  
   providers: [SharedTableService],
   bootstrap: [AppComponent, FormComponent]
 })

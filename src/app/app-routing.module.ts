@@ -10,6 +10,7 @@ import { MotorDeCalculoComponent } from './Dev/motor-de-calculo/motor-de-calculo
 import { GraficoComponent } from './Front/ferramenta/grafico/grafico.component';
 import { AreaUserComponentComponent } from './Usuario/area-user-component/area-user-component.component';
 import { Login2Component } from './Usuario/login2/login2.component';
+import { EdicaoUserComponent } from './Usuario/edicao-user/edicao-user.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'cadUsuario', component: CadUsuarioComponent},
   {path: 'areaUser', component: AreaUserComponentComponent},
   {path: 'login2', component: Login2Component },
+  {path: 'editUser', component: EdicaoUserComponent },
 ];
 
 @NgModule({
