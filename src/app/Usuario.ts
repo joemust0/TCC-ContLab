@@ -4,5 +4,5 @@ export interface Usuario {
     Email: string;
     Password: string;
     Resposavel?: string;
-    Instituição?: string;
+    Instituicao?: string;
 }
