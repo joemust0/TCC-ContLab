@@ -18,8 +18,7 @@ Henrique
 Desenvolvedor Back-end
 
 Paulo
-Supervisão de Front-end
-Desenvolvedor Front-end
+Desenvolvedor híbrido
 
 Henry
 Desenvolvedor Front-end
