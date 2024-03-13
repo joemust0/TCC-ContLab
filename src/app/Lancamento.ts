@@ -1,6 +1,9 @@
 export interface Lancamento{
-    tipoLancamento: String;
-    conta: String;
-    Valor?: number;
-
+    id: number;
+    TIPO: string;
+    estado: string;
+    titulo: string;
+    subtitulo: string;
+    conta_sintetica: string;
+    conta_analitica: string;
 }
