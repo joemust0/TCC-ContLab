@@ -15,10 +15,12 @@ Supervisão de Back-end
 Desenvolvedor Back-end
 
 Henrique
-Desenvolvedor Back-end
+Desenvolvedor Back-end.
+
 
 Paulo
-Desenvolvedor híbrido
+Supervisão de Front-end
+Desenvolvedor Front-end
 
 Henry
 Desenvolvedor Front-end
