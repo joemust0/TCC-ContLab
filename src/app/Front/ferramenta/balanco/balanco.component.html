@@ -1,24 +1,6 @@
 <form id="novoBalanco">
-  <div #btnNovoDiv class="btn-novo">
-    <label>Criar novo balanço</label>
-    <br>
-    <button #btnNovo class="btn-novo" (click)="nBalanco()"><i class='bx bx-plus-circle'></i></button>
-  </div>
 
-  <div #criarBalanco class="criarBalanco ocultar">
-    <label for="nome">Nome do balanço:</label>
-    <br>
-    <input  type="text" id="name" placeholder="Digite seu texto" name="name" required>
-    <br>
-    <br>
-    <label for="description">Descrição:</label>
-    <br>
-    <textarea id="description" name="description" rows="6" cols="50" placeholder="Digite a descrição do balanço"></textarea>
-    <br>
-    <button class="novo-balanco" (click)="newBalanco()">Criar Balanço</button>
-  </div>
-
-  <div #tabelaB class="balanco-table ocultar" [ngClass]="{'ocultar': !mostrarBalanco}">
+  <div #tabelaB class="balanco-table" [ngClass]="{'ocultar': !mostrarBalanco}">
 
         <table border="" id="Graf-Balanço">
           <tr>

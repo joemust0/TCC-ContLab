@@ -24,7 +24,8 @@ import { AreaUserComponentComponent } from './Usuario/area-user-component/area-u
 import { Login2Component } from './Usuario/login2/login2.component';
 import { InfoLancamentoComponent } from './Front/ferramenta/info-lancamento/info-lancamento.component';
 import { ExibirBalancoComponent } from './Front/ferramenta/exibir-balanco/exibir-balanco.component';
-import { EdicaoUserComponent} from './Usuario/edicao-user/edicao-user.component'; 
+import { EdicaoUserComponent} from './Usuario/edicao-user/edicao-user.component';
+import { TaskComponent } from './Front/ferramenta/task/task.component'; 
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { EdicaoUserComponent} from './Usuario/edicao-user/edicao-user.component'
     InfoLancamentoComponent,
     ExibirBalancoComponent,
     EdicaoUserComponent,
+    TaskComponent,
 
   ],
 

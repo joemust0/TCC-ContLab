@@ -11,12 +11,13 @@ import { GraficoComponent } from './Front/ferramenta/grafico/grafico.component';
 import { AreaUserComponentComponent } from './Usuario/area-user-component/area-user-component.component';
 import { Login2Component } from './Usuario/login2/login2.component';
 import { EdicaoUserComponent } from './Usuario/edicao-user/edicao-user.component';
+import { TaskComponent } from './Front/ferramenta/task/task.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent },
   {path: 'login', component: LoginComponent },
   {path: 'lançamentos', component: LancamentosComponent },
-  {path: 'balanço', component: BalancoComponent },
+  {path: 'balanco', component: BalancoComponent },
   {path: 'testes', component: TestesComponent },
   {path: 'motor', component: MotorDeCalculoComponent },
   {path: 'Graf-balanço', component: GraficoComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'areaUser', component: AreaUserComponentComponent},
   {path: 'login2', component: Login2Component },
   {path: 'editUser', component: EdicaoUserComponent },
+  {path: 'atividade', component: TaskComponent },
 ];
 
 @NgModule({
