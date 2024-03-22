@@ -61,5 +61,8 @@ newBalanco() {
     this.atualizarVisibilidade();
   }
 
-
+  gerarBalanco() {
+    this.mostrarBalanco = true;
+  }
+  
 }

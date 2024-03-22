@@ -1,55 +1,38 @@
 <form id="novoBalanco">
-
-  <div #tabelaB class="balanco-table" [ngClass]="{'ocultar': !mostrarBalanco}">
-
-        <table border="" id="Graf-Balanço">
-          <tr>
-            <th colspan="8" align="center" id="Balanço">Balanço Patrimonial</th>
-          </tr>
-          <tr align="center">
-            <td colspan="2" id="Padrão">
-              <div id="Ativo-Circulante">
-                <p>Ativo Circulante</p>
-              </div>
-            </td>
-            <td colspan="2" id="Padrão">
-              <div id="Passivo-Circulante">
-                <p>Passivo Circulante</p>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <!-- Ativo Circulante -->
-              <app-info-lancamento [lancamentos]="lancamentosAtivoCirculante" [columnsToShow]="['tipo', 'conta', 'valor']"></app-info-lancamento>
-            </td>
-            <td colspan="2">
-              <!-- Passivo Circulante -->
-              <app-info-lancamento [lancamentos]="lancamentosPassivoCirculante" [columnsToShow]="['tipo', 'conta', 'valor']"></app-info-lancamento>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <!-- Ativo não Circulante -->
-              <app-info-lancamento [lancamentos]="lancamentosAtivoNCirculante" [columnsToShow]="['tipo', 'conta', 'valor']"></app-info-lancamento>
-            </td>
-            <td colspan="2">
-              <!-- Passivo não Circulante -->
-              <app-info-lancamento [lancamentos]="lancamentosPassivoNCirculante" [columnsToShow]="['tipo', 'conta', 'valor']"></app-info-lancamento>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <!-- Patrimônio Líquido -->
-              <app-info-lancamento [lancamentos]="lancamentosPatrimonioLiquido" [columnsToShow]="['tipo', 'conta', 'valor']"></app-info-lancamento>
-            </td>
-            <td colspan="4"></td> <!-- Colunas extras para ajustar a tabela -->
-          </tr>
-          <tr>
-            <td colspan="4" align="center">Total Ativos: {{ getTotalAtivos() | currency }}</td>
-            <td colspan="4" align="center">Total Passivos: {{ getTotalPassivos() | currency }}</td>
-          </tr>
-        </table>
+  <div #tabelaB class="balanco-table">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">Ativo</th>
+          <th colspan="2">Passivo</th>
+        </tr>
+        <tr>
+          <th>Conta</th>
+          <th>Valor</th>
+          <th>Conta</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of balancoItems; let i = index">
+          <td [ngSwitch]="item.contaType">
+            <span *ngSwitchCase="'ativoCirculante'">Ativo Circulante</span>
+            <span *ngSwitchCase="'ativoNaoCirculante'">Ativo Não Circulante</span>
+          </td>
+          <td>{{ item.valor }}</td>
+          <td [ngSwitch]="item.contaType">
+            <span *ngSwitchCase="'passivoCirculante'">Passivo Circulante</span>
+            <span *ngSwitchCase="'passivoNaoCirculante'">Passivo Não Circulante</span>
+            <span *ngSwitchCase="'patrimonioLiquido'">Patrimonio Líquido</span>
+          </td>
+          <td>{{ item.valor }}</td>
+        </tr>
+        <tr>
+          <td colspan="2">Total Ativo</td>
+          <td colspan="2">{{ getTotalPassivo() }}</td>
+        </tr>
+      </tbody>
+    </table>
       </div>
 
 </form>

@@ -1,11 +1,30 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { BalancoSheetService } from 'src/app/Servicos/balanco-sheet-service.service';
+import { BalancoSheet } from './balancoSheet';
 
 @Component({
   selector: 'app-balanco',
-  templateUrl: './balanco.component.html',
-  styleUrls: ['./balanco.component.css']
+  template: `
+      <table>
+          <thead>
+              <tr>
+                  <th>Ativo</th>
+                  <th>Valor</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let ativo of balancoSheet.ativos">
+                  <td>{{ ativo.nome }}</td>
+                  <td>{{ ativo.valor }}</td>
+              </tr>
+          </tbody>
+      </table>
+      <!-- Exiba as outras seções do balance sheet (passivo e patrimônio) da mesma forma -->
+  `
 })
+
 export class BalancoComponent implements OnInit{
+balancoSheet!: BalancoSheet;
 
   @Input() lancamentosAtivoCirculante: any[] = [];
   @Input() lancamentosAtivoNCirculante: any[] = [];
@@ -14,21 +33,13 @@ export class BalancoComponent implements OnInit{
   @Input() lancamentosPatrimonioLiquido: any[] = [];
   @Input() lancamentos: any[] = [];
 
-
-
-  mostrarBalanco: boolean = false;
-
-  constructor(){}
+  constructor(private balancoSheetService: BalancoSheetService){}
  
-ngOnInit(): void {}
-
-
-  gerarBalanco() {
-    this.mostrarBalanco = true;
-  }
+ngOnInit(): void {
+  this.balancoSheet = this.balancoSheetService.obterBalancoSheet();
+}
 
  
-
   getTotalAtivos(): number {
     return (
       this.getAtivoCirculante() +
