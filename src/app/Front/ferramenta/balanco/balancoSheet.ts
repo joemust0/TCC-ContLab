@@ -1,10 +1,9 @@
-
 export class BalancoSheet {
-ativos!: Ativo[];
-passivos!:Passivo[];
-ativosN!: nAtivo[];
-passivosN!:nPassivo[];
-patrimonio!: Patrimonio[];
+  ativosCirculantes: Ativo[] = [];
+  ativosNaoCirculantes: AtivoNaoCirculante[] = [];
+  passivosCirculantes: Passivo[] = [];
+  passivosNaoCirculantes: PassivoNaoCirculante[] = [];
+  patrimonio: Patrimonio[] = [];
 }
 
 export class Ativo {
@@ -12,20 +11,19 @@ export class Ativo {
   valor!: number;
 }
 
+export class AtivoNaoCirculante {
+  nome!: string;
+  valor!: number;
+}
 export class Passivo {
   nome!: string;
   valor!: number;
 }
 
-export class nAtivo {
-    nome!: string;
-    valor!: number;
-  }
-  
-  export class nPassivo {
-    nome!: string;
-    valor!: number;
-  }
+export class PassivoNaoCirculante {
+  nome!: string;
+  valor!: number;
+}
 
 export class Patrimonio {
   nome!: string;

@@ -26,6 +26,8 @@ import { InfoLancamentoComponent } from './Front/ferramenta/info-lancamento/info
 import { ExibirBalancoComponent } from './Front/ferramenta/exibir-balanco/exibir-balanco.component';
 import { EdicaoUserComponent} from './Usuario/edicao-user/edicao-user.component';
 import { TaskComponent } from './Front/ferramenta/task/task.component'; 
+import { BalancoSheetService } from './Servicos/balanco-sheet-service.service';
+import { UsuarioService } from './Servicos/usuario.service';
 
 
 @NgModule({
@@ -60,7 +62,7 @@ import { TaskComponent } from './Front/ferramenta/task/task.component';
     HttpClientModule
   ],
   
-  providers: [SharedTableService],
+  providers: [SharedTableService, BalancoSheetService, UsuarioService],
   bootstrap: [AppComponent, FormComponent]
 })
 export class AppModule { }

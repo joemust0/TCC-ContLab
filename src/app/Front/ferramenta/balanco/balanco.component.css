@@ -1,61 +1,92 @@
-button {
-  border: none;
-  background: none;
-  align-items: center;
-  cursor: pointer;
-}
-i{
-  font-size: 50px;
-}
-.ocultar{
-  display: none;
-}
-.btn-novo{
-  position: relative;
-  align-items: center;
-  position: relative;
-  justify-content: center;
-  align-content: center;
-  border: none;
-  outline: none;
-}
-.btn-novo label{
-  font-size: 36px;
-}
-.btn-novo button{
-background: white;
-border-radius: 50px;
-margin-left: 100px;
-box-shadow: 2px 2px black;
-
-}
-.novo-balanco{
-  justify-content: center;
-  align-items: center;
-  background-color: skyblue;
-  border-radius: 12px;
-  box-shadow: -2px 2px red;
-  width: 150px;
-  margin-left: 70px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 5px;
-  font-size: 20px;
-}
-textarea .Description{
-  border-radius: 15px;
-}
-.form-wrapper {
-  display: flex;
+table {
+  border-collapse: collapse;
+  width: 100%;
 }
 
-.balanco-info {
-  flex: 1;
-  margin-right: 20px; /* Ajuste conforme necessário */
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+td.total-value,
+td.sub-total-value {
+  font-weight: bold;
+}
+
+.balanco-btn {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.total-title {
+  background-color: #f2f2f2;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.sub-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.name,
+.value {
+  text-align: right;
+}
+
+.value {
+  text-align: right;
+  width: 100px;
+}
+
+.total-value,
+.sub-total-value {
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .balanco-table {
-  flex: 2;
+  border-collapse: separate;
+  margin-bottom: 16px;
+  width: 100%;
 }
 
-/* Adicione mais estilos conforme necessário */
+.balanco-table thead th {
+  border-bottom-color: #ccc;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  font-weight: bold;
+  padding: 12px 8px;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.balanco-table tbody tr {
+  background-color: #f2f2f2;
+}
+
+.balanco-table tbody td {
+  padding: 8px;
+  text-align: right;
+}
+
+.balanco-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.balanco-table tfoot td {
+  background-color: #ccc;
+  font-weight: bold;
+  text-align: right;
+}
