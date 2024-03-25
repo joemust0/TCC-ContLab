@@ -59,7 +59,8 @@ import { UsuarioService } from './Servicos/usuario.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   
   providers: [SharedTableService, BalancoSheetService, UsuarioService],

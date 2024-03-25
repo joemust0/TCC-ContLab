@@ -72,8 +72,10 @@ ngOnInit(): void {
     return alert("Balanço Salvo");
   }
 
-  imprimirBalanco(){
-    window.print()
+  imprimirBalanco(): void {
+    
+      window.print();
+    };
   }
 
-}
+
