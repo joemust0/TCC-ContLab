@@ -1,145 +1,114 @@
-<form id="novoBalanco">
   <div #tabelaB class="balanco-table">
-    <table class="table table-bordered table-hover">
-      <thead>
-        <tr>
-          <th colspan="2">Ativo Circulante</th>
-          <th colspan="2">Ativo Não Circulante</th>
-        </tr>
-        <tr>
-          <th class="name">Conta</th>
-          <th class="value">Valor</th>
-          <th class="name">Conta</th>
-          <th class="value">Valor</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td colspan="2" class="sub-title">Ativo Circulante</td>
-          <td colspan="2" class="sub-title">Ativo Não Circulante</td>
-        </tr>
-        <tr *ngFor="let ativo of balancoSheet.ativos">
-          <td>{{ ativo.nome }}</td>
-          <td>{{ ativo.valor }}</td>
-        </tr>
-        <tr *ngFor="let ativoNaoCirculante of balancoSheet['ativosNaoCirculantes']">
-          <td>{{ ativoNaoCirculante.nome }}</td>
-          <td>{{ ativoNaoCirculante.valor }}</td>
-        </tr>
-      </tbody>
-    </table>
-    
-    <table class="table table-bordered table-hover">
-      <thead>
-        <tr>
-          <th colspan="2">Passivo Circulante</th>
-          <th colspan="2">Passivo Não Circulante</th>
-        </tr>
-        <tr>
-          <th class="name">Conta</th>
-          <th class="value">Valor</th>
-          <th class="name">Conta</th>
-          <th class="value">Valor</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td colspan="2" class="sub-title">Passivo Circulante</td>
-          <td colspan="2" class="sub-title">Passivo Não Circulante</td>
-        </tr>
-        <tr *ngFor="let passivoCirculante of balancoSheet['passivosCirculantes']">
-          <td>{{ passivoCirculante.nome }}</td>
-          <td>{{ passivoCirculante.valor }}</td>
-        </tr>
-        <tr *ngFor="let passivoNaoCirculante of balancoSheet['passivosNaoCirculantes']">
-          <td>{{ passivoNaoCirculante.nome }}</td>
-          <td>A estrutura de classes que você sugeriu é uma boa solução para melhorar a organização dos dados no balanço. No entanto, para exibir os dados corretamente na tabela, você precisará ajustar o código HTML.
-    
-    O código HTML atualizado para exibir os dados das classes separadas seria assim:
-    
-    ```html
-    <table class="table table-bordered table-hover">
-      <thead>
-        <tr>
-          <th colspan="2">Ativo Circulante</th>
-          <th colspan="2">Ativo Não Circulante</th>
-        </tr>
-        <tr>
-          <th class="name">Conta</th>
-          <th class="value">Valor</th>
-          <th class="name">Conta</th>
-          <th class="value">Valor</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td colspan="2" class="sub-title">Ativo Circulante</td>
-          <td colspan="2" class="sub-title">Ativo Não Circulante</td>
-        </tr>
-        <tr *ngFor="let ativo of balancoSheet.ativos">
-          <td>{{ ativo.nome }}</td>
-          <td>{{ ativo.valor }}</td>
-        </tr>
-        <tr *ngFor="let ativoNaoCirculante of balancoSheet.ativosNaoCirculantes">
-          <td>{{ ativoNaoCirculante.nome }}</td>
-          <td>{{ ativoNaoCirculante.valor }}</td>
-        </tr>
-      </tbody>
-    </table>
-    
-    <table class="table table-bordered table-hover">
-      <thead>
-        <tr>
-          <th colspan="2">Passivo Circulante</th>
-          <th colspan="2">Passivo Não Circulante</th>
-        </tr>
-        <tr>
-          <th class="name">Conta</th>
-          <th class="value">Valor</th>
-          <th class="name">Conta</th>
-          <th class="value">Valor</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td colspan="2" class="sub-title">Passivo Circulante</td>
-          <td colspan="2" class="sub-title">Passivo Não Circulante</td>
-        </tr>
-        <tr *ngFor="let passivoCirculante of balancoSheet.passivosCirculantes">
-          <td>{{ passivoCirculante.nome }}</td>
-          <td>{{ passivoCirculante.valor }}</td>
-        </tr>
-        <tr *ngFor="let passivoNaoCirculante of balancoSheet.passivosNaoCirculantes">
-          <td>{{ passivoNaoCirculante.nome }}</td>
-          <td>{{ passivoNaoCirculante.valor }}</td>
-        </tr>
-      </tbody>
-    </table>
-    
-    <table class="table table-bordered table-hover">
-      <thead>
-        <tr>
-          <th colspan="2">Patrimônio</th>
-        </tr>
-        <tr>
-          <th class="name">Conta</th>
-          <th class="value">Valor</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td colspan="2" class="sub-title">Patrimônio</td>
-        </tr>
-        <tr *ngFor="let patrimonio of balancoSheet.patrimonio">
-          <td>{{ patrimonio.nome }}</td>
-          <td>{{ patrimonio.valor }}</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="balanco-btn">
-      <button (click)="saveBalanco()">Salvar Balanço</button>
-      <button (click)="imprimirBalanco()">Imprimir</button>
-    </div>
-      </div>
-
-</form>
+    <h1>Balanço Patrimonial</h1>
+    <table>
+    <thead>
+      <tr>
+        <th colspan="2" class="title">Ativo</th>
+        <th colspan="2" class="title">Passivo</th>
+      </tr>
+      <tr>
+        <th class="name">Conta</th>
+        <th class="value">Valor</th>
+        <th class="name">Conta</th>
+        <th class="value">Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="4" class="sub-title">Ativo Circulante</td>
+      </tr>
+      <tr *ngFor="let ativo of balancoSheet.ativosCirculantes">
+        <td>{{ ativo.nome }}</td>
+        <td>{{ ativo.valor }}</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="sub-title">Total Ativo Circulante</td>
+        <td colspan="2" class="sub-total-value">{{ getTotalAtivoCirculante() }}</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="sub-title">Ativo Não Circulante</td>
+      </tr>
+      <tr *ngFor="let ativoNaoCirculante of balancoSheet['ativosNaoCirculantes']">
+         <td>{{ ativoNaoCirculante.nome }}</td>
+        <td>{{ ativoNaoCirculante.valor }}</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="sub-title">Total Ativo Não Circulante</td>
+        <td colspan="2" class="sub-total-value">{{ getTotalAtivoNaoCirculante() }}</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="total-title">Total Ativo</td>
+        <td colspan="2" class="total-value">{{ getTotalAtivos() }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2">Passivo Circulante</th>
+        <th colspan="2">Passivo Não Circulante</th>
+      </tr>
+      <tr>
+        <th class="name">Conta</th>
+        <th class="value">Valor</th>
+        <th class="name">Conta</th>
+        <th class="value">Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="4" class="sub-title">Passivo Circulante</td>
+      </tr>
+      <tr *ngFor="let passivo of balancoSheet.passivosCirculantes">
+        <td>{{ passivo.nome }}</td>
+        <td>{{ passivo.valor }}</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="sub-title">Total Passivo Circulante</td>
+        <td colspan="2" class="sub-total-value">{{ getTotalPassivoCirculante() }}</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="sub-title">Passivo Não Circulante</td>
+      </tr>
+      <tr *ngFor="let passivoNaoCirculante of balancoSheet['passivosNaoCirculantes']">
+         <td>{{ passivoNaoCirculante.nome }}</td>
+        <td>{{ passivoNaoCirculante.valor }}</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="sub-title">Total Passivo Não Circulante</td>
+        <td colspan="2" class="sub-total-value">{{ getTotalPassivoNaoCirculante() }}</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="total-title">Total Passivo</td>
+        <td colspan="2" class="total-value">{{ getTotalPassivos() }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2">Patrimônio Líquido</th>
+      </tr>
+      <tr>
+        <th class="name">Conta</th>
+        <th class="value">Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let patrimonio of balancoSheet.patrimonio">
+        <td>{{ patrimonio.nome }}</td>
+        <td>{{ patrimonio.valor }}</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="total-title">Total Patrimônio Líquido</td>
+        <td colspan="2" class="total-value">{{ getTotalPatrimonioLiquido() }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="balanco-btn">
+    <button (click)="saveBalanco()">Salvar Balanço</button>
+    <button (click)="imprimirBalanco()">Imprimir</button>
+  </div>
