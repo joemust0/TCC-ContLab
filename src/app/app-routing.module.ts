@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: '', component: MainComponent },
   {path: 'login', component: LoginComponent },
   {path: 'lançamentos', component: LancamentosComponent },
-  {path: 'balanço', component: BalancoComponent },
+  {path: 'balanco', component: BalancoComponent },
   {path: 'testes', component: TestesComponent },
   {path: 'motor', component: MotorDeCalculoComponent },
   {path: 'Graf-balanço', component: GraficoComponent },

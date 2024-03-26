@@ -11,7 +11,9 @@
   <br>
   <label for="valor">Valor:</label>
   <input type="number" id="valor" [(ngModel)]="valor" placeholder="0.000.000,00">
-
+  <br>
+  <label for="valor">Chave de acesso:</label>
+  <input type="number" id="chaveAcesso" [(ngModel)]="chaveAcesso" placeholder="" [minLength]="44" [maxlength]="44">
   <!-- Contrapartida -->
   <div>
     <label for="tipoLancamentoContrapartida">Tipo de Lançamento Crédito:</label>

@@ -19,6 +19,7 @@ export class LancamentosComponent implements OnInit {
   contrapartidaConta: string = '';
   contrapartidaValor: number = 0;
   camposDinamicos: any[] = [];
+  chaveAcesso: number = 0;
 
   @Input() columnsToShow: string[] = [];
   @Input() lancamentos: any[] = [];
