@@ -1,17 +1,22 @@
 *{
     box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
 }
 .login{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: #039900;
-    margin-top: 40%;
-    margin-left: 30%;
+    margin-top: 0%;
+    margin-left: 100%;
     width: max-content;
     height: max-content;
     border-radius: 5px;
     border-left: 8px solid #20521F;
     border-top: 8px solid #20521F;
-    
+    align-items: center;
+    justify-content: center;
+
 }
 .login h2{
     text-align: center;
@@ -26,6 +31,7 @@
     background-color: #039900;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    align-items: center;
 }
 .login-container h4{
     padding-top: 35px;
