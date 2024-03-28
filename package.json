@@ -19,6 +19,9 @@
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
     "@fortawesome/fontawesome-free": "^6.5.1",
+    "file-saver": "^2.0.5",
+    "html2canvas": "^1.4.1",
+    "jspdf-autotable": "^3.8.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "update": "^0.7.4",
@@ -26,9 +29,15 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.2.6",
+<<<<<<< HEAD
     "@angular/cli": "^16.2.13",
+=======
+    "@angular/cli": "^16.2.12",
+>>>>>>> dc87e758182558452d5f153f84211ba0bdaa8ed3
     "@angular/compiler-cli": "^16.2.0",
+    "@types/file-saver": "^2.0.7",
     "@types/jasmine": "~4.3.0",
+    "@types/jspdf": "^2.0.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

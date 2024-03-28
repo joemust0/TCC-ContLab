@@ -1,61 +1,96 @@
-button {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.balanco-table{
+margin: 50px;
+padding: 15px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 16px;
+width: 100%;
+border-collapse: collapse;
+}
+.balanco{
+  font-family: 'Lucida Sans';
   border: none;
-  background: none;
+border-radius: 5%;
+padding: 15px;
+}
+.h1{
+  text-align: center;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  padding-left: 20px;
+}
+.table-at{
+  border: solid 1px;
+  min-height: 150px;
+  min-width: 150px;
+  box-shadow: #45a049 2px -3px;
+  border-radius: 5%;
+  padding: 5px;
+}
+
+
+.balanco-table th,
+.balanco-table td {
+  border: 1px solid #dddddd;
+  padding: 7px;
+  text-align: left;
+}
+
+.table-at th  {
+  background-color: #71d664;
+  font-weight: bold;
+}
+
+.table-at tfoot{
+  background-color: darkgreen;
+  color: white;
+}
+
+.pas-pat{
+  border: solid 1px;
+  min-height: 150px;
+  min-width: 150px;
+  box-shadow: #f50404 2px -3px;
+  border-radius: 5%;
+  padding: 5px;
+}
+.pas-pat th  {
+  background-color: #dd8989;
+  font-weight: bold;
+}
+.pas-pat tfoot{
+  background-color: darkred;
+  color: white;
+}
+/* Estilos para os botões */
+.balanco-btn {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.balanco-btn button {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 30%;
+  width: 150px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
   cursor: pointer;
 }
-i{
-  font-size: 50px;
-}
-.ocultar{
-  display: none;
-}
-.btn-novo{
-  position: relative;
-  align-items: center;
-  position: relative;
-  justify-content: center;
-  align-content: center;
-  border: none;
-  outline: none;
-}
-.btn-novo label{
-  font-size: 36px;
-}
-.btn-novo button{
-background: white;
-border-radius: 50px;
-margin-left: 100px;
-box-shadow: 2px 2px black;
 
+.balanco-btn button:hover {
+  background-color: darkcyan;
 }
-.novo-balanco{
-  justify-content: center;
-  align-items: center;
-  background-color: skyblue;
-  border-radius: 12px;
-  box-shadow: -2px 2px red;
-  width: 150px;
-  margin-left: 70px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 5px;
-  font-size: 20px;
-}
-textarea .Description{
-  border-radius: 15px;
-}
-.form-wrapper {
-  display: flex;
-}
-
-.balanco-info {
-  flex: 1;
-  margin-right: 20px; /* Ajuste conforme necessário */
-}
-
-.balanco-table {
-  flex: 2;
-}
-
-/* Adicione mais estilos conforme necessário */
