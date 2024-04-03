@@ -24,6 +24,7 @@ button{
     border-radius: 12px;
     background-color: rgba(176, 212, 121, 0.651)
   }
+
   tbody{
     padding: 5px;
     justify-content: center;
@@ -31,6 +32,7 @@ button{
     border: solid 2px black;
     border-radius: 12px;
   }
+
   td{
     border: 2px solid green;
     border-radius: 10px;
@@ -40,9 +42,11 @@ button{
     justify-content: center;
   
   }
+
   th{
   padding: 5px;
   }
+
   select{
     font-size: 15pt;
     font-family: 'Poppins', sans-serif;
@@ -63,12 +67,13 @@ button{
     margin: 10px;
     padding: 5px;
     width: 200px;
-    height: 50px;
+    height: 40px;
     border: none;
     outline: none;
     border-radius: 15px;
     box-shadow: 2px 1px black ;
   }
+
   .checkCredito{
     font-size: 10px;
     width: 20px;
@@ -79,6 +84,7 @@ button{
     outline: none;
     color: brown;
   }
+
   .quadroLancamentos{
     border: none;
     box-sizing: border-box;
@@ -86,4 +92,22 @@ button{
     background-color: rgba(52, 116, 211, 0.473);
     border-radius: 20px;
   }
-  
+
+  .lancamento-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .lancamento-header input {
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid black;
+    min-width: 100px;
+    background-color: lightblue;
+    min-height: 30px;
+    max-height: 50px;
+    
+   }

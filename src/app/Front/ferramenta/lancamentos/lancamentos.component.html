@@ -1,4 +1,27 @@
+<div class="lancamento-header">
+  <div class="NF">
+  <label>Numero da nota fiscal:</label>
+  <br>
+  <input type="number" name="Nota Fiscal" id="nf" placeholder="Nº da nota Fiscal">
+  </div>
+  <div class="serieNF">
+    <label>Série:</label>
+    <input type="number" name="Série Nota Fiscal" id="sNF" placeholder="Série da nota Fiscal">
+    </div>
+<div class="chaveA">
+   <label for="valor">Chave de acesso:</label>
+  <br>
+  <input type="number" id="chaveAcesso" [(ngModel)]="chaveAcesso" placeholder="Digite a chave de acesso " [minLength]="44" [maxlength]="44">
+</div>
+<div class="lanc-data">
+  <label>Data de emissão:</label>
+  <input type="date">
+  <label>Data de entrada:</label>
+  <input type="date">
+</div>
+</div>
 <div class="quadroLancamentos">
+  <div class="lanc-deb">
   <label for="tipoLancamento">Tipo de Lançamento Débito:</label>
   <select id="tipoLancamento" [(ngModel)]="tipoLancamento">
     <option *ngFor="let tipo of tiposLancamento" [value]="tipo">{{ tipo }}</option>
@@ -11,11 +34,9 @@
   <br>
   <label for="valor">Valor:</label>
   <input type="number" id="valor" [(ngModel)]="valor" placeholder="0.000.000,00">
-  <br>
-  <label for="valor">Chave de acesso:</label>
-  <input type="number" id="chaveAcesso" [(ngModel)]="chaveAcesso" placeholder="" [minLength]="44" [maxlength]="44">
-  <!-- Contrapartida -->
-  <div>
+</div>
+ <!-- Contrapartida -->
+  <div class="lanc-cred">
     <label for="tipoLancamentoContrapartida">Tipo de Lançamento Crédito:</label>
     <select id="tipoLancamentoContrapartida" [(ngModel)]="tipoLancamentoContrapartida">
       <option *ngFor="let tipo of tiposLancamento" [value]="tipo">{{ tipo }}</option>
@@ -31,7 +52,7 @@
   </div>
 
   <!-- Novo campo -->
-  <div *ngFor="let campo of camposDinamicos; let i = index">
+  <div class="lanc-novo" *ngFor="let campo of camposDinamicos; let i = index">
     <label for="tipoLancamentoNCampo{{ i }}">Tipo de Lançamento:</label>
     <select id="tipoLancamentoNCampo{{ i }}" [(ngModel)]="campo.tipo">
       <option *ngFor="let tipo of tiposLancamento" [value]="tipo">{{ tipo }}</option>
