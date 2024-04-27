@@ -1,12 +1,21 @@
+* {
+  justify-content: center;
+  align-items: center;
+}
+
 /* Estilos para a tela de cadastro */
 
 .cadastro {
-  max-width: 400px;
-  margin: 50px auto;
+  width: 400px;
   padding: 20px;
   background-color: grey;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Adicionando propriedades para centralizar */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .cad-container {
