@@ -1,0 +1,1 @@
+const planocontasService = require(`./services/planocontasService`);

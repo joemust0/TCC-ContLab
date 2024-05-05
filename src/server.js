@@ -10,7 +10,7 @@ server.use(cors());
 server.use(bodyParser.urlencoded({extended: false}));
 
 // Definir as rotas
-server.use('/', routes);
+server.use('/api', routes);
 
 // Iniciar o servidor
 server.listen(process.env.PORT, () => {
