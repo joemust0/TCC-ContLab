@@ -1,1 +1,1 @@
-const planocontasService = require(`./services/planocontasService`);
+const planocontasService = require('../services/planocontasService');
