@@ -28,5 +28,19 @@ module.exports = {
             });
 
         });
+    },
+
+    cadUsuario: (nome, nickname, email, senha, instituicao, responsavel) =>{
+        return new Promise((aceito, rejeitado) => {
+
+            db.query('INSERT INTO usuario (nome, nickname, email, senha, instituicao, responsavel) VALUES (?, ?, ?, ?, ?, ?) ',
+            [nome, nickname, email, senha, instituicao, responsavel],
+            (error, results) =>{
+               if(error) {rejeitado(error); return; }
+               aceito(results.insertcadastro);
+            
+            });
+
+        });
     }
 }

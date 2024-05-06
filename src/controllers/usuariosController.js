@@ -35,20 +35,31 @@ module.exports = {
     
 
     cadUsuario: async (req, res) => {
-        let json = {error: '', result:[]};
+        let json = {error: '', result:{}};
 
-        let cadUser = await usuariosService.cadUsuario();
+        let nome = req.body.Nome_Completo;
+        let nickname = req.body.apelido;
+        let email = req.body.email;
+        let senha = req.body.senha;
+        let instituicao = req.body.instituicao;
+        let responsavel = req.body.responsavel;
 
-        for(let i in cadUser){
-            json.result.push({
-                nome: cadUser[i].Nome_Completo,
-                nickname: cadUser[i].apelido,
-                email: cadUser[i].email,
-                senha: cadUser[i].senha,
-                instituicao: cadUser[i].instituicao,
-                responsavel: cadUser[i].responsavel
-            });
-            res.json(json);
-    }
+        if(nome && nickname && email && senha && instituicao && responsavel){
+            let cadUser = await usuariosService.cadUsuario(nome, nickname, email, senha, instituicao, responsavel);
+            json.result = {
+                cadastro: cadUser,
+                nome,
+                nickname,
+                email,
+                senha,
+                instituicao,
+                responsavel
+            };
+        }else{
+            json.error = 'Campos não enviados';
+        }
+
+        res.json(json);
+        
     }
 }
