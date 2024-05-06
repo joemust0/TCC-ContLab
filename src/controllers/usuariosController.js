@@ -21,11 +21,11 @@ module.exports = {
     res.json(json);
 },
 
-    exibirUsuario: async (req, res) => {
+    buscarUsuario: async (req, res) => {
         let json = {error: '', result:{}};
 
         let cadastro = req.params.cadastro;
-        let usuario = await usuariosService.exibirUsuario(cadastro);
+        let usuario = await usuariosService.buscarUsuario(cadastro);
 
         if(usuario){
             json.result = usuario;

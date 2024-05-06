@@ -7,7 +7,7 @@ const usuariosController = require('./controllers/usuariosController');
 
 router.get('/pcontas', planocontasController.buscarTodos);
 router.get('/usuarios', usuariosController.exibUsuarios);
-router.get('/usuario:cadastro', usuariosController.exibirUsuario);
+router.get('/usuario/:cadastro', usuariosController.buscarUsuario);
 router.post('/cadUser', usuariosController.cadUsuario);
 
 module.exports = router;
