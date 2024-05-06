@@ -5,7 +5,7 @@ module.exports = {
         let json = {error: '', result:[]};
 
         let contas = await planocontasService.buscarTodos();
-
+       
         for(let i in contas){
             json.result.push({
                 id: contas[i].id,
@@ -15,7 +15,9 @@ module.exports = {
                 conta: contas[i].conta,
                 conta_analitica: contas[i].conta_analitica
             });
+            
         }
         res.json(json);
-    }
+    },
+
 }
