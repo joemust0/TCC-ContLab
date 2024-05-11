@@ -1,5 +1,6 @@
 const usuariosService = require('../services/usuariosService');
 
+
 module.exports = {
     //mosta todos os usuarios
     exibUsuarios: async (req, res) => {
@@ -35,25 +36,25 @@ module.exports = {
     
     // cadastro de usuarios
     criarUsuario: async (req, res) => {
-        let json = {error: '', result:{}};
+        let json = {result:{}, error:''};
 
-        let nome = req.body.Nome_Completo;
-        let nickname = req.body.apelido;
+        let nome = req.body.nome;
+        let nickname = req.body.nickname || null;
         let email = req.body.email;
         let senha = req.body.senha;
-        let instituicao = req.body.instituicao;
-        let responsavel = req.body.responsavel;
+        let instituicao = req.body.instituicao || null;
+        let responsavel = req.body.responsavel || null;
 
        
 
-        if(nome && nickname && email && senha && instituicao && responsavel){
+        if(nome && email && senha){
            
             let UsuarioCodigo = await usuariosService.criarUsuario(nome, nickname, email, senha, instituicao,responsavel);
            
             json.result = {
                 codigo: UsuarioCodigo,
-                Nome_Completo,
-                apelido,
+                nome,
+                nickname,
                 email,
                 senha,
                 instituicao,

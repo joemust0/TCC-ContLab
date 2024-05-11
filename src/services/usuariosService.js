@@ -19,7 +19,7 @@ module.exports = {
    buscarUsuario: (cadastro) =>{
         return new Promise((aceito, rejeitado) => {
 
-            db.query('SELECT * FROM usuario WHERE cadastro = ?',[cadastro], (error, results) =>{
+            db.query('SELECT * FROM usuario WHERE id = ?',[cadastro], (error, results) =>{
                if(error) {rejeitado(error); return; }
                if(results.length > 0){
                aceito(results[0]);
@@ -34,11 +34,11 @@ module.exports = {
     criarUsuario: (nome, nickname, email, senha, instituicao, responsavel) =>{
         return new Promise((aceito, rejeitado) => {
 
-            db.query('INSERT INTO usuario (Nome_Completo, apelido, email, senha, instituicao, responsavel) VALUES (?, ?, ?, ?, ?, ?) ',
+            db.query('INSERT INTO usuario (nome, nickname, email, senha, instituicao, responsavel) VALUES (?, ?, ?, ?, ?, ?) ',
             [nome, nickname, email, senha, instituicao, responsavel],
             (error, results) =>{
                if(error) {rejeitado(error); return; }
-               aceito(results.insertCadastro);
+               aceito(results.insertId);
             
             }
         );
