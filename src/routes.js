@@ -8,6 +8,6 @@ const usuariosController = require('./controllers/usuariosController');
 router.get('/pcontas', planocontasController.buscarTodos);
 router.get('/usuarios', usuariosController.exibUsuarios);
 router.get('/usuario/:cadastro', usuariosController.buscarUsuario);
-router.post('/usuario', usuariosController.cadUsuario);
+router.post('/usuario', usuariosController.criarUsuario);
 
 module.exports = router;

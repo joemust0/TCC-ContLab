@@ -1,5 +1,6 @@
 const exibirUs = require('../controllers/usuariosController')
 const buscarUsuario = require('../controllers/usuariosController')
+const criarUsuario =require('../controllers/usuariosController')
 const db = require('../db')
 
 module.exports = {
@@ -30,17 +31,18 @@ module.exports = {
         });
     },
 
-    cadUsuario: (nome, nickname, email, senha, instituicao, responsavel) =>{
+    criarUsuario: (nome, nickname, email, senha, instituicao, responsavel) =>{
         return new Promise((aceito, rejeitado) => {
 
-            db.query('INSERT INTO usuario (nome, nickname, email, senha, instituicao, responsavel) VALUES (?, ?, ?, ?, ?, ?) ',
+            db.query('INSERT INTO usuario (Nome_Completo, apelido, email, senha, instituicao, responsavel) VALUES (?, ?, ?, ?, ?, ?) ',
             [nome, nickname, email, senha, instituicao, responsavel],
             (error, results) =>{
                if(error) {rejeitado(error); return; }
-               aceito(results.insertcadastro);
+               aceito(results.insertCadastro);
             
-            });
+            }
+        );
 
         });
     }
-}
+};
