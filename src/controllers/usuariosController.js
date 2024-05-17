@@ -25,7 +25,7 @@ module.exports = {
     buscarUsuario: async (req, res) => {
         let json = {error: '', result:{}};
 
-        let cadastro = req.params.cadastro;
+        let cadastro = req.params.id;
         let usuario = await usuariosService.buscarUsuario(cadastro);
 
         if(usuario){
@@ -52,7 +52,7 @@ module.exports = {
             let UsuarioCodigo = await usuariosService.criarUsuario(nome, nickname, email, senha, instituicao,responsavel);
            
             json.result = {
-                id: UsuarioCodigo,
+                cadastro: UsuarioCodigo,
                 nome,
                 nickname,
                 email,
@@ -66,13 +66,13 @@ module.exports = {
         
         res.json(json);
 
-}
+},
 
  // alterar dados do usuarios
     alterarDados: async (req, res) => {
     let json = {result:{}, error:''};
 
-    let id = req.body.id;
+    let cadastro = req.params.id;
     let nome = req.body.nome;
     let nickname = req.body.nickname || null;
     let email = req.body.email;
@@ -82,12 +82,12 @@ module.exports = {
 
    
 
-    if(id && nome && nickname && email && senha && instituicao && responsavel){
+    if(cadastro && nome && nickname && email && senha && instituicao && responsavel){
        
-        await usuariosService.alterarDados(id, nome, nickname, email, senha, instituicao,responsavel);
+        await usuariosService.alterarDados(cadastro, nome, nickname, email, senha, instituicao,responsavel);
        
         json.result = {
-            id,
+            cadastro,
             nome,
             nickname,
             email,

@@ -11,7 +11,7 @@ router.get('/pcontas', planocontasController.buscarTodos);
 router.get('/usuarios', usuariosController.exibUsuarios);
 router.get('/usuario/:id', usuariosController.buscarUsuario);
 router.post('/usuario', usuariosController.criarUsuario);
-router.put('/usuario/:id', ususarioController.alterarDados);
+router.put('/usuario/:id', usuariosController.alterarDados);
 
 //rotas-atividades
 

@@ -8,8 +8,7 @@ module.exports = {
             db.query('SELECT * FROM planodecontas', (error, results) =>{
                 if(error) {rejeitado(error); return; }
                 aceito(results);
-                consolw.log("deu certo primo")
-            });
+                });
 
         });
     }

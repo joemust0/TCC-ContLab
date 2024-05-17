@@ -45,7 +45,7 @@ module.exports = {
         );
 
         });
-    }
+    },
 
     alterarDados: (id, nome, nickname, email, senha, instituicao, responsavel) =>{
         return new Promise((aceito, rejeitado) => {
