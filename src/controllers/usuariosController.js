@@ -10,9 +10,9 @@ module.exports = {
 
     for(let i in exibirUs){
         json.result.push({
-            cadastro: exibirUs[i].cadastro,
-            nome: exibirUs[i].Nome_Completo,
-            nickname: exibirUs[i].apelido,
+            cadastro: exibirUs[i].id,
+            nome: exibirUs[i].nome,
+            nickname: exibirUs[i].nickname,
             email: exibirUs[i].email,
             senha: exibirUs[i].senha,
             instituicao: exibirUs[i].instituicao,
@@ -52,7 +52,7 @@ module.exports = {
             let UsuarioCodigo = await usuariosService.criarUsuario(nome, nickname, email, senha, instituicao,responsavel);
            
             json.result = {
-                codigo: UsuarioCodigo,
+                id: UsuarioCodigo,
                 nome,
                 nickname,
                 email,
@@ -67,5 +67,41 @@ module.exports = {
         res.json(json);
 
 }
+
+ // alterar dados do usuarios
+    alterarDados: async (req, res) => {
+    let json = {result:{}, error:''};
+
+    let id = req.body.id;
+    let nome = req.body.nome;
+    let nickname = req.body.nickname || null;
+    let email = req.body.email;
+    let senha = req.body.senha;
+    let instituicao = req.body.instituicao || null;
+    let responsavel = req.body.responsavel || null;
+
+   
+
+    if(id && nome && nickname && email && senha && instituicao && responsavel){
+       
+        await usuariosService.alterarDados(id, nome, nickname, email, senha, instituicao,responsavel);
+       
+        json.result = {
+            id,
+            nome,
+            nickname,
+            email,
+            senha,
+            instituicao,
+            responsavel
+        };
+    }else{
+        json.error = 'Campos não enviados';
+    }
+    
+    res.json(json);
+
+}
+
 
 }

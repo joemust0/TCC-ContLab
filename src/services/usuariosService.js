@@ -1,6 +1,7 @@
 const exibirUs = require('../controllers/usuariosController')
 const buscarUsuario = require('../controllers/usuariosController')
 const criarUsuario =require('../controllers/usuariosController')
+const alterarDados =require('../controllers/usuariosController')
 const db = require('../db')
 
 module.exports = {
@@ -39,6 +40,21 @@ module.exports = {
             (error, results) =>{
                if(error) {rejeitado(error); return; }
                aceito(results.insertId);
+            
+            }
+        );
+
+        });
+    }
+
+    alterarDados: (id, nome, nickname, email, senha, instituicao, responsavel) =>{
+        return new Promise((aceito, rejeitado) => {
+
+            db.query('UPDATE usuario SET nome = ?, nickname = ?, email = ?, senha = ?, instituicao = ?, responsavel = ? WHERE id = ?)',
+            [nome, nickname, email, senha, instituicao, responsavel, id],
+            (error, results) =>{
+               if(error) {rejeitado(error); return; }
+               aceito(results);
             
             }
         );
