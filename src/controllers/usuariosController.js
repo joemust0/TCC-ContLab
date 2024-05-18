@@ -4,12 +4,12 @@ const usuariosService = require('../services/usuariosService');
 module.exports = {
     //mosta todos os usuarios
     exibUsuarios: async (req, res) => {
-    let json = {error: '', result:[]};
+    let json = {error: '', results:[]};
 
     let exibirUs = await usuariosService.exibUsuarios();
 
     for(let i in exibirUs){
-        json.result.push({
+        json.results.push({
             cadastro: exibirUs[i].id,
             nome: exibirUs[i].nome,
             nickname: exibirUs[i].nickname,
