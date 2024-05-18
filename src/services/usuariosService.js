@@ -2,6 +2,7 @@ const exibirUs = require('../controllers/usuariosController')
 const buscarUsuario = require('../controllers/usuariosController')
 const criarUsuario =require('../controllers/usuariosController')
 const alterarDados =require('../controllers/usuariosController')
+const apagarDados = require('../controllers/usuariosController')
 const db = require('../db')
 
 module.exports = {
@@ -59,6 +60,18 @@ module.exports = {
             }
         );
 
+        });
+    },
+
+    apagarDados: (id) => {
+        return new Promise ((aceito, rejeitado)=>{
+
+            db.query('DELETE FROM usuario WHERE id =?',
+            [id],
+            (error, results)=>{
+                if(error) {rejeitado(error); return; }
+                aceito(results); 
+        });
         });
     }
 };

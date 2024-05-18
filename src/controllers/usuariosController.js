@@ -68,7 +68,7 @@ module.exports = {
 
 },
 
- // alterar dados do usuarios
+ // alterar dados do usuario
     alterarDados: async (req, res) => {
     let json = {result:{}, error:''};
 
@@ -99,6 +99,16 @@ module.exports = {
         json.error = 'Campos não enviados';
     }
     
+    res.json(json);
+
+},
+
+//excluir dados do usuario
+apagarDados: async(req, res) => {
+    let json = {error:'', results:{}};
+
+    await usuariosService.apagarDados(req.params.id);
+
     res.json(json);
 
 }
