@@ -50,7 +50,7 @@ module.exports = {
     alterarDados: (id, nome, nickname, email, senha, instituicao, responsavel) =>{
         return new Promise((aceito, rejeitado) => {
 
-            db.query('UPDATE usuario SET nome = ?, nickname = ?, email = ?, senha = ?, instituicao = ?, responsavel = ? WHERE id = ?)',
+            db.query('UPDATE usuario SET nome = ?, nickname = ?, email = ?, senha = ?, instituicao = ?, responsavel = ? WHERE id = ?',
             [nome, nickname, email, senha, instituicao, responsavel, id],
             (error, results) =>{
                if(error) {rejeitado(error); return; }

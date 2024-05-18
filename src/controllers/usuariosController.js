@@ -82,9 +82,9 @@ module.exports = {
 
    
 
-    if(cadastro && nome && nickname && email && senha && instituicao && responsavel){
+    if(cadastro && nome && email && senha){
        
-        await usuariosService.alterarDados(cadastro, nome, nickname, email, senha, instituicao,responsavel);
+        await usuariosService.alterarDados(cadastro, nome, email, senha );
        
         json.result = {
             cadastro,
