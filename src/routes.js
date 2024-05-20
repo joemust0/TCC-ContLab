@@ -24,7 +24,7 @@ router.put('/balancos/:num_balanco', balancosController.atualizarBalanco);
 router.delete('/balancos/:num_balanco', balancosController.apagarBalanco);
 
 //rotas-lancamentos
-router.post('/lancamentos', lancamentosController.adicionarLancamento);
+router.post('/lancamentos', lancamentosController.adicionarLancamentos);
 router.get('/lancamentos/:num_balanco', lancamentosController.listarLancamentos);
 router.put('/lancamentos/:id', lancamentosController.atualizarLancamento);
 router.delete('/lancamentos/:id', lancamentosController.apagarLancamento);

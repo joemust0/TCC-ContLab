@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11/05/2024 às 07:02
+-- Tempo de geração: 20/05/2024 às 20:07
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -24,26 +24,57 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `atividades`
+-- Estrutura para tabela `balancos`
 --
 
-CREATE TABLE `atividades` (
+CREATE TABLE `balancos` (
   `num_atividade` int(11) NOT NULL,
   `id_usuario` int(11) DEFAULT NULL,
+  `nome_balanco` varchar(255) DEFAULT NULL,
+  `descricao_balanco` text DEFAULT NULL,
+  `data_criacao` date DEFAULT NULL,
+  `data_emissao` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `balancos`
+--
+
+INSERT INTO `balancos` (`num_atividade`, `id_usuario`, `nome_balanco`, `descricao_balanco`, `data_criacao`, `data_emissao`) VALUES
+(1, 1, 'Balanço Exemplo', 'Descrição do balanço exemplo', '2024-05-19', '2024-05-19'),
+(2, 2, 'Balanço Exemplo', 'Descrição do balanço exemplo', '2024-05-19', '2024-05-19');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `lancamentos`
+--
+
+CREATE TABLE `lancamentos` (
+  `id` int(11) NOT NULL,
+  `num_atividade` int(11) DEFAULT NULL,
   `c_debito` varchar(255) DEFAULT NULL,
   `v_debito` decimal(10,2) DEFAULT NULL,
   `c_credito` varchar(255) DEFAULT NULL,
   `v_credito` decimal(10,2) DEFAULT NULL,
   `id_plano_de_contas` int(11) DEFAULT NULL,
   `conta_analitica` varchar(255) DEFAULT NULL,
-  `chave_nf` int(44) DEFAULT NULL,
+  `chave_nf` int(11) DEFAULT NULL,
   `num_nf` int(11) DEFAULT NULL,
-  `serie_nf` int(3) DEFAULT NULL,
-  `data_criacao` date DEFAULT NULL,
-  `data_emissao` date DEFAULT NULL,
-  `nome_balanco` varchar(255) DEFAULT NULL,
-  `descricao_balanco` text DEFAULT NULL
+  `serie_nf` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `lancamentos`
+--
+
+INSERT INTO `lancamentos` (`id`, `num_atividade`, `c_debito`, `v_debito`, `c_credito`, `v_credito`, `id_plano_de_contas`, `conta_analitica`, `chave_nf`, `num_nf`, `serie_nf`) VALUES
+(1, 1, '1001', 100.00, '2001', 100.00, 1, 'Contabilização exemplo 1', 12345, 0, 1),
+(2, 1, '1001', 100.00, '2001', 100.00, 1, 'Contabilização exemplo 1', 12345, 0, 1),
+(3, 1, '1002', 200.00, '2002', 200.00, 2, 'Contabilização exemplo 2', 12346, 0, 2),
+(4, 1, '1003', 300.00, '2003', 300.00, 3, 'Contabilização exemplo 3', 12347, 0, 3),
+(5, 1, '1004', 400.00, '2004', 400.00, 4, 'Contabilização exemplo 4', 12348, 0, 4),
+(6, 1, '1005', 500.00, '2005', 500.00, 5, 'Contabilização exemplo 5', 12349, 0, 5);
 
 -- --------------------------------------------------------
 
@@ -202,19 +233,26 @@ INSERT INTO `usuario` (`id`, `nome`, `nickname`, `email`, `senha`, `instituicao`
 (1, 'Fulano de Tal', NULL, 'fulano@example.com', 'senha123', NULL, NULL),
 (2, 'João', 'Joe', 'joao@gmail.com', '1234', 'ETEC ZL', 'Test'),
 (3, 'João2', 'Joe2', 'joo@gmail.com', '1254', 'ETEC ZL', 'Test 2'),
-(4, 'João3', 'Jo3e', 'joa3o@gmail.com', '123354', 'ETEC ZL', 'Test 3'),
 (8, 'João4', 'Joe4', 'joao4@gmail.com', '123354', 'ETEC ZL', 'Test 3'),
-(9, 'João9', 'Joe9', 'joao4@gmail.com', '123354', 'ETEC ZL', 'Test 3');
+(9, 'João9', 'Joe9', 'joao4@gmail.com', '123354', 'ETEC ZL', 'Test 3'),
+(10, 'Marquinhos', 'Marquinhos', 'Marquinhos@gmail.com', 'marquinhos.12', 'ETEC ZL', 'Test 3');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `atividades`
+-- Índices de tabela `balancos`
 --
-ALTER TABLE `atividades`
+ALTER TABLE `balancos`
   ADD PRIMARY KEY (`num_atividade`);
+
+--
+-- Índices de tabela `lancamentos`
+--
+ALTER TABLE `lancamentos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `num_atividade` (`num_atividade`);
 
 --
 -- Índices de tabela `planodecontas`
@@ -233,22 +271,38 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de tabela `atividades`
+-- AUTO_INCREMENT de tabela `balancos`
 --
-ALTER TABLE `atividades`
-  MODIFY `num_atividade` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `balancos`
+  MODIFY `num_atividade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `lancamentos`
+--
+ALTER TABLE `lancamentos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `planodecontas`
 --
 ALTER TABLE `planodecontas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- Restrições para tabelas despejadas
+--
+
+--
+-- Restrições para tabelas `lancamentos`
+--
+ALTER TABLE `lancamentos`
+  ADD CONSTRAINT `lancamentos_ibfk_1` FOREIGN KEY (`num_atividade`) REFERENCES `balancos` (`num_atividade`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
