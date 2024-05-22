@@ -3,7 +3,7 @@ const db = require('../db')
 module.exports = {
 
     criarBalanco: (balanco) => {
-        return new Promise((resolve, reject) => {
+        return new Promise((aceito, rejeitado) => {
             const sql = `
                 INSERT INTO balancos (id_usuario, nome_balanco, descricao_balanco, data_criacao, data_emissao)
                 VALUES (?, ?, ?, ?, ?)
@@ -18,46 +18,46 @@ module.exports = {
 
             db.query(sql, values, (error, results) => {
                 if (error) {
-                    reject(error);
+                    rejeitado(error);
                     return;
                 }
-                resolve(results.insertId);
+                aceito(results.insertId);
             });
         });
     },
 
     listarBalancos: (id_usuario) => {
-        return new Promise((resolve, reject) => {
-            const sql = `SELECT * FROM balancos WHERE id_usuario = ?`;
-            db.query(sql, [id_usuario], (error, results) => {
+        return new Promise((aceito, rejeitado) => {
+            const sql = `SELECT * FROM balancos`;
+            db.query(sql, (error, results) => {
                 if (error) {
-                    reject(error);
+                    rejeitado(error);
                     return;
                 }
-                resolve(results);
+                aceito(results);
             });
         });
     },
 
     buscarBalanco: (num_atividade, id_usuario) => {
-        return new Promise((resolve, reject) => {
+        return new Promise((aceito, rejeitado) => {
             const sql = `SELECT * FROM balancos WHERE num_atividade = ? AND id_usuario = ?`;
             db.query(sql, [num_atividade, id_usuario], (error, results) => {
                 if (error) {
-                    reject(error);
+                    rejeitado(error);
                     return;
                 }
                 if (results.length > 0) {
-                    resolve(results[0]);
+                    aceito(results[0]);
                 } else {
-                    resolve(false);
+                    aceito(false);
                 }
             });
         });
     },
 
     atualizarBalanco: (num_atividade, balanco) => {
-        return new Promise((resolve, reject) => {
+        return new Promise((aceito, rejeitado) => {
             const sql = `
                 UPDATE balancos SET
                     nome_balanco = ?, descricao_balanco = ?, data_criacao = ?, data_emissao = ?
@@ -74,19 +74,19 @@ module.exports = {
 
             db.query(sql, values, (error, results) => {
                 if (error) {
-                    reject(error);
+                    rejeitado(error);
                     return;
                 }
-                resolve(results);
+                aceito(results);
             });
         });
     },
 
     apagarBalanco: (num_atividade, id_usuario) => {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve, rejeitado) => {
             db.query('DELETE FROM balancos WHERE num_atividade = ? AND id_usuario = ?', [num_atividade, id_usuario], (error, results) => {
                 if (error) {
-                    reject(error);
+                    rejeitado(error);
                     return;
                 }
                 resolve(results);
