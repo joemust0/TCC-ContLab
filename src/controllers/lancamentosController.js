@@ -70,9 +70,8 @@ module.exports = {
         let json = { error: '', results: {} };
 
         try {
-            let id = req.params.id;
-            let id_usuario = req.query.id_usuario;
-            await lancamentosService.apagarLancamento(id, id_usuario);
+            let num_atividade = req.query.num_atividade;//alterar para localizar por usuario
+            await lancamentosService.apagarLancamento(id, num_atividade);
             json.results = { message: 'Lançamento apagado com sucesso' };
         } catch (error) {
             json.error = error;

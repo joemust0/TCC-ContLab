@@ -46,7 +46,7 @@ module.exports = {
 
         try {
             let num_balanco = req.params.num_balanco;
-            let id_usuario = req.query.id_usuario;
+            let id_usuario = req.params.id_usuario;
             let balanco = await balancosService.buscarBalanco(num_balanco, id_usuario);
             if (balanco) {
                 json.result = balanco;
