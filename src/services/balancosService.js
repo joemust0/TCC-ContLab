@@ -39,19 +39,15 @@ module.exports = {
         });
     },
 
-    buscarBalanco: (num_atividade, id_usuario) => {
+    buscarBalanco: (id_usuario) => {
         return new Promise((aceito, rejeitado) => {
-            const sql = `SELECT * FROM balancos WHERE num_atividade = ? AND id_usuario = ?`;
-            db.query(sql, [num_atividade, id_usuario], (error, results) => {
+            const sql = `SELECT * FROM balancos WHERE id_usuario = ?`;
+            db.query(sql, [id_usuario], (error, results) => {
                 if (error) {
                     rejeitado(error);
                     return;
                 }
-                if (results.length > 0) {
-                    aceito(results[0]);
-                } else {
-                    aceito(false);
-                }
+                    aceito(results);
             });
         });
     },

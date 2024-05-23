@@ -45,10 +45,9 @@ module.exports = {
         let json = { error: '', result: {} };
 
         try {
-            let num_balanco = req.params.num_balanco;
             let id_usuario = req.params.id_usuario;
-            let balanco = await balancosService.buscarBalanco(num_balanco, id_usuario);
-            if (balanco) {
+            let balanco = await balancosService.buscarBalanco(id_usuario);
+            if (balanco.length > 0) {
                 json.result = balanco;
             } else {
                 json.error = 'Balanço não encontrado';
