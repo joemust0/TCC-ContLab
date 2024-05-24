@@ -58,6 +58,30 @@ module.exports = {
         res.json(json);
     },
 
+    buscarBalancoAtiv: async (req, res) => {
+        let json = { error: '', result: {} };
+    
+        try {
+            let id_usuario = req.params.id_usuario;
+            let num_atividade = req.params.num_atividade;
+    
+            // Adicionar log para depuração
+            console.log(`Buscando balanço para id_usuario: ${id_usuario} e num_atividade: ${num_atividade}`);
+    
+            let balanco = await balancosService.buscarBalancoAtiv(id_usuario, num_atividade); // Passar os parâmetros corretamente
+            if (balanco && balanco.length > 0) {
+                json.result = balanco; // Corrigido para retornar os resultados
+            } else {
+                json.error = 'Balanço não encontrado';
+            }
+        } catch (error) {
+            json.error = error.message; // Certifique-se de capturar a mensagem de erro
+            console.error(error); // Log do erro para depuração
+        }
+        res.json(json);
+    },
+    
+
     atualizarBalanco: async (req, res) => {
         let json = { results: {}, error: '' };
 

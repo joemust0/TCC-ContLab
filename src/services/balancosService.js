@@ -52,6 +52,23 @@ module.exports = {
         });
     },
 
+    buscarBalancoAtiv: (id_usuario, num_atividade) => {
+        return new Promise((resolve, reject) => {
+            const sql = `SELECT * FROM balancos WHERE id_usuario = ? AND num_atividade = ?`;
+            
+            // Adicionar log para depuração
+            console.log(`Executando SQL: ${sql} com id_usuario: ${id_usuario} e num_atividade: ${num_atividade}`);
+            
+            db.query(sql, [id_usuario, num_atividade], (error, results) => {
+                if (error) {
+                    reject(error);
+                    return;
+                }
+                resolve(results);
+            });
+        });
+    },
+ 
     atualizarBalanco: (num_atividade, balanco) => {
         return new Promise((aceito, rejeitado) => {
             const sql = `

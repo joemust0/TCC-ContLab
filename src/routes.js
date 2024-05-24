@@ -20,6 +20,7 @@ router.delete('/usuario/:id', usuariosController.apagarDados);
 router.post('/balancos', balancosController.criarBalanco);
 router.get('/balancos', balancosController.listarBalancos);
 router.get('/balancos/:id_usuario', balancosController.buscarBalanco);
+router.get('/balancos/:id_usuario/:num_atividade', balancosController.buscarBalancoAtiv);
 router.put('/balancos/:num_balanco', balancosController.atualizarBalanco);
 router.delete('/balancos/:num_balanco', balancosController.apagarBalanco);
 
