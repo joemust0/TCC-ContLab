@@ -59,7 +59,8 @@ module.exports = {
             // Adicionar log para depuração
             console.log(`Executando SQL: ${sql} com id_usuario: ${id_usuario} e num_atividade: ${num_atividade}`);
             
-            db.query(sql, [id_usuario, num_atividade], (error, results) => {
+            db.query(sql, [id_usuario, num_atividade], 
+                (error, results) => {
                 if (error) {
                     reject(error);
                     return;
@@ -97,7 +98,9 @@ module.exports = {
 
     apagarBalanco: (num_atividade, id_usuario) => {
         return new Promise((resolve, rejeitado) => {
-            db.query('DELETE FROM balancos WHERE num_atividade = ? AND id_usuario = ?', [num_atividade, id_usuario], (error, results) => {
+            
+            db.query('DELETE FROM balancos WHERE id_usuario = ? AND num_atividade = ?', [ id_usuario, num_atividade], 
+            (error, results) => {
                 if (error) {
                     rejeitado(error);
                     return;

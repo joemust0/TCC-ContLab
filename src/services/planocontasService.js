@@ -1,4 +1,3 @@
-const { buscarTodos } = require('../controllers/planocontasController');
 const db =require('../db')
 
 module.exports = {
