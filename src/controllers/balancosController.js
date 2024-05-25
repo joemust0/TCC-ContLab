@@ -84,20 +84,30 @@ module.exports = {
 
     atualizarBalanco: async (req, res) => {
         let json = { results: {}, error: '' };
-
-        let num_balanco = req.params.num_balanco;
-        let id_usuario = req.query.id_usuario;
-        let balanco = {
-            nome_balanco: req.body.nome_balanco,
-            descricao_balanco: req.body.descricao_balanco,
-            data_criacao: req.body.data_criacao || null,
-            data_emissao: req.body.data_emissao || null
-        };
-
-        if (balanco.nome_balanco && balanco.descricao_balanco) {
+    
+        let num_atividade = req.params.num_atividade;
+        let id_usuario = req.params.id_usuario;
+        let nome_balanco= req.body.nome_balanco ||null;
+        let descricao_balanco= req.body.descricao_balanco || null;
+        let data_criacao= req.body.data_criacao || null;
+        let data_emissao= req.body.data_emissao || null
+        
+        if (id_usuario && num_atividade) {
             try {
-                await balancosService.atualizarBalanco(num_balanco, balanco, id_usuario);
-                json.results = { num_balanco, ...balanco };
+                const balanco = {
+                    nome_balanco,
+                    descricao_balanco,
+                    data_criacao,
+                    data_emissao
+                };
+                await balancosService.atualizarBalanco(id_usuario, num_atividade, balanco);
+                json.results = { 
+                    num_atividade,
+                    nome_balanco,
+                    descricao_balanco,
+                    data_criacao,
+                    data_emissao
+                };
             } catch (error) {
                 json.error = error;
             }
@@ -111,11 +121,15 @@ module.exports = {
         let json = { error: '', results: {} };
 
         try {
-            let num_balanco = req.params.num_balanco;
-            let id_usuario = req.query.id_usuario;
-            await lancamentosService.apagarLancamentos(num_balanco);
-            await balancosService.apagarBalanco(num_balanco, id_usuario);
-            json.results = { message: 'Balanço apagado com sucesso' };
+            let num_atividade = req.params.num_atividade;
+            let id_usuario = req.params.id_usuario;
+
+            //para apagar os lançamentos
+            await lancamentosService.apagarLancamentos(num_atividade);
+
+            //para apagar o balanço
+            await balancosService.apagarBalanco(id_usuario, num_atividade);
+            json.results = { message: 'Balanço e lançamentos associados apagados com sucesso' };
         } catch (error) {
             json.error = error;
         }

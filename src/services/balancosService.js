@@ -54,11 +54,12 @@ module.exports = {
 
     buscarBalancoAtiv: (id_usuario, num_atividade) => {
         return new Promise((resolve, reject) => {
-            const sql = `SELECT * FROM balancos WHERE id_usuario = ? AND num_atividade = ?`;
             
-            // Adicionar log para depuração
-            console.log(`Executando SQL: ${sql} com id_usuario: ${id_usuario} e num_atividade: ${num_atividade}`);
-            
+            const sql = `
+            SELECT * FROM balancos
+            WHERE id_usuario = ? AND num_atividade = ?
+            `;
+             
             db.query(sql, [id_usuario, num_atividade], 
                 (error, results) => {
                 if (error) {
@@ -70,21 +71,24 @@ module.exports = {
         });
     },
  
-    atualizarBalanco: (num_atividade, balanco) => {
+    atualizarBalanco: (id_usuario, num_atividade, balanco) => {
         return new Promise((aceito, rejeitado) => {
+            
+            const { nome_balanco, descricao_balanco, data_criacao, data_emissao } = balanco;
+
             const sql = `
                 UPDATE balancos SET
-                    nome_balanco = ?, descricao_balanco = ?, data_criacao = ?, data_emissao = ?
-                WHERE num_atividade = ? AND id_usuario = ?
+                nome_balanco = ?, descricao_balanco = ?, data_criacao = ?, data_emissao = ?
+                WHERE id_usuario = ? AND  num_atividade = ? 
             `;
             const values = [
-                balanco.nome_balanco,
-                balanco.descricao_balanco,
-                balanco.data_criacao,
-                balanco.data_emissao,
-                num_atividade,
-                balanco.id_usuario
-            ];
+                nome_balanco,
+                descricao_balanco,
+                data_criacao,
+                data_emissao,
+                id_usuario,
+                num_atividade
+               ];
 
             db.query(sql, values, (error, results) => {
                 if (error) {
@@ -96,17 +100,18 @@ module.exports = {
         });
     },
 
-    apagarBalanco: (num_atividade, id_usuario) => {
+    apagarBalanco: (id_usuario, num_atividade,) => {
         return new Promise((resolve, rejeitado) => {
             
-            db.query('DELETE FROM balancos WHERE id_usuario = ? AND num_atividade = ?', [ id_usuario, num_atividade], 
+            db.query('DELETE FROM balancos WHERE id_usuario = ? AND num_atividade = ?',
+            [ id_usuario, num_atividade], 
             (error, results) => {
-                if (error) {
-                    rejeitado(error);
+                if (error) {rejeitado(error);
                     return;
                 }
                 resolve(results);
             });
         });
     }
+
 };

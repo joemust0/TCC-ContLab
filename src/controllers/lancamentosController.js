@@ -20,13 +20,14 @@ module.exports = {
         res.json(json);
     },
 
+    //listar todos os lançamentos da atividade
     listarLancamentos: async (req, res) => {
         let json = { error: '', results: [] };
 
         try {
             let num_atividade = req.params.num_atividade;
-            let id_usuario = req.query.id_usuario;
-            let lancamentos = await lancamentosService.listarLancamentos(num_atividade, id_usuario);
+
+            let lancamentos = await lancamentosService.listarLancamentos(num_atividade);
             for (let lancamento of lancamentos) {
                 json.results.push(lancamento);
             }
@@ -36,22 +37,64 @@ module.exports = {
         res.json(json);
     },
 
+        //listar por nf da atividade
+        buscarLancamentosNf: async (req, res) => {
+            let json = { error: '', results: [] };
+    
+            try {
+                let num_atividade = req.params.num_atividade;
+                let num_nf = req.params.num_nf;
+
+                let lancamento = await lancamentosService.buscarLancamentosNf(num_atividade, num_nf);
+                if (lancamento && lancamento.length > 0) {
+                    json.result = lancamento;
+                }else{
+                    json.error = 'Lançamento não encontrado';
+                }
+            } catch (error) {
+                json.error = error.message;
+                console.error(error);
+            }
+            res.json(json);
+        },
+
+
     atualizarLancamento: async (req, res) => {
         let json = { results: {}, error: '' };
 
         let id = req.params.id;
         let id_usuario = req.query.id_usuario;
-        let lancamento = {
-            c_debito: req.body.c_debito || null,
-            v_debito: req.body.v_debito || null,
-            c_credito: req.body.c_credito || null,
-            v_credito: req.body.v_credito || null,
-            id_plano_de_contas: req.body.id_plano_de_contas || null,
-            conta_analitica: req.body.conta_analitica || null,
-            chave_nf: req.body.chave_nf || null,
-            num_nf: req.body.num_nf || null,
-            serie_nf: req.body.serie_nf || null
-        };
+        lancamentos.forEach(lancamento => {
+                lancamento.debito.forEach(debito => {
+                    values.push([
+                        num_atividade,
+                        debito.c_debito,
+                        debito.v_debito,
+                        null,
+                        null,
+                        debito.id_plano_de_contas,
+                        debito.conta_analitica,
+                        lancamento.chave_nf,
+                        lancamento.num_nf,
+                        lancamento.serie_nf
+                    ]);
+                });
+
+                    lancamento.credito.forEach(credito => {
+                        values.push([
+                            num_atividade,
+                            null,
+                            null,
+                            credito.c_credito,
+                            credito.v_credito,
+                            credito.id_plano_de_contas,
+                            credito.conta_analitica,
+                            lancamento.chave_nf,
+                            lancamento.num_nf,
+                            lancamento.serie_nf
+                        ]);
+                    });
+            });
 
         if (lancamento) {
             try {
@@ -66,12 +109,12 @@ module.exports = {
         res.json(json);
     },
 
-    apagarLancamento: async (req, res) => {
+    apagarLancamentos: async (req, res) => {
         let json = { error: '', results: {} };
 
         try {
             let num_atividade = req.query.num_atividade;//alterar para localizar por usuario
-            await lancamentosService.apagarLancamento(id, num_atividade);
+            await lancamentosService.apagarLancamentos(num_atividade);
             json.results = { message: 'Lançamento apagado com sucesso' };
         } catch (error) {
             json.error = error;
