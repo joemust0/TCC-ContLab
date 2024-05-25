@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20/05/2024 às 20:07
+-- Tempo de geração: 25/05/2024 às 06:26
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -42,7 +42,10 @@ CREATE TABLE `balancos` (
 
 INSERT INTO `balancos` (`num_atividade`, `id_usuario`, `nome_balanco`, `descricao_balanco`, `data_criacao`, `data_emissao`) VALUES
 (1, 1, 'Balanço Exemplo', 'Descrição do balanço exemplo', '2024-05-19', '2024-05-19'),
-(2, 2, 'Balanço Exemplo', 'Descrição do balanço exemplo', '2024-05-19', '2024-05-19');
+(2, 2, 'Balanço Exemplo', 'Descrição do balanço exemplo', '2024-05-19', '2024-05-19'),
+(3, 9, 'Balanço Exemplo 3', 'Descrição do balanço exemplo', '2024-05-19', '2024-05-19'),
+(4, 9, 'Balanço Exemplo 3', 'Descrição do balanço exemplo', '2024-05-19', '2024-05-19'),
+(5, 9, 'Balanço Exemplo 5', 'Descrição do balanço exemplo', '2024-05-19', '2024-05-19');
 
 -- --------------------------------------------------------
 
@@ -74,7 +77,12 @@ INSERT INTO `lancamentos` (`id`, `num_atividade`, `c_debito`, `v_debito`, `c_cre
 (3, 1, '1002', 200.00, '2002', 200.00, 2, 'Contabilização exemplo 2', 12346, 0, 2),
 (4, 1, '1003', 300.00, '2003', 300.00, 3, 'Contabilização exemplo 3', 12347, 0, 3),
 (5, 1, '1004', 400.00, '2004', 400.00, 4, 'Contabilização exemplo 4', 12348, 0, 4),
-(6, 1, '1005', 500.00, '2005', 500.00, 5, 'Contabilização exemplo 5', 12349, 0, 5);
+(6, 1, '1005', 500.00, '2005', 500.00, 5, 'Contabilização exemplo 5', 12349, 0, 5),
+(7, 3, '1001', 100.00, '2001', 100.00, 1, 'Contabilização exemplo 1', 12345, 0, 1),
+(8, 3, '1002', 200.00, '2002', 200.00, 2, 'Contabilização exemplo 2', 12346, 0, 2),
+(9, 3, '1003', 300.00, '2003', 300.00, 3, 'Contabilização exemplo 3', 12347, 0, 3),
+(10, 3, '1004', 400.00, '2004', 400.00, 4, 'Contabilização exemplo 4', 12348, 0, 4),
+(11, 3, '1005', 500.00, '2005', 500.00, 5, 'Contabilização exemplo 5', 12349, 0, 5);
 
 -- --------------------------------------------------------
 
@@ -274,13 +282,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `balancos`
 --
 ALTER TABLE `balancos`
-  MODIFY `num_atividade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `num_atividade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `lancamentos`
 --
 ALTER TABLE `lancamentos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `planodecontas`
