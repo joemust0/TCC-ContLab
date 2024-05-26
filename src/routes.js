@@ -8,6 +8,8 @@ const lancamentosController = require('./controllers/lancamentosController');
 
 //rotas-plano de contas
 router.get('/pcontas', planocontasController.buscarTodos);
+router.get('/pcontas/:id', planocontasController.buscarFilhos);
+
 
 //rotas-usuarios
 router.get('/usuarios', usuariosController.exibUsuarios);
@@ -28,7 +30,8 @@ router.delete('/balancos/:id_usuario/:num_atividade', balancosController.apagarB
 router.post('/lancamentos', lancamentosController.adicionarLancamentos);
 router.get('/lancamentos/:num_atividade', lancamentosController.listarLancamentos);
 router.get('/lancamentos/:num_atividade/:num_nf', lancamentosController.buscarLancamentosNf);
-router.put('/lancamentos/:id', lancamentosController.atualizarLancamento);
+router.put('/lancamentos/:num_atividade/:num_nf', lancamentosController.atualizarLancamentos);
+router.delete('/lancamentos/:num_atividade/:num_nf', lancamentosController.apagarLancamento);
 router.delete('/lancamentos/:num_atividade', lancamentosController.apagarLancamentos);
 
 module.exports = router;

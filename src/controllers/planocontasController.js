@@ -5,7 +5,7 @@ module.exports = {
         let json = {error: '', result:[]};
 
         let contas = await planocontasService.buscarTodos();
-       
+
         for(let i in contas){
             json.result.push({
                 id: contas[i].id,
@@ -15,9 +15,26 @@ module.exports = {
                 conta: contas[i].conta,
                 conta_analitica: contas[i].conta_analitica
             });
-            
         }
         res.json(json);
     },
 
-}
+    buscarFilhos: async (req, res) => {
+        let json = {error: '', result:[]};
+
+        let id = req.params.id;
+        let contas = await planocontasService.buscarFilhos(id);
+
+        for(let i in contas){
+            json.result.push({
+                id: contas[i].id,
+                codigo: contas[i].TIPO,
+                estado: contas[i].estado,
+                titulo: contas[i].titulo,
+                conta: contas[i].conta,
+                conta_analitica: contas[i].conta_analitica
+            });
+        }
+        res.json(json);
+    }
+};

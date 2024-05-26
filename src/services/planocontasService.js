@@ -10,7 +10,16 @@ module.exports = {
                 });
 
         });
-    }
+    },
 
-   
+    buscarFilhos: (id) =>{
+        return new Promise((aceito, rejeitado) => {
+
+            db.query('SELECT * FROM planodecontas WHERE id = ?', [id], (error, results) =>{
+                if(error) {rejeitado(error); return; }
+                aceito(results);
+                });
+
+        });
+    }
 };
