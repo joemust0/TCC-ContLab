@@ -4,12 +4,12 @@ module.exports = {
     adicionarLancamentos: async (req, res) => {
         let json = { results: {}, error: '' };
 
-        let num_atividade = req.body.num_atividade;
+        let num_balanco = req.body.num_balanco;
         let lancamentos = req.body.lancamentos;
 
-        if (num_atividade && Array.isArray(lancamentos) && lancamentos.length > 0) {
+        if (num_balanco && Array.isArray(lancamentos) && lancamentos.length > 0) {
             try {
-                let results = await lancamentosService.adicionarLancamentos(num_atividade, lancamentos);
+                let results = await lancamentosService.adicionarLancamentos(num_balanco, lancamentos);
                 json.results = results;
             } catch (error) {
                 json.error = error.message;
@@ -25,9 +25,9 @@ module.exports = {
         let json = { error: '', results: [] };
 
         try {
-            let num_atividade = req.params.num_atividade;
+            let num_balanco = req.params.num_balanco;
 
-            let lancamentos = await lancamentosService.listarLancamentos(num_atividade);
+            let lancamentos = await lancamentosService.listarLancamentos(num_balanco);
             for (let lancamento of lancamentos) {
                 json.results.push(lancamento);
             }
@@ -42,10 +42,10 @@ module.exports = {
             let json = { error: '', results: [] };
     
             try {
-                let num_atividade = req.params.num_atividade;
+                let num_balanco = req.params.num_balanco;
                 let num_nf = req.params.num_nf;
 
-                let lancamento = await lancamentosService.buscarLancamentosNf(num_atividade, num_nf);
+                let lancamento = await lancamentosService.buscarLancamentosNf(num_balanco, num_nf);
                 if (lancamento && lancamento.length > 0) {
                     json.result = lancamento;
                 }else{
@@ -62,13 +62,13 @@ module.exports = {
         atualizarLancamentos: async (req, res) => {
             let json = { results: {}, error: '' };
         
-            let num_atividade = req.params.num_atividade;
+            let num_balanco = req.params.num_balanco;
             let num_nf = req.params.num_nf;
             let lancamentos = req.body.lancamentos;
         
-            if (num_atividade && num_nf && Array.isArray(lancamentos) && lancamentos.length > 0) {
+            if (num_balanco && num_nf && Array.isArray(lancamentos) && lancamentos.length > 0) {
                 try {
-                    let results = await lancamentosService.atualizarLancamentos(num_atividade, num_nf, lancamentos);
+                    let results = await lancamentosService.atualizarLancamentos(num_balanco, num_nf, lancamentos);
                     json.results = results;
                 } catch (error) {
                     json.error = error.message;
@@ -84,9 +84,9 @@ module.exports = {
             let json = { error: '', results: {} };
     
             try {
-                let num_atividade = req.params.num_atividade;
+                let num_balanco = req.params.num_balanco;
                 let num_nf = req.params.num_nf;
-                await lancamentosService.apagarLancamento(num_atividade, num_nf);
+                await lancamentosService.apagarLancamento(num_balanco, num_nf);
                 json.results = { message: 'Lançamento apagado com sucesso' };
             } catch (error) {
                 json.error = error;
@@ -98,8 +98,8 @@ module.exports = {
         let json = { error: '', results: {} };
 
         try {
-            let num_atividade = req.params.num_atividade;
-            await lancamentosService.apagarLancamentos(num_atividade);
+            let num_balanco = req.params.num_balanco;
+            await lancamentosService.apagarLancamentos(num_balanco);
             json.results = { message: 'Lançamento apagado com sucesso' };
         } catch (error) {
             json.error = error;

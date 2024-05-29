@@ -5,7 +5,7 @@ module.exports = {
     criarBalanco: (balanco) => {
         return new Promise((aceito, rejeitado) => {
             const sql = `
-                INSERT INTO balancos (id_usuario, nome_balanco, descricao_balanco, data_criacao, data_emissao)
+                INSERT INTO balancos (id_usuario, nome_balanco, descricao_balanco, data_criacao, data_modificacao)
                 VALUES (?, ?, ?, ?, ?)
             `;
             const values = [
@@ -13,7 +13,7 @@ module.exports = {
                 balanco.nome_balanco,
                 balanco.descricao_balanco,
                 balanco.data_criacao,
-                balanco.data_emissao
+                balanco.data_modificacao
             ];
 
             db.query(sql, values, (error, results) => {
@@ -26,7 +26,7 @@ module.exports = {
         });
     },
 
-    listarBalancos: (id_usuario) => {
+    listarBalancos: () => {
         return new Promise((aceito, rejeitado) => {
             const sql = `SELECT * FROM balancos`;
             db.query(sql, (error, results) => {
@@ -52,16 +52,11 @@ module.exports = {
         });
     },
 
-    buscarBalancoAtiv: (id_usuario, num_atividade) => {
+    buscarBalancoAtiv: (id_usuario, num_balanco) => {
         return new Promise((resolve, reject) => {
             
-            const sql = `
-            SELECT * FROM balancos
-            WHERE id_usuario = ? AND num_atividade = ?
-            `;
-             
-            db.query(sql, [id_usuario, num_atividade], 
-                (error, results) => {
+            const sql = `SELECT * FROM balancos WHERE id_usuario = ? AND num_balanco = ?`;
+            db.query(sql, [id_usuario, num_balanco], (error, results) => {
                 if (error) {
                     reject(error);
                     return;
@@ -71,23 +66,23 @@ module.exports = {
         });
     },
  
-    atualizarBalanco: (id_usuario, num_atividade, balanco) => {
+    atualizarBalanco: (id_usuario, num_balanco, balanco) => {
         return new Promise((aceito, rejeitado) => {
             
-            const { nome_balanco, descricao_balanco, data_criacao, data_emissao } = balanco;
+            const { nome_balanco, descricao_balanco, data_criacao, data_modificacao } = balanco;
 
             const sql = `
                 UPDATE balancos SET
-                nome_balanco = ?, descricao_balanco = ?, data_criacao = ?, data_emissao = ?
-                WHERE id_usuario = ? AND  num_atividade = ? 
+                nome_balanco = ?, descricao_balanco = ?, data_criacao = ?, data_modificacao = ?
+                WHERE id_usuario = ? AND  num_balanco = ? 
             `;
             const values = [
                 nome_balanco,
                 descricao_balanco,
                 data_criacao,
-                data_emissao,
+                data_modificacao,
                 id_usuario,
-                num_atividade
+                num_balanco
                ];
 
             db.query(sql, values, (error, results) => {
@@ -100,11 +95,11 @@ module.exports = {
         });
     },
 
-    apagarBalanco: (id_usuario, num_atividade,) => {
+    apagarBalanco: (id_usuario, num_balanco,) => {
         return new Promise((resolve, rejeitado) => {
             
-            db.query('DELETE FROM balancos WHERE id_usuario = ? AND num_atividade = ?',
-            [ id_usuario, num_atividade], 
+            db.query('DELETE FROM balancos WHERE id_usuario = ? AND num_balanco = ?',
+            [ id_usuario, num_balanco], 
             (error, results) => {
                 if (error) {rejeitado(error);
                     return;

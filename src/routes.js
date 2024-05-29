@@ -22,16 +22,16 @@ router.delete('/usuario/:id', usuariosController.apagarDados);
 router.post('/balancos', balancosController.criarBalanco);
 router.get('/balancos', balancosController.listarBalancos);
 router.get('/balancos/:id_usuario', balancosController.buscarBalanco);
-router.get('/balancos/:id_usuario/:num_atividade', balancosController.buscarBalancoAtiv);
-router.put('/balancos/:id_usuario/:num_atividade', balancosController.atualizarBalanco);
-router.delete('/balancos/:id_usuario/:num_atividade', balancosController.apagarBalanco);
+router.get('/balancos/:id_usuario/:num_balanco', balancosController.buscarBalancoAtiv);
+router.put('/balancos/:id_usuario/:num_balanco', balancosController.atualizarBalanco);
+router.delete('/balancos/:id_usuario/:num_balanco', balancosController.apagarBalanco);
 
 //rotas-lancamentos
 router.post('/lancamentos', lancamentosController.adicionarLancamentos);
-router.get('/lancamentos/:num_atividade', lancamentosController.listarLancamentos);
-router.get('/lancamentos/:num_atividade/:num_nf', lancamentosController.buscarLancamentosNf);
-router.put('/lancamentos/:num_atividade/:num_nf', lancamentosController.atualizarLancamentos);
-router.delete('/lancamentos/:num_atividade/:num_nf', lancamentosController.apagarLancamento);
-router.delete('/lancamentos/:num_atividade', lancamentosController.apagarLancamentos);
+router.get('/lancamentos/:num_balanco', lancamentosController.listarLancamentos);
+router.get('/lancamentos/:num_balanco/:num_nf', lancamentosController.buscarLancamentosNf);
+router.put('/lancamentos/:num_balanco/:num_nf', lancamentosController.atualizarLancamentos);
+router.delete('/lancamentos/:num_balanco/:num_nf', lancamentosController.apagarLancamento);
+router.delete('/lancamentos/:num_balanco', lancamentosController.apagarLancamentos);
 
 module.exports = router;
