@@ -5,9 +5,7 @@ module.exports = {
         return new Promise((aceito, rejeitado) => {
 
             db.query('SELECT * FROM planodecontas', (error, results) =>{
-                if(error) {
-                    rejeitado(error);
-                    return; }
+                if(error) {rejeitado(error); return; }
                 aceito(results);
                 });
 

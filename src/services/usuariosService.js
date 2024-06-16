@@ -1,3 +1,8 @@
+const exibirUs = require('../controllers/usuariosController')
+const buscarUsuario = require('../controllers/usuariosController')
+const criarUsuario =require('../controllers/usuariosController')
+const alterarDados =require('../controllers/usuariosController')
+const apagarDados = require('../controllers/usuariosController')
 const db = require('../db')
 
 module.exports = {
