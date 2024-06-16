@@ -73,7 +73,7 @@ module.exports = {
 
             const sql = `
                 UPDATE balancos SET
-                nome_balanco = ?, descricao_balanco = ?, data_criacao = ?, data_modificacao = ?
+                nome_balanco = ?, descricao_balanco = ?, data_criacao = ?, data_modificacao = CURRENT_TIMESTAMP
                 WHERE id_usuario = ? AND  num_balanco = ? 
             `;
             const values = [
