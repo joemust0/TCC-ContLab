@@ -2,13 +2,16 @@
   justify-content: center;
   align-items: center;
 }
-
 /* Estilos para a tela de cadastro */
+@media (max-width: 768px) {
+  /* Estilos específicos para telas menores */
+
+}
 
 .cadastro {
-  width: 400px;
-  padding: 20px;
-  background-color: grey;
+  width: 30%; /* Garante que ocupe toda a largura disponível */
+  padding: 20px; /* Espaçamento interno menor para telas menores */
+  background-color: rgb(128, 128, 128);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   /* Adicionando propriedades para centralizar */
