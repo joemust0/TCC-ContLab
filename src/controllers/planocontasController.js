@@ -9,9 +9,9 @@ module.exports = {
         for(let i in contas){
             json.result.push({
                 id: contas[i].id,
-                codigo: contas[i].tipo,
+                tipo: contas[i].tipo,
                 periodo_c: contas[i].periodo_c,
-                titulo: contas[i].titulo,
+                modelo: contas[i].modelo,
                 conta: contas[i].conta,
                 conta_analitica: contas[i].conta_analitica
             });
@@ -28,9 +28,9 @@ module.exports = {
         for(let i in contas){
             json.result.push({
                 id: contas[i].id,
-                codigo: contas[i].tipo,
+                tipo: contas[i].tipo,
                 periodo_c: contas[i].periodo_c,
-                titulo: contas[i].titulo,
+                modelo: contas[i].modelo,
                 conta: contas[i].conta,
                 conta_analitica: contas[i].conta_analitica
             });

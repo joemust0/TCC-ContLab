@@ -11,7 +11,7 @@ module.exports = {
     for(let i in exibirUs){
         json.results.push({
             cadastro: exibirUs[i].id,
-            nome: exibirUs[i].nome,
+            nome_completo: exibirUs[i].nome_completo,
             nickname: exibirUs[i].nickname,
             email: exibirUs[i].email,
             senha: exibirUs[i].senha,
@@ -32,7 +32,7 @@ module.exports = {
             if (usuario) {
                 json.result = {
                     cadastro: usuario.id,
-                    nome: usuario.nome,
+                    nome_completo: usuario.nome_completo,
                     nickname: usuario.nickname,
                     email: usuario.email,
                     senha: usuario.senha,
@@ -53,7 +53,7 @@ module.exports = {
     criarUsuario: async (req, res) => {
         let json = {result:{}, error:''};
 
-        let nome = req.body.nome;
+        let nome_completo = req.body.nome_completo;
         let nickname = req.body.nickname || null;
         let email = req.body.email;
         let senha = req.body.senha;
@@ -62,13 +62,13 @@ module.exports = {
 
        
 
-        if(nome && email && senha){
+        if(nome_completo && email && senha){
            
-            let UsuarioCodigo = await usuariosService.criarUsuario(nome, nickname, email, senha, instituicao,responsavel);
+            let UsuarioCodigo = await usuariosService.criarUsuario(nome_completo, nickname, email, senha, instituicao,responsavel);
            
             json.result = {
                 cadastro: UsuarioCodigo,
-                nome,
+                nome_completo,
                 nickname,
                 email,
                 senha,
@@ -88,7 +88,7 @@ module.exports = {
     let json = {result:{}, error:''};
 
     let cadastro = req.params.id;
-    let nome = req.body.nome;
+    let nome_completo = req.body.nome_completo;
     let nickname = req.body.nickname || null;
     let email = req.body.email;
     let senha = req.body.senha;
@@ -97,13 +97,13 @@ module.exports = {
 
    
 
-    if(cadastro && nome || nickname && email && senha || instituicao || responsavel){
+    if(cadastro && nome_completo && email && senha){
        
-        await usuariosService.alterarDados(cadastro, nome, nickname, email, senha, instituicao, responsavel );
+        await usuariosService.alterarDados(cadastro, nome_completo, email, senha );
        
         json.result = {
             cadastro,
-            nome,
+            nome_completo,
             nickname,
             email,
             senha,
@@ -119,19 +119,15 @@ module.exports = {
 },
 
 //excluir dados do usuario
-apagarDados: async (req, res) => {
-    let json = { error: '', results: {} };
+apagarDados: async(req, res) => {
+    let json = {error:'', results:{}};
 
-    try {
-        await usuariosService.apagarDados(req.params.id);
-        json.results.message = 'Usuário apagado com sucesso.';
-    } catch (error) {
-        json.error = 'Erro ao apagar o usuário.';
-    }
+    await usuariosService.apagarDados(req.params.id);
+
 
     res.json(json);
+    
 }
-
 
 
 }

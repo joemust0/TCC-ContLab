@@ -89,14 +89,16 @@ module.exports = {
         let id_usuario = req.params.id_usuario;
         let nome_balanco= req.body.nome_balanco ||null;
         let descricao_balanco= req.body.descricao_balanco || null;
-        let data_criacao= req.body.data_criacao
+        let data_criacao= req.body.data_criacao || null;
+        let data_modificacao= req.body.data_modificacao 
         
         if (id_usuario && num_balanco) {
             try {
                 const balanco = {
                     nome_balanco,
                     descricao_balanco,
-                    data_criacao
+                    data_criacao,
+                    data_modificacao
                 };
                 await balancosService.atualizarBalanco(id_usuario, num_balanco, balanco);
                 json.results = { 
@@ -104,7 +106,7 @@ module.exports = {
                     nome_balanco,
                     descricao_balanco,
                     data_criacao,
-                    data_modificacao: new Date() // para atualiza a data sozinho.
+                    data_modificacao
                 };
             } catch (error) {
                 json.error = error;

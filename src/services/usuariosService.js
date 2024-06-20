@@ -35,11 +35,11 @@ module.exports = {
     },
     
 
-    criarUsuario: (nome, nickname, email, senha, instituicao, responsavel) =>{
+    criarUsuario: (nome_completo, nickname, email, senha, instituicao, responsavel) =>{
         return new Promise((aceito, rejeitado) => {
 
-            db.query('INSERT INTO usuarios (nome, nickname, email, senha, instituicao, responsavel) VALUES (?, ?, ?, ?, ?, ?) ',
-            [nome, nickname, email, senha, instituicao, responsavel],
+            db.query('INSERT INTO usuarios (nome_completo, nickname, email, senha, instituicao, responsavel) VALUES (?, ?, ?, ?, ?, ?) ',
+            [nome_completo, nickname, email, senha, instituicao, responsavel],
             (error, results) =>{
                if(error) {rejeitado(error); return; }
                aceito(results.insertId);
@@ -50,11 +50,11 @@ module.exports = {
         });
     },
 
-    alterarDados: (id, nome, nickname, email, senha, instituicao, responsavel) =>{
+    alterarDados: (id, nome_completo, nickname, email, senha, instituicao, responsavel) =>{
         return new Promise((aceito, rejeitado) => {
 
-            db.query('UPDATE usuarios SET nome = ?, nickname = ?, email = ?, senha = ?, instituicao = ?, responsavel = ? WHERE id = ?',
-            [nome, nickname, email, senha, instituicao, responsavel, id],
+            db.query('UPDATE usuarios SET nome_completo = ?, nickname = ?, email = ?, senha = ?, instituicao = ?, responsavel = ? WHERE id = ?',
+            [nome_completo, nickname, email, senha, instituicao, responsavel, id],
             (error, results) =>{
                if(error) {rejeitado(error); return; }
                aceito(results);
