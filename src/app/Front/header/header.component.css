@@ -1,4 +1,15 @@
-
+*{
+  position: relative;
+ }
+ 
+h1{
+margin-left: 150px;
+  font-size: 18pt;
+  font-family: 'Iceland', sans-serif;
+  color: blueviolet
+ 
+}
+ 
 .expanded {
   left: calc(100% - 250px);
   width: calc(100% - 250px);

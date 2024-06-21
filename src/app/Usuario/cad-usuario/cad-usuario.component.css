@@ -1,41 +1,42 @@
+/* Reset básico para garantir consistência */
 * {
-  justify-content: center;
-  align-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
 }
+
 /* Estilos para a tela de cadastro */
-@media (max-width: 768px) {
-  /* Estilos específicos para telas menores */
-
-}
-
 .cadastro {
-  width: 30%; /* Garante que ocupe toda a largura disponível */
-  padding: 20px; /* Espaçamento interno menor para telas menores */
+  width: 80%; /* Utilizando largura em porcentagem para ajustar à largura da tela */
+  max-width: 600px; /* Limitando a largura máxima para melhor legibilidade */
+  padding: 15px;
   background-color: rgb(128, 128, 128);
-  border-radius: 8px;
+  border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* Adicionando propriedades para centralizar */
+  /* Centralizando vertical e horizontalmente */
   position: fixed;
-  top: 50%;
+  top: 47%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .cad-container {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .cad-container input {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  border: 1px solid blue;
-  border-radius: 5px;
+  padding: 5px;
+  margin-top: 2px;
+  margin-bottom: 5px;
+  border: 1px solid rgb(90, 235, 168);
+  border-radius: 9px;
 }
 
 .btn {
   text-align: center;
+  margin-top: 10px; /* Espaço acima dos botões para melhor legibilidade */
 }
 
 .btn button {
@@ -54,4 +55,17 @@
 .btn-can {
   background-color: #f44336;
   color: white;
+}
+
+/* Media query para telas menores que 768px (tablets e smartphones) */
+@media (max-width: 768px) {
+  .cadastro {
+    width: 90%; /* Aumentando a largura para ocupar mais espaço disponível */
+    padding: 15px; /* Reduzindo um pouco o espaçamento interno */
+  }
+
+  .btn button {
+    padding: 8px 16px; /* Reduzindo um pouco o padding dos botões */
+    font-size: 14px; /* Reduzindo o tamanho da fonte nos botões para melhorar a legibilidade */
+  }
 }
