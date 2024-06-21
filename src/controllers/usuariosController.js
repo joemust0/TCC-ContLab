@@ -11,7 +11,7 @@ module.exports = {
     for(let i in exibirUs){
         json.results.push({
             cadastro: exibirUs[i].id,
-            nome_completo: exibirUs[i].nome_completo,
+            nome: exibirUs[i].nome,
             nickname: exibirUs[i].nickname,
             email: exibirUs[i].email,
             senha: exibirUs[i].senha,
@@ -32,7 +32,7 @@ module.exports = {
             if (usuario) {
                 json.result = {
                     cadastro: usuario.id,
-                    nome_completo: usuario.nome_completo,
+                    nome_completo: usuario.nome,
                     nickname: usuario.nickname,
                     email: usuario.email,
                     senha: usuario.senha,
@@ -53,7 +53,7 @@ module.exports = {
     criarUsuario: async (req, res) => {
         let json = {result:{}, error:''};
 
-        let nome_completo = req.body.nome_completo;
+        let nome = req.body.nome;
         let nickname = req.body.nickname || null;
         let email = req.body.email;
         let senha = req.body.senha;
@@ -62,13 +62,13 @@ module.exports = {
 
        
 
-        if(nome_completo && email && senha){
+        if(nome && email && senha){
            
-            let UsuarioCodigo = await usuariosService.criarUsuario(nome_completo, nickname, email, senha, instituicao,responsavel);
+            let UsuarioCodigo = await usuariosService.criarUsuario(nome, nickname, email, senha, instituicao,responsavel);
            
             json.result = {
                 cadastro: UsuarioCodigo,
-                nome_completo,
+                nome,
                 nickname,
                 email,
                 senha,
@@ -88,7 +88,7 @@ module.exports = {
     let json = {result:{}, error:''};
 
     let cadastro = req.params.id;
-    let nome_completo = req.body.nome_completo;
+    let nome = req.body.nome;
     let nickname = req.body.nickname || null;
     let email = req.body.email;
     let senha = req.body.senha;
@@ -97,13 +97,13 @@ module.exports = {
 
    
 
-    if(cadastro && nome_completo && email && senha){
+    if(cadastro && nome && email && senha){
        
-        await usuariosService.alterarDados(cadastro, nome_completo, email, senha );
+        await usuariosService.alterarDados(cadastro, nome, email, senha );
        
         json.result = {
             cadastro,
-            nome_completo,
+            nome,
             nickname,
             email,
             senha,
