@@ -12,7 +12,7 @@ router.get('/pcontas/:id', planocontasController.buscarFilhos);
 
 
 //rotas-usuarios
-router.get('/usuarios', usuariosController.exibUsuarios);
+router.get('/usuario', usuariosController.exibUsuarios);
 router.get('/usuario/:id', usuariosController.buscarUsuario);
 router.post('/usuario', usuariosController.criarUsuario);
 router.put('/usuario/:id', usuariosController.alterarDados);
