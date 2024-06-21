@@ -17,6 +17,7 @@ router.get('/usuario/:id', usuariosController.buscarUsuario);
 router.post('/usuario', usuariosController.criarUsuario);
 router.put('/usuario/:id', usuariosController.alterarDados);
 router.delete('/usuario/:id', usuariosController.apagarDados);
+router.post('/usuario/login', usuariosController.login);
 
 //rotas-balancos
 router.post('/balancos', balancosController.criarBalanco);
