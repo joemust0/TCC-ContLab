@@ -1,75 +1,16 @@
-<!-- Acabar de mexer nos botões do login-->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/7a75a377e6.ts" crossorigin="anonymous"></script>
-    <title>Login</title>
-</head>
-<body>
-    <div class="container">
-        <div class="content first-content"> <!-- começa o first-content-->
-        <div class="first-column">
-            <h2 class="title title-primary">Bem vindo de volta</h2>
-            <p class="description"> Continue conectado conosco!</p>
-            <p class="description"> Entre com suas informaçõoes pessoais</p>
-            <button class="btn btn-primary">Entrar</button>
-
-        </div><!-- acaba o first-column-->
-        <div class="second-column">
-            <h2 class="title title-second">Criar conta</h2>
-            <div class="midias-sociais">
-                <ul class="list-social-media">
-                    <li>
-                        <a href="#"><i class="fa-brands fa-facebook">Facebook</i></a>
-                    </li>
-                    <li>
-                        <a href="#">Google+</a>
-                    </li>
-                    <li>
-                        <a href="#">Linkedln</a>
-                    </li>
-                </ul>
-            </div> <!-- Midias sociais-->
-            <p class="description">Ou utilize seu próprio e-mail para o registro</p>
-            <form class="form">
-                <input type="text" placeholder="nome">
-                <input type="email" placeholder="e-mail">
-                <input type="password" placeholder="senha">
-                <button class="btn btn-second">Resgistrar-se</button>
-
-            </form>
-        </div><!-- acaba o second-column-->
-
-        </div><!-- acaba o first-content-->
-
-        <div class="content second-content"> <!-- começa o second-content-->
-
-            <div class="first-column"> <!--começa o first-column-->
-                <h2 class="title">Olá, amigo!</h2>
-                <p class="description"> Entre com suas informaçõoes pessoais</p>
-                <p class="description"> E comece sua jornada conosco</p>
-                <button class="btn">inscrever-se</button>
-    
-            </div><!-- acaba o first-column-->
-            <div class="second-column">
-                <h2 class="title">Entrar</h2>
-                <div class="midias-sociais">
-                    <ul>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Google+</a></li>
-                        <li><a href="#">Linkedln</a></li>
-                    </ul>
-                </div> <!-- Midias sociais-->
-                <p class="description">Ou utilize seu próprio e-mail</p>
-                <form class="form">
-                    <input type="email" placeholder="e-mail">
-                    <input type="password" placeholder="senha">
-                    <button class="btn">Entrar</button>
-    
-                </form>
-            </div><!-- Acaba o second-column-->
-            
-        </div><!-- acaba o second-content-->
-
+<div class="login">
+  <h2>Faça seu login</h2>
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <div class="login-container">
+      <h4>E-mail:</h4>
+      <input type="email" [(ngModel)]="email" name="email" alt="E-mail" placeholder="Digite seu E-mail" required/>
+      <h4>Senha</h4>
+      <input type="password" [(ngModel)]="senha" name="senha" alt="senha" placeholder="Digite sua senha" required />
+    </div>
+    <div class="login-btn">
+      <button type="submit" alt="Logar">Logar</button>
+      <button type="button" (click)="CadUsuario()" alt="Criar Cadastro">Criar Cadastro</button>
+    </div>
+  </form>
+  <p *ngIf="mensagemErro" class="erro">{{ mensagemErro }}</p>
+</div>

@@ -1,42 +1,64 @@
-/* Reset básico para garantir consistência */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
-/* Estilos para a tela de cadastro */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+
+}
+
 .cadastro {
-  width: 80%; /* Utilizando largura em porcentagem para ajustar à largura da tela */
-  max-width: 600px; /* Limitando a largura máxima para melhor legibilidade */
+  max-width: 80%;
   padding: 15px;
   background-color: rgb(128, 128, 128);
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* Centralizando vertical e horizontalmente */
-  position: fixed;
-  top: 47%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+  position: relative;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 15em;
+  margin-left: 10em;
 }
 
 .cad-container {
-  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 600px; /* ajuste a largura máxima para 600px */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cad-container > div {
+  flex-basis: 45%; /* ajuste a largura para 45% */
+  margin: 10px;
 }
 
 .cad-container input {
   width: 100%;
   padding: 5px;
-  margin-top: 2px;
-  margin-bottom: 5px;
+  margin-top: 3px;
+  margin-bottom: 7px;
   border: 1px solid rgb(90, 235, 168);
-  border-radius: 9px;
+  border-radius: 5px;
 }
 
 .btn {
   text-align: center;
-  margin-top: 10px; /* Espaço acima dos botões para melhor legibilidade */
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .btn button {
@@ -45,27 +67,37 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  background-color: rgb(90, 235, 168);
+  color: white;
+  font-weight: bold;
 }
 
-.btn-cad {
-  background-color: #4caf50;
-  color: white;
-}
-
-.btn-can {
-  background-color: #f44336;
-  color: white;
+.btn button:hover {
+  background-color: rgb(70, 215, 148);
 }
 
 /* Media query para telas menores que 768px (tablets e smartphones) */
 @media (max-width: 768px) {
   .cadastro {
-    width: 90%; /* Aumentando a largura para ocupar mais espaço disponível */
-    padding: 15px; /* Reduzindo um pouco o espaçamento interno */
+    max-width: 90%;
+    padding: 10px;
   }
 
   .btn button {
-    padding: 8px 16px; /* Reduzindo um pouco o padding dos botões */
-    font-size: 14px; /* Reduzindo o tamanho da fonte nos botões para melhorar a legibilidade */
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+/* Media query para telas menores que 480px (smartphones) */
+@media (max-width: 480px) {
+  .cadastro {
+    max-width: 95%;
+    padding: 5px;
+  }
+
+  .btn button {
+    padding: 6px 12px;
+    font-size: 12px;
   }
 }

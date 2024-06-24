@@ -1,0 +1,10 @@
+<h1>TESTE API</h1>
+
+<div>
+  <h2>Lista de Contas</h2>
+  <ul>
+    <li *ngFor="let pConta of pContasList$ | async">
+      {{ pConta.id }} - {{ pConta.tipo }} - {{ pConta.periodo_c }} - {{ pConta.modelo }} - {{ pConta.conta }}
+    </li>
+  </ul>
+</div>

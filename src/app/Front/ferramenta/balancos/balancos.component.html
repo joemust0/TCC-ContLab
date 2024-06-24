@@ -1,0 +1,101 @@
+<div class="balanco-table">
+  <div class="table-at">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="4" class="title">Ativo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th colspan="2" class="sub-title">Ativo Circulante</th>
+          <th colspan="2">Total</th>
+        </tr>
+        <tr *ngFor="let nome of getObjectKeys(agruparLancamentos(lancamentosAtivoCirculante))">
+          <td>{{ nome }}</td>
+          <td>{{ agruparLancamentos(lancamentosAtivoCirculante)[nome] | currency:'BRL' }}</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="sub-title">Total Ativo Circulante</td>
+          <td colspan="2" class="sub-total-value">{{ getTotalAtivoCirculante() | currency:'BRL' }}</td>
+        </tr>
+        <tr>
+          <th colspan="2" class="sub-title">Ativo Não Circulante</th>
+          <th colspan="2">Total</th>
+        </tr>
+        <tr *ngFor="let nome of getObjectKeys(agruparLancamentos(lancamentosAtivoNCirculante))">
+          <td>{{ nome }}</td>
+          <td>{{ agruparLancamentos(lancamentosAtivoNCirculante)[nome] | currency:'BRL' }}</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="sub-title">Total Ativo Não Circulante</td>
+          <td colspan="2" class="sub-total-value">{{ getTotalAtivoNaoCirculante() | currency:'BRL' }}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2" class="total-title">Total Ativo</td>
+          <td colspan="2" class="total-value">{{ getTotalAtivos() | currency:'BRL' }}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div class="pas-pat">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="4" class="title">Passivo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th colspan="2" class="sub-title">Passivo Circulante</th>
+          <th colspan="2">Total</th>
+        </tr>
+        <tr *ngFor="let nome of getObjectKeys(agruparLancamentos(lancamentosPassivoCirculante))">
+          <td>{{ nome }}</td>
+          <td>{{ agruparLancamentos(lancamentosPassivoCirculante)[nome] | currency:'BRL' }}</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="sub-title">Total Passivo Circulante</td>
+          <td colspan="2" class="sub-total-value">{{ getTotalPassivoCirculante() | currency:'BRL' }}</td>
+        </tr>
+        <tr>
+          <th colspan="2" class="sub-title">Passivo Não Circulante</th>
+          <th colspan="2">Total</th>
+        </tr>
+        <tr *ngFor="let nome of getObjectKeys(agruparLancamentos(lancamentosPassivoNCirculante))">
+          <td>{{ nome }}</td>
+          <td>{{ agruparLancamentos(lancamentosPassivoNCirculante)[nome] | currency:'BRL' }}</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="sub-title">Total Passivo Não Circulante</td>
+          <td colspan="2" class="sub-total-value">{{ getTotalPassivoNaoCirculante() | currency:'BRL' }}</td>
+        </tr>
+        <tr>
+          <th colspan="2" class="sub-title">Patrimônio Líquido</th>
+          <th colspan="2">Total</th>
+        </tr>
+        <tr *ngFor="let nome of getObjectKeys(agruparLancamentos(lancamentosPatrimonioLiquido))">
+          <td>{{ nome }}</td>
+          <td>{{ agruparLancamentos(lancamentosPatrimonioLiquido)[nome] | currency:'BRL' }}</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="sub-title">Total Patrimônio Líquido</td>
+          <td colspan="2" class="sub-total-value">{{ getTotalPatrimonioLiquido() | currency:'BRL' }}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2" class="total-title">Total Passivo e Patrimônio Líquido</td>
+          <td colspan="2" class="total-value">{{ getTotalPassivos() | currency:'BRL' }}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
+
+<div *ngIf="getTotalAtivos() !== getTotalPassivos()" class="alert alert-danger">
+  Os totais de ativo e passivo não batem!
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="areaUser">
+    <img src="/src/assets/logo contilab.jpeg" alt="Logo CONTLAB">
+    <h1>CONTLAB</h1>
+    <p>Seu Laboratório Contábil</p>
+    <div class="user-info">
+      <label for="usuario">Usuário:</label>
+      <p id="usuario">{{ usuario.nome }}</p>
+      <label for="email">Email:</label>
+      <p id="email">{{ usuario.email }}</p>
+      <label for="instituicao">Instituição:</label>
+      <p id="instituicao">{{ usuario.instituicao }}</p>
+      <label for="responsavel">Responsável:</label>
+      <p id="responsavel">{{ usuario.responsavel }}</p>
+    </div>
+    <div class="btn-comandos-userArea">
+      <button (click)="edit()">Editar</button>
+      <button (click)="sair()">Sair</button>
+    </div>
+  </div>
+  <div class="areaUser-task">
+    <h1>Veja seus balanços:</h1>
+    <table class="taskUser">
+      <thead>
+        <tr>
+          <th>balanço 1</th>
+          <th>balanço 2</th>
+          <th>balanço 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+         <td>balanço 4</td>
+          <td>balanço 5</td>
+          <td>balanço 6</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

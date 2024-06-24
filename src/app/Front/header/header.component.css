@@ -1,57 +1,18 @@
 *{
   position: relative;
  }
- 
+
 h1{
 margin-left: 150px;
   font-size: 18pt;
   font-family: 'Iceland', sans-serif;
   color: blueviolet
- 
-}
- 
-.expanded {
-  left: calc(100% - 250px);
-  width: calc(100% - 250px);
-  /* Outros estilos quando a barra lateral estiver expandida */
 }
 
-.home{
-  display: block;
-  position: relative;
-  top: 0;
-  left: 78px;
-  margin-left: calc(100% - 78px);
-  width: calc(100% - 78px);
-  min-width: 100vh;
-  background-color: #01102C;
-  z-index: 6;
-  transition: var(--transition);
-  font-family: "iceland", sans-serif;
-}
-.sidebar.expand ~ .home{
-  left: calc(100% - 250px);
-  width: calc(100% - 250px);
-  transition: var(--transition);
+img{
+  margin-left: 10.0em;
+  margin-top: 1em;
+  max-width: 7.5em;
+  border-radius: 20px;
 }
 
-.home p{
-  font-size: 20px;
-  font-weight: 500;
-  color: #000;
-  display: inline-block;
-  margin: 20px;
-  white-space: nowrap;
-}
-p{
-  text-align: center;
-  font-size: 18pt;
-  font-family: 'Iceland', sans-serif;
-  color: blueviolet
-
-
-}
-*{
-  position: relative;
-  background-color: #01102C;  
-}

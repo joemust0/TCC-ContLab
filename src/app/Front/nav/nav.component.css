@@ -1,6 +1,6 @@
 *{
   --color-hover: rgba(32, 59,232);
-  --transition: all 0.2s ease 
+  --transition: all 0.2s ease
 }
 .sidebar{
 position:fixed;
@@ -28,11 +28,14 @@ transition: var(--transition);
   position: relative;
 }
 .nav-header .logo{
-color: #000;
-font-size: 23px;
+  color: rgb(117, 236, 181);
+  background-color: #011d3a;
+font-size: 3.0em;
 font-weight: 600;
 opacity: 0;
 transition: var(--transition);
+padding: 10px;
+border-radius: 15px;
 }
 .sidebar.expand .nav-header .logo{
   opacity: 1;
@@ -153,7 +156,7 @@ padding: 8px 16px;
 }
 .theme-wrapper .theme-icon{/*tela de tema escuro, css da tela */
   font-size: 20px;
-  color: #000;   
+  color: #000;
   display: none;
   transition: var(--transition);
   transition: background-color 0.5s ease;
@@ -162,7 +165,7 @@ padding: 8px 16px;
   display: block;
 
 }
-.theme-wrapper p{                       
+.theme-wrapper p{
   font-size: 16px;
   color: #000;
   font-weight: 400;

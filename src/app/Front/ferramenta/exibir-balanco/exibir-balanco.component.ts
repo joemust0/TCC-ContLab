@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ExibirBalancoComponent implements OnInit {
   @Input() lancamentos: any[] = [];
   @Input() tipoLancamento: string = '';
-  mostrarBalanco: boolean = false; 
+  mostrarBalanco: boolean = false;
 
   constructor(){}
 
@@ -16,5 +16,9 @@ export class ExibirBalancoComponent implements OnInit {
 
   adicionarLancamento(novoLancamento: any) {
     this.lancamentos.push(novoLancamento);
+  }
+
+  handleMostrarBalancoChange(event: any) {
+    this.mostrarBalanco = event;
   }
 }

@@ -1,13 +1,12 @@
-*{
-  position: relative;  
-  
-}
+
 p{
   text-align: center;
-  font-size: 10pt;
+  font-size: 18pt;
   font-family: 'Iceland';
-
 }
 
-
+label{
+  margin: 5px;
+  padding: 5px;
+}
 

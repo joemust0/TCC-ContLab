@@ -1,53 +1,44 @@
-  <nav>
-    <section class="sidebar" [ngClass]="{'ocultar' : ocultar}">
-    <div class="nav-header">
-      <p class="logo">Área de estudos</p>
-      <i class="bx bx-menu-alt-right btn-menu"></i>
-      </div>
-      <ul class="nav-routes">
-        <li>
-        <i class='bx bx-search-alt-2 busca-btn'></i>
-        <input type="text" placeholder="Buscar...">
+<nav>
+  <section class="sidebar" [ngClass]="{'ocultar' : ocultar}">
+  <div class="logo">
+    <!-- <img [ngClass]="{'ocultar': ocultar}" src="./../../../assets/logo contilab.jpeg" alt="logo ContLab"> -->
+  </div>
+  <div class="nav-header">
+    <p class="logo">ContLab</p>
+    <i class="bx bx-menu-alt-right btn-menu"></i>
+    </div>
+    <ul class="nav-routes">
+      <li>
+      <i class='bx bx-search-alt-2 busca-btn'></i>
+      <input type="text" placeholder="Buscar...">
+    </li>
+      <li class="routes" routerLink="">
+             <i class='bx bx-home'></i>
+        <span class="text" [ngClass]="{'hidden-text': ocultar}">Início</span>
       </li>
-        <li class="routes" routerLink="">
-               <i class='bx bx-home'></i>
-          <span class="text" [ngClass]="{'hidden-text': ocultar}">Início</span>
-        </li>
-        <li class="routes" routerLink="/lançamentos">
-          <i class='bx bx-spreadsheet'></i>
-          <span class="text" [ngClass]="{'hidden-text': ocultar}">Lançamentos</span>
-        </li>
-         <li class="routes" routerLink="/atividade">
-          <i Class="bx bxs-bar-chart-alt-2"></i>
-          <span class="text" [ngClass]="{'hidden-text': ocultar}">Balanços</span>
-        </li>
-        <li class="routes" routerLink="/balanco">
-          <i class='bx bx-buildings'></i>
-          <span class="text" [ngClass]="{'hidden-text': ocultar}">Contole</span>
-        </li>
-        <li class="routes" routerLink="/login">
-          <i class='bx bx-user'></i>
-          <span class="text" [ngClass]="{'hidden-text': ocultar}">Perfil</span>
-        </li>
-        <li class="routes" routerLink="/testes">
-          <i class='bx bx-cog' ></i>
-          <span class="text" [ngClass]="{'hidden-text': ocultar}">Testes desenvolvimento</span>
-        </li>
-        <li class="routes" routerLink="/login2">
-          <i class='bx bx-user'></i>
-          <span class="text" [ngClass]="{'hidden-text': ocultar}">Perfil teste</span>
-        </li>
-        <li class="routes" routerLink="/areaUser">
-          <i class='bx bx-user'></i>
-          <span class="text" [ngClass]="{'hidden-text': ocultar}">Area teste</span>
-        </li>
-      </ul>
-      <div class="theme-wrapper">
-        <i class='bx bxs-moon theme-icon'></i>
-        <p>Tema escuro</p>
-        <div class="theme-btn">
-          <span class="theme-ball"></span>
-        </div>
-      </div>
-    </section>
-  
+      <li class="routes" routerLink="/lançamentos">
+        <i class='bx bx-spreadsheet'></i>
+        <span class="text" [ngClass]="{'hidden-text': ocultar}">Lançamentos</span>
+      </li>
+       <li class="routes" routerLink="/task">
+        <i Class="bx bxs-bar-chart-alt-2"></i>
+        <span class="text" [ngClass]="{'hidden-text': ocultar}">Balanços</span>
+      </li>
+      <li class="routes" routerLink="/balancos">
+        <i class='bx bx-buildings'></i>
+        <span class="text" [ngClass]="{'hidden-text': ocultar}">Contole</span>
+      </li>
+      <li class="routes" routerLink="/login">
+        <i class='bx bx-user'></i>
+        <span class="text" [ngClass]="{'hidden-text': ocultar}">Perfil</span>
+      </li>
+      <li class="routes" routerLink="/areaUser">
+        <i class='bx bx-user'></i>
+        <span class="text" [ngClass]="{'hidden-text': ocultar}">Area teste</span>
+      <!-- </li>
+      <li class="routes" routerLink="/teste">
+        <i class='bx bx-user'></i>
+        <span class="text" [ngClass]="{'hidden-text': ocultar}">teste</span>
+      </li> -->
+    </ul>
+</section>

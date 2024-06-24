@@ -1,23 +1,23 @@
 <div class="editUser">
-    <h2>Edição</h2>
-    <div class="editCad-container">
-        <div class="btn-edit">
-            <button [ngClass]="editavel ? 'ocultar-btn' : 'exibir-btn'" alt="Alterar" (click)="ocultarCampo()">Alterar</button><!-- Não implementado -->
-            <button [ngClass]="editavel ? 'exibir-btn':'ocultar-btn'" alt="Salvar" (click)="alterarCampo()">Salvar</button><!-- Não implementado -->
-            <button alt="Voltar">Voltar</button><!-- Não implementado -->
-        </div>
-        <div class="edit" ngForm="Cadastro">
-            <label>Nome Completo:</label>
-            <input type="text" alt="Nome" id="Nome" [(ngModel)]="usuario.Nome" [readonly]="!editavel" />
-            <label>Apelido:</label>
-            <input type="text" alt="Apelido" id="Nickname" [(ngModel)]="usuario.Nickname" [readonly]="!editavel" />
-            <label>Digite seu e-mail:</label>
-            <input type="email" alt="E-mail" id="Email" [(ngModel)]="usuario.Email" [readonly]="!editavel" />
-            <label>Instituição:</label>
-            <input type="text" alt="Instituição" id="Instituicao" [(ngModel)]="usuario.Instituicao" />
-            <label>Responsável:</label>
-            <input type="text" alt="Responsável" id="Responsavel" [(ngModel)]="usuario.Resposavel" />
-            
-        </div>
-    </div>
+  <h2>Edição</h2>
+  <div class="editCad-container">
+      <div class="btn-edit">
+          <!-- <button [ngClass]="editavel ? 'ocultar-btn' : 'exibir-btn'" alt="Alterar" (click)="ocultarCampo()">Alterar</button><!-- Não implementado -->
+          <button [ngClass]="editavel ? 'exibir-btn':'ocultar-btn'" alt="Salvar" (click)="alterarCampo()">Salvar</button><!-- Não implementado -->
+          <button alt="Voltar">Voltar</button><!-- Não implementado -->
+      </div>
+      <div class="edit" ngForm="Cadastro">
+          <label>Nome Completo:</label>
+          <input type="text" alt="Nome" id="Nome" [(ngModel)]="usuario.nome" [readonly]="!editavel" />
+          <label>Apelido:</label>
+          <input type="text" alt="Apelido" id="Nickname" [(ngModel)]="usuario.nickname" [readonly]="!editavel" />
+          <label>Digite seu e-mail:</label>
+          <input type="email" alt="E-mail" id="Email" [(ngModel)]="usuario.email" [readonly]="!editavel" />
+          <label>Instituição:</label>
+          <input type="text" alt="Instituição" id="Instituicao" [(ngModel)]="usuario.instituicao" />
+          <label>Responsável:</label>
+          <input type="text" alt="Responsável" id="Responsavel" [(ngModel)]="usuario.responsavel" /> -->
+
+      </div>
+  </div>
 </div>

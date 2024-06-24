@@ -1,8 +1,7 @@
 .ocultar-btn {
-    display: none;
-  }
+  display: none;
+}
 
-  .exibir-btn {
-    display: flex;
-  }
-  
+.exibir-btn {
+  display: flex;
+}

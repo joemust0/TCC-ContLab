@@ -1,0 +1,94 @@
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #d7d9db;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.areaUser {
+  background-color: #011d3a;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 500px;
+  margin-bottom: 20px;
+  color: rgb(117, 236, 181);
+}
+
+.areaUser h1 {
+  color: rgb(117, 236, 181);
+  margin-bottom: 20px;
+}
+
+.areaUser img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.areaUser label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.areaUser p {
+  margin-bottom: 10px;
+}
+
+.btn-comandos-userArea {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-comandos-userArea button {
+  color: #011d3a;
+  background-color:rgb(117, 236, 181);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-comandos-userArea button:hover {
+  background-color: #45a049;
+}
+
+.areaUser-task {
+  background-color: #011d3a;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 500px;
+  margin-top: 20px;
+}
+
+.areaUser-task h1 {
+  color: rgb(117, 236, 181);
+  margin-bottom: 20px;
+}
+
+.taskUser {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: rgb(117, 236, 181);
+}
+
+.taskUser th,
+.taskUser td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.taskUser th {
+  color: rgb(117, 236, 181);
+}

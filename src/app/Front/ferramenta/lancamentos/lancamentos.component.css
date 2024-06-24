@@ -1,113 +1,188 @@
 button{
-    font-size: 15pt;
-    padding: 5px;
-    margin: 10px;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin: 1rem;
   border-radius: 15px;
-  }
-  
-  label{
-    height: 50px;
-  font-size: 15pt;
-  margin: 5px;
-  font-weight: bold;
-  
-  }
-  
-  table{
-    font-size: 12pt;
-    content: none;
-    justify-items: center;
-    align-items: center;
+}
+
+label{
+  height: 50px;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+font-weight: bold;
+
+}
+
+table{
+  font-size: 2rem;
+  padding: 0.5rem;
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+  content: none;
+  justify-items: center;
+  align-items: center;
   border: 2px double green;
-    position: center;
-    padding: 5px;
-    border-radius: 12px;
-    background-color: rgba(176, 212, 121, 0.651)
-  }
+  position: center;
+  border-radius: 12px;
+  background-color: rgba(3, 168, 53, 0.651);
+}
 
-  tbody{
-    padding: 5px;
-    justify-content: center;
-    align-items: center;
-    border: solid 2px black;
-    border-radius: 12px;
-  }
-
-  td{
-    border: 2px solid green;
-    border-radius: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    align-items: center;
-    justify-content: center;
-  
-  }
-
-  th{
+tbody{
   padding: 5px;
-  }
-
-  select{
-    font-size: 15pt;
-    font-family: 'Poppins', sans-serif;
-    border: none;
-    outline: none;
-    border-radius: 15px;
-    box-shadow: 2px -3px lightskyblue;
-    margin: 10px;
-    padding: 5px;
-    height: 40px;
-    width: 350px;
-    align-items: center;
   justify-content: center;
-  }
-  
-  input{
-    font-size: 20pt;
-    margin: 10px;
-    padding: 5px;
-    width: 200px;
-    height: 40px;
-    border: none;
-    outline: none;
-    border-radius: 15px;
-    box-shadow: 2px 1px black ;
+  align-items: center;
+  border: solid 2px black;
+  border-radius: 12px;
+}
+
+td{
+  border: 2px solid green;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: center;
+  justify-content: center;
+  display: relative; /* Make the td a flex container */
+}
+.cbLanc {
+  display: relative;
+  margin-right: 10px;
+  max-width: 20px;
+  max-height: 20px;
+}
+
+th{
+padding: 5px;
+}
+
+select{
+  font-size: 15pt;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  box-shadow: 2px -3px lightskyblue;
+  margin: 10px;
+  padding: 5px;
+  height: 40px;
+  width: 350px;
+  align-items: center;
+justify-content: center;
+
+}
+
+input{
+  font-size: 20pt;
+  margin: 10px;
+  padding: 5px;
+  width: 200px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  box-shadow: 2px 1px black ;
+}
+
+.checkCredito{
+  font-size: 10px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  color: brown;
+}
+
+.quadroLancamentos{
+  border: none;
+  box-sizing: border-box;
+  box-shadow: 2px -4px darkgreen;
+  background-color: #011d3a;
+  border-radius: 15px;
+  color: rgb(117, 236, 181);
+  padding: 5px;
+  padding-left: 10px;
+}
+
+.lancamento-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .lancamento-header input {
+  font-size: 1.5rem;
+  text-align: center;
+  border: 1px solid black;
+  min-width: 100px;
+  background-color: #011d3a;
+  min-height: 30px;
+  max-height: 50px;
+
+ }
+
+ /* Estilos para telas pequenas */
+@media (max-width: 768px) {
+  button {
+    font-size: 1rem;
+    padding: 0.25rem;
+    margin: 0.5rem;
   }
 
-  .checkCredito{
-    font-size: 10px;
-    width: 20px;
-    height: 20px;
-    padding: 0;
-    border-radius: 50%;
-    border: none;
-    outline: none;
-    color: brown;
+  label {
+    font-size: 1rem;
+    margin: 0.25rem;
   }
 
-  .quadroLancamentos{
-    border: none;
-    box-sizing: border-box;
-    box-shadow: 2px -4px darkgreen;
-    background-color: rgba(52, 116, 211, 0.473);
-    border-radius: 20px;
+  table {
+    font-size: 1.5rem;
+    padding: 0.25rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+  }
+}
+
+/* Estilos para telas médias */
+@media (min-width: 769px) and (max-width: 1024px) {
+  button {
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    margin: 1rem;
   }
 
-  .lancamento-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5px;
-    justify-content: center;
-    align-items: center;
-   }
+  label {
+    font-size: 1.25rem;
+    margin: 0.5rem;
+  }
 
-   .lancamento-header input {
-    font-size: 16px;
-    text-align: center;
-    border: 1px solid black;
-    min-width: 100px;
-    background-color: lightblue;
-    min-height: 30px;
-    max-height: 50px;
-    
-   }
+  table {
+    font-size: 2rem;
+    padding: 0.5rem;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+  }
+}
+
+/* Estilos para telas grandes */
+@media (min-width: 1025px) {
+  button {
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: 2rem;
+  }
+
+  label {
+    font-size: 1.5rem;
+    margin: 1rem;
+  }
+
+  table {
+    font-size: 2.5rem;
+    padding: 1rem;
+    margin-top: 10rem;
+    margin-bottom: 20rem;
+  }
+}

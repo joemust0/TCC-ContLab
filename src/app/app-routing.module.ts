@@ -1,31 +1,28 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './Front/main/main.component';
+import { LancamentosComponent } from './Front/Ferramenta/lancamentos/lancamentos.component';
+import { BalancosComponent } from './Front/Ferramenta/balancos/balancos.component';
 import { LoginComponent } from './Usuario/login/login.component';
 import { CadUsuarioComponent } from './Usuario/cad-usuario/cad-usuario.component';
-import { LancamentosComponent } from './Front/ferramenta/lancamentos/lancamentos.component';
-import { BalancoComponent } from './Front/ferramenta/balanco/balanco.component';
-import { TestesComponent } from './Dev/testes/testes.component';
-import { MotorDeCalculoComponent } from './Dev/motor-de-calculo/motor-de-calculo.component';
-import { GraficoComponent } from './Front/ferramenta/grafico/grafico.component';
-import { AreaUserComponentComponent } from './Usuario/area-user-component/area-user-component.component';
-import { Login2Component } from './Usuario/login2/login2.component';
+import { AreaUserComponent } from './Usuario/area-user/area-user.component';
+import { TaskComponent } from './Front/Ferramenta/task/task.component';
 import { EdicaoUserComponent } from './Usuario/edicao-user/edicao-user.component';
-import { TaskComponent } from './Front/ferramenta/task/task.component';
+import { LancamentosTesteComponent } from './Front/Ferramenta/teste/lancamentos-teste/lancamentos-teste.component';
+
+
 
 const routes: Routes = [
-  {path: '', component: MainComponent },
-  {path: 'login', component: LoginComponent },
-  {path: 'lançamentos', component: LancamentosComponent },
-  {path: 'balanco', component: BalancoComponent },
-  {path: 'testes', component: TestesComponent },
-  {path: 'motor', component: MotorDeCalculoComponent },
-  {path: 'Graf-balanço', component: GraficoComponent },
+  {path: '', component: MainComponent},
+  {path: 'lançamentos', component: LancamentosComponent},
+  {path: 'balancos', component: BalancosComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'cadUsuario', component: CadUsuarioComponent},
-  {path: 'areaUser', component: AreaUserComponentComponent},
-  {path: 'login2', component: Login2Component },
+  {path: 'areaUser', component: AreaUserComponent},
   {path: 'editUser', component: EdicaoUserComponent },
-  {path: 'atividade', component: TaskComponent },
+  {path: 'task', component: TaskComponent },
+  {path: 'teste', component: LancamentosTesteComponent},
+  {path: '', redirectTo: '/balancos', pathMatch: 'full' },
 ];
 
 @NgModule({

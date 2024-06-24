@@ -1,5 +1,4 @@
-<div class="lancamento-header">
-  <div class="NF">
+<div class="quadroLancamentos"> <div class="NF">
   <label>Numero da nota fiscal:</label>
   <br>
   <input type="number" name="Nota Fiscal" id="nf" placeholder="Nº da nota Fiscal">
@@ -11,7 +10,7 @@
 <div class="chaveA">
    <label for="valor">Chave de acesso:</label>
   <br>
-  <input type="number" id="chaveAcesso" [(ngModel)]="chaveAcesso" placeholder="Digite a chave de acesso " [minLength]="44" [maxlength]="44">
+  <input type="number" id="chaveAcesso" [(ngModel)]="chave_nf" placeholder="Digite a chave de acesso " [minLength]="44" [maxlength]="44">
 </div>
 <div class="lanc-data">
   <label>Data de emissão:</label>
@@ -19,99 +18,161 @@
   <label>Data de entrada:</label>
   <input type="date">
 </div>
-</div>
-<div class="quadroLancamentos">
   <div class="lanc-deb">
-  <label for="tipoLancamento">Tipo de Lançamento Débito:</label>
-  <select id="tipoLancamento" [(ngModel)]="tipoLancamento">
-    <option *ngFor="let tipo of tiposLancamento" [value]="tipo">{{ tipo }}</option>
-  </select>
-  <br>
-  <label for="conta">Conta:</label>
-  <select id="conta" [(ngModel)]="conta">
-    <option *ngFor="let conta of contas" [value]="conta">{{ conta }}</option>
-  </select>
-  <br>
-  <label for="valor">Valor:</label>
-  <input type="number" id="valor" [(ngModel)]="valor" placeholder="0.000.000,00">
-</div>
- <!-- Contrapartida -->
+    <h1>Lançamento Débito</h1>
+
+    <label for="tipoDebito">Tipo de Lançamento Débito:</label>
+    <select id="tipoDebito" [(ngModel)]="tiposd">
+      <option *ngFor="let tipo of uniqueTipos" [value]="tipo">{{ tipo }}</option>
+    </select>
+    <br>
+
+    <label for="perDebito">Periodo Contábil:</label>
+    <select id="perDebito" [(ngModel)]="periodo_csd">
+      <option *ngFor="let periodo of uniquePeriodos" [value]="periodo">{{ periodo }}</option>
+    </select>
+    <br>
+
+    <label for="ModeloDebito">Modelo:</label>
+    <select id="ModeloDebito" [(ngModel)]="modelosd">
+      <option *ngFor="let modelo of uniqueModelos" [value]="modelo">{{ modelo }}</option>
+    </select>
+    <br>
+
+    <label for="contaDebito">Conta:</label>
+    <select id="contaDebito" [(ngModel)]="contasd">
+      <option *ngFor="let conta of uniqueContas" [value]="conta">{{ conta }}</option>
+    </select>
+    <br>
+
+    <label for="valorDebito">Valor:</label>
+    <input type="number" id="valorDebito" [(ngModel)]="valord" placeholder="0.000.000,00">
+  </div>
+  <hr>
+
+  <!-- Quadro de Crédito -->
   <div class="lanc-cred">
-    <label for="tipoLancamentoContrapartida">Tipo de Lançamento Crédito:</label>
-    <select id="tipoLancamentoContrapartida" [(ngModel)]="tipoLancamentoContrapartida">
-      <option *ngFor="let tipo of tiposLancamento" [value]="tipo">{{ tipo }}</option>
+    <h1>Lançamento Crédito</h1>
+
+    <label for="tipoCredito">Tipo de Lançamento Crédito:</label>
+    <select id="tipoCredito" [(ngModel)]="tiposc">
+      <option *ngFor="let tipo of uniqueTipos" [value]="tipo">{{ tipo }}</option>
     </select>
     <br>
-    <label for="contrapartidaConta">Conta:</label>
-    <select id="contrapartidaConta" [(ngModel)]="contrapartidaConta">
-      <option *ngFor="let conta of contas" [value]="conta">{{ conta }}</option>
+
+    <label for="perCredito">Periodo Contábil:</label>
+    <select id="perCredito" [(ngModel)]="periodo_csc">
+      <option *ngFor="let periodo of uniquePeriodos" [value]="periodo">{{ periodo }}</option>
     </select>
     <br>
-    <label for="contrapartidaValor">Valor:</label>
-    <input type="number" id="contrapartidaValor" [(ngModel)]="contrapartidaValor" placeholder="0.000.000,00">
+
+    <label for="modeloCredito">Modelo:</label>
+    <select id="modeloCredito" [(ngModel)]="modelosc">
+      <option *ngFor="let modelo of uniqueModelos" [value]="modelo">{{ modelo }}</option>
+    </select>
+    <br>
+
+    <label for="contaCredito">Conta:</label>
+    <select id="contaCredito" [(ngModel)]="contasc">
+      <option *ngFor="let conta of uniqueContas" [value]="conta">{{ conta }}</option>
+    </select>
+    <br>
+
+    <label for="valorCredito">Valor:</label>
+    <input type="number" id="valorCredito" [(ngModel)]="valorc" placeholder="0.000.000,00">
+  </div>
+  <hr>
+
+  <!-- Quadro de Campos Adicionais -->
+  <div *ngFor="let campo of camposDinamicos; let i = index" class="lanc-novo">
+    <h1>Campo Adicional {{ i + 1 }}</h1>
+
+    <label for="tipoNCampo{{ i }}">Tipo:</label>
+    <select id="tipoNCampo{{ i }}" [(ngModel)]="campo.tiposn">
+      <option *ngFor="let tipo of uniqueTipos" [value]="tipo">{{ tipo }}</option>
+    </select>
+    <br>
+
+    <label for="perNCampo{{ i }}">Periodo Contábil:</label>
+    <select id="perNCampo{{ i }}" [(ngModel)]="campo.periodo_csn">
+      <option *ngFor="let periodo of uniquePeriodos" [value]="periodo">{{ periodo }}</option>
+    </select>
+    <br>
+
+    <label for="modeloNCampo{{ i }}">Modelo:</label>
+    <select id="modeloNCampo{{ i }}" [(ngModel)]="campo.modelosn">
+      <option *ngFor="let modelo of uniqueModelos" [value]="modelo">{{ modelo }}</option>
+    </select>
+    <br>
+
+    <label for="contaNCampo{{ i }}">Conta:</label>
+    <select id="contaNCampo{{ i }}" [(ngModel)]="campo.contasn">
+      <option *ngFor="let conta of uniqueContas" [value]="conta">{{ conta }}</option>
+    </select>
+    <br>
+
+    <label for="valorNCampo{{ i }}">Valor:</label>
+    <input type="number" id="valorNCampo{{ i }}" [(ngModel)]="campo.valorn" placeholder="0.000.000,00">
+
+    <label for="funcNCampo{{ i }}">Função:</label>
+    <input class="checkCredito" type="checkbox" id="funcNCampo{{ i }}" [(ngModel)]="campo.funcaoCredito">
+
+    <label for="funcNCampo{{ i }}">Crédito</label>
   </div>
 
-  <!-- Novo campo -->
-  <div class="lanc-novo" *ngFor="let campo of camposDinamicos; let i = index">
-    <label for="tipoLancamentoNCampo{{ i }}">Tipo de Lançamento:</label>
-    <select id="tipoLancamentoNCampo{{ i }}" [(ngModel)]="campo.tipo">
-      <option *ngFor="let tipo of tiposLancamento" [value]="tipo">{{ tipo }}</option>
-    </select>
-<br>
-    <label for="nCampoConta{{ i }}">Conta:</label>
-    <select id="nCampoConta{{ i }}" [(ngModel)]="campo.conta">
-      <option *ngFor="let conta of contas" [value]="conta">{{ conta }}</option>
-    </select>
-  <br>
-    <label for="nCampoValor{{ i }}">Valor:</label>
-    <input type="number" id="nCampoValor{{ i }}" [(ngModel)]="campo.valor" placeholder="0.000.000,00">
-
-    <label for="nCampoFuncao{{ i }}">Função:</label>
-    <input class="checkCredito" type="checkbox" id="nCampoFuncao{{ i }}" [(ngModel)]="campo.funcaoCredito">
-    <label for="nCampoFuncao{{ i }}">Crédito</label>
-  </div>
   <button (click)="adicionarCampo()">Adicionar Campo</button>
   <button (click)="adicionarLancamento()">Gravar Lançamento</button>
+  <button (click)="apagarLancamentos()">Apagar Lançamento</button>
   <button (click)="limparLancamentos()">Limpar Lançamento</button>
+  <button (click)="gerarBalanco()">Gerar Balanço</button>
 
- <button (click)="gerarBalanco()">Gerar Balanço</button>
 </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nº Lançamento</th>
-      <th>Função</th>
-      <th>Tipo de Lançamento</th>
-      <th>Conta</th>
-      <th>Valor</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let lancamento of lancamentos; let i = index">
-      <td>{{ i + 1 }}</td>
-      <div>
-      <td>{{ lancamento.tipo }}</td>
-      <td>{{ lancamento.tipoLancamento }}</td>
-      <td>{{ lancamento.conta }}</td>
-      <td>{{ lancamento.valor | currency }}</td>
-    </div>
-    <div>
-      <td>{{ lancamento.contrapartida?.tipo }}</td>
-      <td>{{ lancamento.contrapartida?.tipoLancamento }}</td>
-      <td>{{ lancamento.contrapartida?.conta }}</td>
-      <td>{{ lancamento.contrapartida?.valor | currency }}</td>
-    </div>
-    <ng-container *ngFor="let campo of lancamento.camposDinamicos; let j = index">
-      <div>
-      <td>{{ campo.funcaoCredito ? 'Crédito' : 'Débito' }}</td>
-        <td>{{ campo.tipo }}</td>
-        <td>{{ campo.conta }}</td>
-        <td>{{ campo.valor | currency }}</td>
-      </div>
+<div class="tabLanc">
+  <table>
+    <thead>
+      <tr>
+        <th>Nº Lançamento</th>
+        <th>Tipo</th>
+        <th>Periodo Contábil</th>
+        <th>Modelo</th>
+        <th>Conta</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let lancamento of lancamentos; let i = index">
+        <!-- Debit Entries -->
+        <tr>
+          <td><input class="cbLanc" type="checkbox" [(ngModel)]="lancamento.selecionado"></td>
+         <tr *ngFor="let debito of lancamento.debito; let j = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ lancamento.tipos }}</td>
+          <td>{{ lancamento.periodo_cs }}</td>
+          <td>{{ lancamento.modelo }}</td>
+          <td>{{ debito.c_debito }}</td>
+          <td>{{ debito.v_debito | currency }}</td>
+        </tr>
+        <!-- Credit Entries -->
+        <tr *ngFor="let credito of lancamento.credito; let j = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ lancamento.tipoCredito }}</td>
+          <td>{{ lancamento.periodo_cs }}</td>
+          <td>{{ lancamento.modelo }}</td>
+          <td>{{ credito.c_credito }}</td>
+          <td>{{ credito.v_credito | currency }}</td>
+        </tr>
+        <!-- Dynamic Entries -->
+        <tr *ngFor="let campo of lancamento.camposDinamicos; let j = index">
+          <td>{{ i + 1 }} -
+          {{ campo.funcaoCredito ? 'Crédito' : 'Débito' }}</td>
+          <td>{{ campo.tiposn }}</td>
+          <td>{{ campo.periodo_csn }}</td>
+          <td>{{ campo.modelosn }}</td>
+          <td>{{ campo.contasn }}</td>
+          <td>{{ campo.valorn | currency }}</td>
+        </tr>
       </ng-container>
-    </tr>
-</table>
-<div *ngIf="mostrarBalanco">
-  <div #tabelaB class="balanco-table" [ngClass]="{'ocultar': !mostrarBalanco}">
+    </tbody>
+  </table>
 </div>

@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Ferramenta_contabil'`, () => {
+  it(`should have as title 'tcc-s'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Ferramenta_contabil');
+    expect(app.title).toEqual('tcc-s');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('Ferramenta_contabil app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('tcc-s app is running!');
   });
 });
